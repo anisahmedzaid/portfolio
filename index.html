@@ -248,12 +248,15 @@
                 </div>
             </div>
             <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
-                <p>© 2023 Anis Ahmed Zaid. All rights reserved.</p>
+                <p>© <div id="year"></div> Anis Ahmed Zaid. All rights reserved.</p>
             </div>
         </div>
     </footer>
     <script>
         feather.replace();
+        const date = new Date();
+        let currentYear = date.getFullYear();
+        document.getElementById("year").innerHTML = currentYear;
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
