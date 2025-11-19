@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,7 +18,25 @@
         }
     </style>
 </head>
+
 <body class="bg-white text-gray-800">
+
+<!-- 🔒 SECRET PAGE HANDLER -->
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const page = params.get("page");
+
+    document.addEventListener("DOMContentLoaded", () => {
+        if (page === "privacy" || page === "terms") {
+            document.getElementById("main-site").style.display = "none";
+            document.getElementById(page + "-page").style.display = "block";
+        }
+    });
+</script>
+
+<!-- ✅ WRAP THE ENTIRE ORIGINAL SITE -->
+<div id="main-site">
+
     <nav class="py-4 px-4 bg-white shadow-sm">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <a href="#" class="text-xl font-bold">
@@ -30,6 +49,7 @@
             </div>
         </div>
     </nav>
+
     <section class="py-20 px-4 bg-gradient-to-r from-blue-50 to-indigo-50">
         <div class="max-w-4xl mx-auto text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-6">
@@ -45,6 +65,7 @@
             </div>
         </div>
     </section>
+
     <section id="about" class="py-16 px-4">
         <div class="max-w-4xl mx-auto">
             <div class="bg-white rounded-xl shadow-lg p-8">
@@ -63,6 +84,7 @@
             </div>
         </div>
     </section>
+
     <section id="services" class="py-16 px-4 bg-gray-50">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold mb-8 text-center">
@@ -82,6 +104,7 @@
                         Transform repetitive tasks into automated workflows that save time and reduce errors.
                     </p>
                 </div>
+
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
                     <div class="text-blue-500 mb-4">
                         <i data-feather="cpu" class="w-8 h-8"></i>
@@ -91,6 +114,7 @@
                         Predictive models that analyze patterns and make data-driven decisions for your business.
                     </p>
                 </div>
+
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
                     <div class="text-blue-500 mb-4">
                         <i data-feather="message-square" class="w-8 h-8"></i>
@@ -103,6 +127,7 @@
             </div>
         </div>
     </section>
+
     <section id="contact" class="py-16 px-4">
         <div class="max-w-4xl mx-auto">
             <div class="bg-white rounded-xl shadow-lg overflow-hidden">
@@ -111,28 +136,38 @@
                         <h2 class="text-3xl font-bold mb-6">
                             Ready to <span class="gradient-text">Automate?</span>
                         </h2>
+
                         <p class="mb-8 text-gray-600">
                             Let's discuss how AI can transform your business operations
                         </p>
+
+                        <!-- CONTACT FORM -->
                         <form id="contactForm" class="space-y-6">
-<div>
+
+                            <div>
                                 <label for="name" class="block mb-2 font-medium">Your Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="John Doe">
+                                <input type="text" id="name" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="John Doe">
                             </div>
+
                             <div>
                                 <label for="email" class="block mb-2 font-medium">Email Address</label>
-                                <input type="email" id="email" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="you@company.com">
+                                <input type="email" id="email" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="you@company.com">
                             </div>
+
                             <div>
                                 <label for="message" class="block mb-2 font-medium">Your Message</label>
-                                <textarea id="message" rows="4" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Tell me about your automation needs..."></textarea>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="Tell me about your automation needs..."></textarea>
                             </div>
+
                             <button type="submit" class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 font-medium">
                                 Send Message
                             </button>
+
                             <div id="success-message" class="hidden mt-4 p-3 bg-green-100 text-green-700 rounded-lg"></div>
+
                         </form>
-<script>
+
+                        <script>
                             document.getElementById('contactForm').addEventListener('submit', function(e) {
                                 e.preventDefault();
                                 
@@ -150,75 +185,47 @@
                                     return;
                                 }
                                 
-                                const formData = {
-                                    name: name,
-                                    email: email,
-                                    message: message
-                                };
-                                // Show loading state
+                                const formData = { name, email, message };
+
                                 const submitBtn = document.querySelector('#contactForm button[type="submit"]');
                                 submitBtn.disabled = true;
-                                submitBtn.innerHTML = 'Sending...';
-                                
-                                // Create success message element if not exists
+                                submitBtn.innerText = 'Sending...';
+
                                 let successMsg = document.getElementById('success-message');
-                                if (!successMsg) {
-                                    successMsg = document.createElement('div');
-                                    successMsg.id = 'success-message';
-                                    successMsg.className = 'hidden mt-4 p-3 bg-green-100 text-green-700 rounded-lg';
-                                    document.getElementById('contactForm').appendChild(successMsg);
-                                }
-// Using FormSubmit.co as a reliable alternative
+
                                 fetch('https://n8n.srv950423.hstgr.cloud/webhook/266cc9b1-806b-4cb2-8c7d-793add7709b0', {
                                     method: 'POST',
-                                    headers: { 
-                                        'Content-Type': 'application/json',
-                                        'Accept': 'application/json'
-                                    },
+                                    headers: { 'Content-Type': 'application/json' },
                                     body: JSON.stringify(formData)
                                 })
-.then(response => {
-                                    submitBtn.innerHTML = 'Send Message';
+                                .then(() => {
+                                    submitBtn.innerText = 'Send Message';
                                     successMsg.textContent = 'Message sent successfully!';
                                     successMsg.classList.remove('hidden');
                                     document.getElementById('contactForm').reset();
-                                    
-                                    // Hide message after 5 seconds
-                                    setTimeout(() => {
-                                        successMsg.classList.add('hidden');
-                                    }, 5000);
+
+                                    setTimeout(() => { successMsg.classList.add('hidden'); }, 5000);
                                 })
-                                .catch(error => {
+                                .catch(() => {
                                     submitBtn.disabled = false;
-                                    submitBtn.innerHTML = 'Send Message';
-                                    successMsg.textContent = 'Error sending message. Please try again later or email me directly at anisahmedzaid@gmail.com';
+                                    submitBtn.innerText = 'Send Message';
+                                    successMsg.textContent = 'Error sending message. Please try again.';
                                     successMsg.classList.remove('hidden');
-                                    successMsg.classList.replace('bg-green-100', 'bg-red-100');
-                                    successMsg.classList.replace('text-green-700', 'text-red-700');
-                                    
-                                    // Hide message after 5 seconds
-                                    setTimeout(() => {
-                                        successMsg.classList.add('hidden');
-                                        successMsg.classList.replace('bg-red-100', 'bg-green-100');
-                                        successMsg.classList.replace('text-red-700', 'text-green-700');
-                                    }, 5000);
-                                })
-.finally(() => {
-                                    setTimeout(() => {
-                                        submitBtn.disabled = false;
-                                        submitBtn.innerHTML = 'Send Message';
-                                    }, 3000);
+
+                                    setTimeout(() => { successMsg.classList.add('hidden'); }, 5000);
                                 });
                             });
-</script>
-</div>
+                        </script>
+                    </div>
+
                     <div class="bg-blue-600 p-8 text-white">
                         <h3 class="text-2xl font-bold mb-6">Contact Info</h3>
+
                         <div class="space-y-6">
                             <div class="flex items-start">
                                 <i data-feather="mail" class="w-5 h-5 mt-1 mr-4"></i>
                                 <p>anisahmedzaid@gmail.com</p>
-</div>
+                            </div>
                             <div class="flex items-start">
                                 <i data-feather="linkedin" class="w-5 h-5 mt-1 mr-4"></i>
                                 <p>linkedin.com/in/anis-ahmed-zaid</p>
@@ -227,46 +234,74 @@
                                 <i data-feather="phone" class="w-5 h-5 mt-1 mr-4"></i>
                                 <p>+33 6 52 64 02 58</p>
                             </div>
-</div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <footer class="py-8 px-4 bg-gray-900 text-white">
         <div class="max-w-4xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center">
+
                 <div class="mb-4 md:mb-0">
                     <a href="#" class="text-xl font-bold">
                         <span class="text-blue-400">AAZ AI</span>
                     </a>
                 </div>
+
                 <div class="flex space-x-6">
                     <a href="#about" class="hover:text-blue-400">About</a>
                     <a href="#services" class="hover:text-blue-400">Services</a>
                     <a href="#contact" class="hover:text-blue-400">Contact</a>
                 </div>
             </div>
+
             <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
                 <div id="year"></div>
             </div>
         </div>
     </footer>
-    <script>
-        feather.replace();
-        const date = new Date();
-        let currentYear = date.getFullYear();
-        let signature = "© " + currentYear + " Anis Ahmed Zaid. All rights reserved."
-        document.getElementById("year").innerHTML = signature;
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+
+</div> <!-- END main-site -->
+
+<!-- 🔒 SECRET PRIVACY PAGE -->
+<div id="privacy-page" style="display:none; padding:40px;">
+    <h1 class="text-3xl font-bold mb-4">Politique de Confidentialité</h1>
+    <p>
+        Cette application utilise les API Meta (WhatsApp) uniquement pour communiquer avec les clients ayant donné leur consentement.
+        Aucune donnée personnelle n’est vendue, partagée ou exploitée à des fins commerciales.
+        Pour toute demande de suppression des données, contactez : <b>azautomationai@gmail.com</b>.
+    </p>
+</div>
+
+<!-- 🔒 SECRET TERMS PAGE -->
+<div id="terms-page" style="display:none; padding:40px;">
+    <h1 class="text-3xl font-bold mb-4">Conditions de Service</h1>
+    <p>
+        En utilisant ce service, vous acceptez que l'assistant Lisa puisse communiquer via WhatsApp dans le cadre des prestations de conciergerie et d’automatisation.
+        Vous pouvez demander la suppression de vos données à tout moment en écrivant à : <b>azautomationai@gmail.com</b>.
+    </p>
+</div>
+
+<script>
+    feather.replace();
+
+    const date = new Date();
+    document.getElementById("year").innerHTML =
+        `© ${date.getFullYear()} Anis Ahmed Zaid. All rights reserved.`;
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
