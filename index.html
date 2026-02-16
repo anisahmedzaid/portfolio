@@ -709,16 +709,17 @@
 
   <!-- Footer -->
   <footer class="border-t border-border-subtle py-12 px-6 bg-background">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="flex items-center gap-2">
-        <span class="text-text-primary font-mono font-bold text-lg">anis.dev</span>
-        <span class="text-text-muted text-sm ml-2">© 2026 Anis Ahmed Zaid</span>
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="text-text-muted text-sm">
+        © 2026 Anis Ahmed Zaid
       </div>
 
-      <div class="flex gap-8 text-sm text-text-secondary">
-        <a href="https://linkedin.com/in/anis-ahmed-zaid" target="_blank"
-          class="hover:text-text-primary transition-colors">LinkedIn</a>
-        <a href="mailto:anisahmedzaid@gmail.com" class="hover:text-text-primary transition-colors">Email</a>
+      <div class="text-text-primary font-mono font-bold text-lg">
+        Ingénieur.informatique.freelance
+      </div>
+
+      <div class="hidden md:block w-40">
+        <!-- Spacer for alignment -->
       </div>
     </div>
   </footer>
@@ -777,6 +778,8 @@
     const numParticles = 30;
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
+    let algerianFlag = null;
+    let flagCaught = false;
 
     class Particle {
       constructor() {
@@ -796,16 +799,62 @@
       }
 
       update() {
-        // Mouse repulsion
-        const dx = this.x - mouseX;
-        const dy = this.y - mouseY;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        const repulsionRadius = 150;
+        // Special behavior for Algerian flag
+        if (this.isFlag) {
+          // Check if mouse is over a content section
+          const elementsAtMouse = document.elementsFromPoint(mouseX, mouseY);
+          const isOverContent = elementsAtMouse.some(el =>
+            el.closest('section, header, footer') && !el.closest('.floating-logos')
+          );
 
-        if (distance < repulsionRadius && distance > 0) {
-          const force = (repulsionRadius - distance) / repulsionRadius;
-          this.vx += (dx / distance) * force * 0.5;
-          this.vy += (dy / distance) * force * 0.5;
+          if (isOverContent && !flagCaught) {
+            // Teleport to random position outside sections
+            this.x = Math.random() * window.innerWidth;
+            this.y = Math.random() * window.innerHeight;
+            this.vx = (Math.random() - 0.5) * 2;
+            this.vy = (Math.random() - 0.5) * 2;
+            this.element.style.opacity = '0.3';
+            return;
+          }
+
+          if (flagCaught) {
+            // Follow mouse exactly
+            this.x = mouseX;
+            this.y = mouseY;
+            this.vx = 0;
+            this.vy = 0;
+            this.element.style.opacity = '0.6';
+          } else {
+            // Attraction to mouse (opposite of repulsion)
+            const dx = mouseX - this.x;
+            const dy = mouseY - this.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            const attractionRadius = 200;
+
+            if (distance < attractionRadius && distance > 0) {
+              const force = (attractionRadius - distance) / attractionRadius;
+              this.vx += (dx / distance) * force * 0.3;
+              this.vy += (dy / distance) * force * 0.3;
+
+              // Catch the flag if very close
+              if (distance < 20) {
+                flagCaught = true;
+                this.element.style.opacity = '0.8';
+              }
+            }
+          }
+        } else {
+          // Mouse repulsion for normal particles
+          const dx = this.x - mouseX;
+          const dy = this.y - mouseY;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          const repulsionRadius = 150;
+
+          if (distance < repulsionRadius && distance > 0) {
+            const force = (repulsionRadius - distance) / repulsionRadius;
+            this.vx += (dx / distance) * force * 0.5;
+            this.vy += (dy / distance) * force * 0.5;
+          }
         }
 
         // Update position
@@ -844,6 +893,10 @@
     for (let i = 0; i < numParticles; i++) {
       particles.push(new Particle());
     }
+
+    // Create Algerian flag easter egg
+    algerianFlag = new Particle(true);
+    particles.push(algerianFlag);
 
     // Track mouse
     document.addEventListener('mousemove', (e) => {
