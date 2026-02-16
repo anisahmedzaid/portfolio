@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&family=Crimson+Pro:wght@400;600;700&display=swap"
+    rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -45,6 +48,7 @@
       background: linear-gradient(to bottom, transparent, #0a0a0b) #0a0a0b;
       -webkit-font-smoothing: antialiased;
     }
+
     .grain {
       position: fixed;
       top: 0;
@@ -56,6 +60,7 @@
       z-index: 50;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     }
+
     /* Floating Logos */
     .floating-logos {
       position: fixed;
@@ -67,41 +72,52 @@
       z-index: 0;
       overflow: hidden;
     }
+
     .floating-logo {
       position: absolute;
-      width: 22px;
-      height: 22px;
-      opacity: 0.04;
-      color: #fafafa;
+      width: 24px;
+      height: 24px;
+      opacity: 0.2;
       animation: float-space linear infinite;
     }
-    .floating-logo svg {
+
+    .floating-logo img {
       width: 100%;
       height: 100%;
-      filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.15));
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.2));
     }
+
     @keyframes float-space {
       0% {
         transform: translate(0, 0) rotate(0deg) scale(1);
       }
+
       25% {
         transform: translate(80px, -100px) rotate(90deg) scale(1.2);
       }
+
       50% {
         transform: translate(-60px, -200px) rotate(180deg) scale(0.8);
       }
+
       75% {
         transform: translate(-100px, -100px) rotate(270deg) scale(1.1);
       }
+
       100% {
         transform: translate(0, 0) rotate(360deg) scale(1);
       }
     }
-    section, header, footer {
+
+    section,
+    header,
+    footer {
       position: relative;
       z-index: 10;
       background: #0a0a0b;
     }
+
     @media (max-width: 768px) {
       .floating-logo {
         width: 16px;
@@ -109,44 +125,54 @@
         opacity: 0.03;
       }
     }
+
     .hover-lift {
       transition: all 0.3s ease;
     }
+
     .hover-lift:hover {
       transform: translateY(-4px);
     }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
         transform: translateY(10px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
     .fade-in {
       animation: fadeIn 0.6s ease-out forwards;
     }
+
     @keyframes slideInUp {
       from {
         opacity: 0;
         transform: translateY(30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
     .scroll-reveal {
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
+
     .scroll-reveal.revealed {
       opacity: 1;
       transform: translateY(0);
     }
+
     /* Floating CTA Button */
     .floating-cta {
       position: fixed;
@@ -162,7 +188,7 @@
       font-weight: 500;
       font-size: 0.875rem;
       border-radius: 0.75rem;
-      box-shadow: 
+      box-shadow:
         0 4px 16px rgba(0, 0, 0, 0.4),
         0 0 0 1px rgba(255, 255, 255, 0.05);
       z-index: 50;
@@ -173,67 +199,81 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
+
     .floating-cta.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     .floating-cta:hover {
       transform: translateY(-2px);
       border-color: #3b82f6;
-      box-shadow: 
+      box-shadow:
         0 8px 24px rgba(0, 0, 0, 0.5),
         0 0 0 1px rgba(59, 130, 246, 0.3),
         0 0 24px rgba(59, 130, 246, 0.15);
     }
+
     .floating-cta svg {
       width: 1.125rem;
       height: 1.125rem;
       opacity: 0.8;
     }
+
     @media (max-width: 768px) {
       .floating-cta span {
         display: none;
       }
+
       .floating-cta {
         padding: 0.875rem;
         bottom: 1.5rem;
         right: 1.5rem;
       }
     }
+
     .perspective-tilt {
       perspective: 1000px;
       transition: transform 0.3s ease;
     }
+
     .perspective-tilt:hover {
       transform: rotateX(2deg) rotateY(2deg);
     }
+
     .perspective-container {
       perspective: 1200px;
     }
+
     .terminal-window {
       transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
       transform-style: preserve-3d;
     }
+
     .terminal-window:hover {
       transform: rotateX(-5deg) rotateY(-8deg) translateY(-8px);
-      box-shadow: 
+      box-shadow:
         0 25px 50px -12px rgba(0, 0, 0, 0.5),
         0 0 0 1px rgba(59, 130, 246, 0.1),
         0 0 80px rgba(59, 130, 246, 0.15);
     }
+
     .macos-window {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .macos-window:hover {
-      box-shadow: 
+      box-shadow:
         0 20px 40px -12px rgba(0, 0, 0, 0.4),
         0 0 0 1px rgba(59, 130, 246, 0.1);
     }
+
     .service-block {
       transition: all 0.3s ease;
     }
   </style>
 </head>
+
 <body class="bg-background text-text-primary">
   <!-- Grain Overlay -->
   <div class="grain" aria-hidden="true"></div>
@@ -242,75 +282,115 @@
   <!-- Floating Logos Background -->
   <div class="floating-logos" aria-hidden="true">
     <!-- Python -->
-    <div class="floating-logo" style="top: 15%; left: 10%; animation-delay: 0s; animation-duration: 12s;">
-      <svg viewBox="0 0 256 255" xmlns="http://www.w3.org/2000/svg"><path d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072z" fill="#366994"/><path d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897z" fill="#FFC331"/></svg>
+    <div class="floating-logo" style="top: 15%; left: 10%; animation-delay: 0s; animation-duration: 25s;">
+      <img src="./icons/python.png" alt="Python" />
     </div>
 
     <!-- n8n -->
-    <div class="floating-logo" style="top: 60%; right: 8%; animation-delay: 2s; animation-duration: 14s;">
-      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="180" r="35" fill="#FF6D5A"/><circle cx="256" cy="150" r="35" fill="#FF6D5A"/><circle cx="372" cy="180" r="35" fill="#FF6D5A"/><circle cx="140" cy="332" r="35" fill="#FF6D5A"/><circle cx="372" cy="332" r="35" fill="#FF6D5A"/></svg>
+    <div class="floating-logo" style="top: 60%; right: 8%; animation-delay: 2s; animation-duration: 28s;">
+      <img src="./icons/n8n.png" alt="n8n" />
     </div>
 
-    <!-- OpenAI -->
-    <div class="floating-logo" style="top: 75%; left: 15%; animation-delay: 5s; animation-duration: 11s;">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 10L90 50L50 90L10 50Z" fill="currentColor" opacity="0.9"/></svg>
-    </div>
-
-    <!-- Docker -->
-    <div class="floating-logo" style="top: 25%; right: 18%; animation-delay: 1s; animation-duration: 13s;">
-      <svg viewBox="0 0 256 185" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="40" width="30" height="25" fill="#2496ED"/><rect x="55" y="40" width="30" height="25" fill="#2496ED"/><rect x="90" y="40" width="30" height="25" fill="#2496ED"/><rect x="125" y="40" width="30" height="25" fill="#2496ED"/><rect x="55" y="10" width="30" height="25" fill="#2496ED"/><rect x="90" y="10" width="30" height="25" fill="#2496ED"/></svg>
+    <!-- OpenAI (White) -->
+    <div class="floating-logo" style="top: 75%; left: 15%; animation-delay: 5s; animation-duration: 22s;">
+      <img src="./icons/openai.png" alt="OpenAI" style="filter: brightness(0) invert(1);" />
     </div>
 
     <!-- Anthropic -->
-    <div class="floating-logo" style="top: 40%; left: 20%; animation-delay: 6s; animation-duration: 15s;">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#D97757" rx="15"/><text x="50" y="65" font-size="45" font-weight="bold" fill="#fff" text-anchor="middle" font-family="sans-serif">A</text></svg>
+    <div class="floating-logo" style="top: 40%; left: 20%; animation-delay: 6s; animation-duration: 30s;">
+      <img src="./icons/anthropic.png" alt="Anthropic" />
     </div>
 
     <!-- Supabase -->
-    <div class="floating-logo" style="top: 82%; right: 15%; animation-delay: 8s; animation-duration: 16s;">
-      <svg viewBox="0 0 109 113" xmlns="http://www.w3.org/2000/svg"><path d="M63.708 110.284l-43.151-54.347c-5.093-6.414-.525-15.874 7.665-15.874h45.22l-1.007 67.251c-.069 4.598-5.867 6.571-8.727 2.97z" fill="#3ECF8E"/></svg>
+    <div class="floating-logo" style="top: 82%; right: 15%; animation-delay: 8s; animation-duration: 32s;">
+      <img src="./icons/supabase.png" alt="Supabase" />
     </div>
 
     <!-- Netlify -->
-    <div class="floating-logo" style="top: 50%; right: 5%; animation-delay: 3s; animation-duration: 17s;">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="35" height="35" fill="#00C7B7"/><rect x="55" y="10" width="35" height="35" fill="#00C7B7"/><rect x="10" y="55" width="35" height="35" fill="#00C7B7"/><rect x="55" y="55" width="35" height="35" fill="#00C7B7"/></svg>
+    <div class="floating-logo" style="top: 50%; right: 5%; animation-delay: 3s; animation-duration: 34s;">
+      <img src="./icons/netlify.png" alt="Netlify" />
     </div>
 
     <!-- Gemini -->
-    <div class="floating-logo" style="top: 10%; right: 22%; animation-delay: 10s; animation-duration: 18s;">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" fill="#4285F4"/><path d="M50 20L65 45L50 70L35 45Z" fill="#fff" opacity="0.9"/></svg>
+    <div class="floating-logo" style="top: 10%; right: 22%; animation-delay: 10s; animation-duration: 36s;">
+      <img src="./icons/gemini.png" alt="Gemini" />
     </div>
 
-    <!-- LangChain -->
-    <div class="floating-logo" style="top: 92%; left: 8%; animation-delay: 12s; animation-duration: 14s;">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="25" cy="50" r="15" fill="#00D4FF" opacity="0.8"/><circle cx="50" cy="35" r="15" fill="#00D4FF" opacity="0.8"/><circle cx="75" cy="50" r="15" fill="#00D4FF" opacity="0.8"/></svg>
+    <!-- Extra: LangChain (using python icon as placeholder) -->
+    <div class="floating-logo" style="top: 92%; left: 8%; animation-delay: 12s; animation-duration: 28s;">
+      <img src="./icons/python.png" alt="LangChain" style="opacity: 0.1" />
     </div>
 
-    <!-- Vercel -->
-    <div class="floating-logo" style="top: 55%; left: 25%; animation-delay: 14s; animation-duration: 13s;">
-      <svg viewBox="0 0 116 100" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M58 0L116 100H0L58 0z"/></svg>
+    <!-- Duplicates for varying depth and density -->
+    <div class="floating-logo" style="top: 28%; left: 5%; animation-delay: 0.5s; animation-duration: 24s;">
+      <img src="./icons/n8n.png" alt="n8n" style="width: 32px; height: 32px; opacity: 0.1;" />
     </div>
 
-    <!-- Duplicates -->
-    <div class="floating-logo" style="top: 28%; left: 5%; animation-delay: 0.5s; animation-duration: 12s;">
-      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><circle cx="256" cy="256" r="35" fill="#FF6D5A"/></svg>
+    <div class="floating-logo" style="top: 65%; right: 28%; animation-delay: 4s; animation-duration: 22s;">
+      <img src="./icons/anthropic.png" alt="Anthropic" style="width: 32px; height: 32px; opacity: 0.1;" />
     </div>
 
-    <div class="floating-logo" style="top: 65%; right: 28%; animation-delay: 4s; animation-duration: 11s;">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#D97757" rx="15"/></svg>
+    <div class="floating-logo" style="top: 5%; left: 45%; animation-delay: 7s; animation-duration: 29s;">
+      <img src="./icons/openai.png" alt="OpenAI"
+        style="width: 36px; height: 36px; opacity: 0.1; filter: brightness(0) invert(1);" />
     </div>
 
-    <div class="floating-logo" style="top: 35%; left: 30%; animation-delay: 7s; animation-duration: 15s;">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="#2496ED" opacity="0.7"/></svg>
+    <div class="floating-logo" style="top: 35%; right: 35%; animation-delay: 1.5s; animation-duration: 31s;">
+      <img src="./icons/supabase.png" alt="Supabase" style="width: 40px; height: 40px; opacity: 0.12;" />
     </div>
 
-    <div class="floating-logo" style="top: 48%; right: 12%; animation-delay: 9s; animation-duration: 14s;">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="25" y="25" width="50" height="50" fill="#3ECF8E" opacity="0.7"/></svg>
+    <div class="floating-logo" style="top: 85%; left: 40%; animation-delay: 9s; animation-duration: 27s;">
+      <img src="./icons/gemini.png" alt="Gemini" style="width: 28px; height: 28px; opacity: 0.08;" />
     </div>
 
-    <div class="floating-logo" style="top: 88%; left: 22%; animation-delay: 11s; animation-duration: 16s;">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,10 90,90 10,90" fill="#00C7B7" opacity="0.7"/></svg>
+    <div class="floating-logo" style="top: 20%; right: 50%; animation-delay: 3.5s; animation-duration: 23s;">
+      <img src="./icons/netlify.png" alt="Netlify" style="width: 34px; height: 34px; opacity: 0.1;" />
     </div>
+
+    <div class="floating-logo" style="top: 55%; left: 80%; animation-delay: 11s; animation-duration: 26s;">
+      <img src="./icons/python.png" alt="Python" style="width: 30px; height: 30px; opacity: 0.09;" />
+    </div>
+    <!-- New batch -->
+    <div class="floating-logo" style="top: 2%; left: 15%; animation-delay: 0.2s; animation-duration: 24s;"><img
+        src="./icons/openai.png" alt="" style="filter: brightness(0) invert(1);" /></div>
+    <div class="floating-logo" style="top: 8%; left: 35%; animation-delay: 1.5s; animation-duration: 22s;"><img
+        src="./icons/supabase.png" alt="" /></div>
+    <div class="floating-logo" style="top: 12%; left: 55%; animation-delay: 3s; animation-duration: 26s;"><img
+        src="./icons/n8n.png" alt="" /></div>
+    <div class="floating-logo" style="top: 18%; left: 75%; animation-delay: 4.5s; animation-duration: 28s;"><img
+        src="./icons/anthropic.png" alt="" /></div>
+    <div class="floating-logo" style="top: 22%; left: 95%; animation-delay: 6s; animation-duration: 23s;"><img
+        src="./icons/gemini.png" alt="" /></div>
+    <div class="floating-logo" style="top: 28%; left: 10%; animation-delay: 1.2s; animation-duration: 27s;"><img
+        src="./icons/python.png" alt="" /></div>
+    <div class="floating-logo" style="top: 32%; left: 30%; animation-delay: 2.7s; animation-duration: 30s;"><img
+        src="./icons/netlify.png" alt="" /></div>
+    <div class="floating-logo" style="top: 38%; left: 50%; animation-delay: 4.2s; animation-duration: 32s;"><img
+        src="./icons/openai.png" alt="" style="filter: brightness(0) invert(1);" /></div>
+    <div class="floating-logo" style="top: 42%; left: 70%; animation-delay: 5.7s; animation-duration: 29s;"><img
+        src="./icons/supabase.png" alt="" /></div>
+    <div class="floating-logo" style="top: 48%; left: 90%; animation-delay: 7.2s; animation-duration: 25s;"><img
+        src="./icons/n8n.png" alt="" /></div>
+    <div class="floating-logo" style="top: 52%; left: 5%; animation-delay: 0.8s; animation-duration: 24s;"><img
+        src="./icons/anthropic.png" alt="" /></div>
+    <div class="floating-logo" style="top: 58%; left: 25%; animation-delay: 2.3s; animation-duration: 22s;"><img
+        src="./icons/gemini.png" alt="" /></div>
+    <div class="floating-logo" style="top: 62%; left: 45%; animation-delay: 3.8s; animation-duration: 26s;"><img
+        src="./icons/python.png" alt="" /></div>
+    <div class="floating-logo" style="top: 68%; left: 65%; animation-delay: 5.3s; animation-duration: 28s;"><img
+        src="./icons/netlify.png" alt="" /></div>
+    <div class="floating-logo" style="top: 72%; left: 85%; animation-delay: 6.8s; animation-duration: 23s;"><img
+        src="./icons/openai.png" alt="" style="filter: brightness(0) invert(1);" /></div>
+    <div class="floating-logo" style="top: 78%; left: 15%; animation-delay: 1.1s; animation-duration: 27s;"><img
+        src="./icons/supabase.png" alt="" /></div>
+    <div class="floating-logo" style="top: 82%; left: 35%; animation-delay: 2.6s; animation-duration: 30s;"><img
+        src="./icons/n8n.png" alt="" /></div>
+    <div class="floating-logo" style="top: 88%; left: 55%; animation-delay: 4.1s; animation-duration: 32s;"><img
+        src="./icons/anthropic.png" alt="" /></div>
+    <div class="floating-logo" style="top: 92%; left: 75%; animation-delay: 5.6s; animation-duration: 29s;"><img
+        src="./icons/gemini.png" alt="" /></div>
+    <div class="floating-logo" style="top: 98%; left: 95%; animation-delay: 7.1s; animation-duration: 25s;"><img
+        src="./icons/python.png" alt="" /></div>
   </div>
 
   <!-- Header -->
@@ -323,9 +403,12 @@
 
       <!-- Desktop Nav -->
       <div class="hidden md:flex items-center gap-8">
-        <a href="#services" class="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">Services</a>
-        <a href="#process" class="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">Process</a>
-        <a href="#contact" class="text-sm font-medium bg-bg-elevated border border-border px-4 py-2 rounded-md hover:bg-bg-hover hover:border-text-muted transition-colors">Discutons</a>
+        <a href="#services"
+          class="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">Services</a>
+        <a href="#process"
+          class="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">Process</a>
+        <a href="#contact"
+          class="text-sm font-medium bg-bg-elevated border border-border px-4 py-2 rounded-md hover:bg-bg-hover hover:border-text-muted transition-colors">Discutons</a>
       </div>
 
       <!-- Mobile Menu Button -->
@@ -337,7 +420,8 @@
     </nav>
 
     <!-- Mobile Nav -->
-    <div id="mobileMenu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-bg-secondary border-b border-border p-6 flex flex-col gap-4">
+    <div id="mobileMenu"
+      class="hidden md:hidden absolute top-16 left-0 right-0 bg-bg-secondary border-b border-border p-6 flex flex-col gap-4">
       <a href="#services" class="text-text-secondary hover:text-text-primary">Services</a>
       <a href="#process" class="text-text-secondary hover:text-text-primary">Process</a>
       <a href="#contact" class="text-text-secondary hover:text-text-primary">Discutons</a>
@@ -345,7 +429,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+  <section class="relative z-10 bg-background pt-32 pb-20 px-6 max-w-7xl mx-auto mb-32">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <!-- Left: Text -->
       <div class="fade-in">
@@ -353,23 +437,25 @@
           <span class="text-accent-green">●</span>
           <span>Freelance disponible · Réponse sous 24h</span>
         </div>
-        
+
         <h1 class="text-5xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
           J'automatise vos workflows avec l'
           <span class="text-accent-blue">IA</span>
         </h1>
-        
+
         <p class="text-xl text-text-secondary mb-8 leading-relaxed">
-          Chatbots intelligents, agents LLM, pipelines RAG et automatisations n8n. 
-          Je transforme vos processus répétitifs en systèmes autonomes qui 
+          Chatbots intelligents, agents LLM, pipelines RAG et automatisations n8n.
+          Je transforme vos processus répétitifs en systèmes autonomes qui
           <span class="text-accent-amber font-semibold">vous font gagner des heures chaque jour</span>.
         </p>
-        
+
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#contact" class="inline-flex items-center justify-center px-8 py-3.5 bg-white text-black font-bold rounded-lg hover:translate-y-[-2px] hover:shadow-xl transition-all text-center">
+          <a href="#contact"
+            class="inline-flex items-center justify-center px-8 py-3.5 bg-white text-black font-bold rounded-lg hover:translate-y-[-2px] hover:shadow-xl transition-all text-center">
             Démarrer un projet
           </a>
-          <a href="#services" class="inline-flex items-center justify-center px-8 py-3.5 bg-bg-elevated border border-border font-medium rounded-lg hover:bg-bg-hover hover:border-text-muted transition-all text-center">
+          <a href="#services"
+            class="inline-flex items-center justify-center px-8 py-3.5 bg-bg-elevated border border-border font-medium rounded-lg hover:bg-bg-hover hover:border-text-muted transition-all text-center">
             Voir mes services
           </a>
         </div>
@@ -385,7 +471,7 @@
             <div class="w-3 h-3 rounded-full bg-accent-green"></div>
             <span class="ml-2 text-xs text-text-muted font-mono">~/automation-workflow</span>
           </div>
-          
+
           <!-- Terminal Content -->
           <div class="p-6 font-mono text-sm space-y-2">
             <div>
@@ -456,7 +542,7 @@
   </section>
 
   <!-- Services & Réalisations Section -->
-  <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
+  <section id="services" class="relative z-10 bg-background py-32 px-6 max-w-7xl mx-auto my-32">
     <div class="mb-12">
       <div class="font-mono text-sm text-text-muted mb-3">
         <span class="text-accent-blue">~</span>
@@ -479,7 +565,8 @@
       <!-- Content Grid -->
       <div class="p-8 grid md:grid-cols-2 gap-6">
         <!-- Agents Vocaux -->
-        <div class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-blue transition-all">
+        <div
+          class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-blue transition-all">
           <div class="flex items-start justify-between mb-4">
             <div class="font-mono text-xs text-text-muted">
               <span class="text-accent-blue">~</span>
@@ -490,7 +577,7 @@
           </div>
           <h3 class="text-2xl font-serif font-bold mb-3">Agents Vocaux Téléphoniques</h3>
           <p class="text-text-secondary mb-4 leading-relaxed">
-            Des agents IA qui répondent à votre place pour ne jamais perdre un client. 
+            Des agents IA qui répondent à votre place pour ne jamais perdre un client.
             Appels entrants gérés 24/7, qualification de prospects, prise de rendez-vous automatique.
           </p>
           <div class="space-y-2 text-sm mb-4">
@@ -515,7 +602,8 @@
         </div>
 
         <!-- Chatbots RAG -->
-        <div class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-amber transition-all">
+        <div
+          class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-amber transition-all">
           <div class="font-mono text-xs text-text-muted mb-4">
             <span class="text-accent-blue">~</span>
             <span class="text-text-muted">/</span>
@@ -523,7 +611,7 @@
           </div>
           <h3 class="text-2xl font-serif font-bold mb-3">Chatbots Intelligents</h3>
           <p class="text-text-secondary mb-4 leading-relaxed">
-            Assistants conversationnels avec RAG adaptés à votre base de connaissances. 
+            Assistants conversationnels avec RAG adaptés à votre base de connaissances.
             Réponses précises basées sur vos documents, FAQ et données métier.
           </p>
           <div class="space-y-2 text-sm mb-4">
@@ -548,7 +636,8 @@
         </div>
 
         <!-- Automatisation Google Workspace -->
-        <div class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-green transition-all">
+        <div
+          class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-green transition-all">
           <div class="font-mono text-xs text-text-muted mb-4">
             <span class="text-accent-blue">~</span>
             <span class="text-text-muted">/</span>
@@ -556,7 +645,7 @@
           </div>
           <h3 class="text-2xl font-serif font-bold mb-3">Automatisation Google Workspace</h3>
           <p class="text-text-secondary mb-4 leading-relaxed">
-            De la simple automatisation d'emails à la réponse automatique aux avis Google. 
+            De la simple automatisation d'emails à la réponse automatique aux avis Google.
             Gmail, Sheets, Drive, Calendar : tous vos outils Google connectés et automatisés.
           </p>
           <div class="space-y-2 text-sm mb-4">
@@ -581,7 +670,8 @@
         </div>
 
         <!-- Recherche de Leads -->
-        <div class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-text-muted transition-all">
+        <div
+          class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-text-muted transition-all">
           <div class="font-mono text-xs text-text-muted mb-4">
             <span class="text-accent-blue">~</span>
             <span class="text-text-muted">/</span>
@@ -589,7 +679,7 @@
           </div>
           <h3 class="text-2xl font-serif font-bold mb-3">Recherche de Leads</h3>
           <p class="text-text-secondary mb-4 leading-relaxed">
-            Automatisation de prospection sur LinkedIn et autres plateformes. 
+            Automatisation de prospection sur LinkedIn et autres plateformes.
             Extraction, qualification et enrichissement de données pour alimenter votre pipeline commercial.
           </p>
           <div class="space-y-2 text-sm mb-4">
@@ -617,7 +707,7 @@
   </section>
 
   <!-- Process Section -->
-  <section id="process" class="py-20 px-6 max-w-7xl mx-auto">
+  <section id="process" class="relative z-10 bg-background py-32 px-6 max-w-7xl mx-auto my-32">
     <div class="mb-12">
       <div class="font-mono text-sm text-text-muted mb-3">
         <span class="text-accent-blue">~</span>
@@ -640,7 +730,8 @@
       <!-- Content Grid -->
       <div class="p-8 grid md:grid-cols-2 gap-8">
         <!-- Étape 1 -->
-        <div class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-blue transition-all">
+        <div
+          class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-blue transition-all">
           <div class="font-mono text-xs text-text-muted mb-4">
             <span class="text-accent-blue">~</span>
             <span class="text-text-muted">/</span>
@@ -648,7 +739,7 @@
           </div>
           <h3 class="text-2xl font-serif font-bold mb-3">Découverte & Cadrage</h3>
           <p class="text-text-secondary leading-relaxed mb-4">
-            On discute de vos besoins, objectifs et contraintes. J'analyse votre workflow actuel, 
+            On discute de vos besoins, objectifs et contraintes. J'analyse votre workflow actuel,
             identifie les opportunités d'automatisation et vous propose une solution adaptée.
           </p>
           <div class="font-mono text-xs text-accent-blue">
@@ -657,7 +748,8 @@
         </div>
 
         <!-- Étape 2 -->
-        <div class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-amber transition-all">
+        <div
+          class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-amber transition-all">
           <div class="font-mono text-xs text-text-muted mb-4">
             <span class="text-accent-blue">~</span>
             <span class="text-text-muted">/</span>
@@ -665,7 +757,7 @@
           </div>
           <h3 class="text-2xl font-serif font-bold mb-3">Développement & Livraison</h3>
           <p class="text-text-secondary leading-relaxed mb-4">
-            Je crée votre solution en itérations courtes avec démos régulières. 
+            Je crée votre solution en itérations courtes avec démos régulières.
             Vous validez à chaque étape, je m'adapte à vos retours et livre une solution clé en main.
             Support 30 jours inclus.
           </p>
@@ -696,31 +788,36 @@
   </section>
 
   <!-- CTA / Contact -->
-  <section id="contact" class="py-32 px-6 text-center max-w-4xl mx-auto">
+  <section id="contact" class="relative z-10 bg-background py-32 px-6 text-center max-w-4xl mx-auto mb-32">
     <div class="mb-12">
       <div class="inline-block mb-6 px-4 py-2 bg-accent-blue/10 border border-accent-blue rounded-full">
         <span class="text-accent-blue font-mono text-sm">● Disponible maintenant</span>
       </div>
       <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-        Prêt à automatiser<br/>
+        Prêt à automatiser<br />
         votre workflow ?
       </h2>
       <p class="text-xl text-text-muted mb-12 leading-relaxed">
-        Discutons de votre projet. Réponse garantie sous 24h, 
+        Discutons de votre projet. Réponse garantie sous 24h,
         premier appel gratuit et sans engagement.
       </p>
     </div>
-    
+
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-      <a href="/cdn-cgi/l/email-protection#690807001a0801040c0d1308000d290e04080005470a0604" class="px-10 py-4 bg-white text-black font-bold rounded-lg text-lg hover:translate-y-[-2px] hover:shadow-xl transition-all flex items-center gap-3 w-full sm:w-auto justify-center">
+      <a href="/cdn-cgi/l/email-protection#690807001a0801040c0d1308000d290e04080005470a0604"
+        class="px-10 py-4 bg-white text-black font-bold rounded-lg text-lg hover:translate-y-[-2px] hover:shadow-xl transition-all flex items-center gap-3 w-full sm:w-auto justify-center">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+          </path>
         </svg>
         Envoyer un email
       </a>
-      <a href="https://linkedin.com/in/anis-ahmed-zaid" target="_blank" class="px-10 py-4 bg-bg-elevated border border-border font-bold rounded-lg text-lg hover:bg-bg-hover hover:border-text-muted transition-all flex items-center gap-3 w-full sm:w-auto justify-center">
+      <a href="https://linkedin.com/in/anis-ahmed-zaid" target="_blank"
+        class="px-10 py-4 bg-bg-elevated border border-border font-bold rounded-lg text-lg hover:bg-bg-hover hover:border-text-muted transition-all flex items-center gap-3 w-full sm:w-auto justify-center">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          <path
+            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
         </svg>
         Me contacter sur LinkedIn
       </a>
@@ -730,24 +827,32 @@
     <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
       <div class="p-6 bg-bg-secondary border border-border rounded-xl text-left">
         <div class="flex items-center gap-3 mb-3">
-          <div class="w-10 h-10 bg-accent-blue/10 border border-accent-blue rounded-lg flex items-center justify-center">
+          <div
+            class="w-10 h-10 bg-accent-blue/10 border border-accent-blue rounded-lg flex items-center justify-center">
             <svg class="w-5 h-5 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+              </path>
             </svg>
           </div>
           <h3 class="font-bold">Email</h3>
         </div>
         <p class="text-text-secondary text-sm mb-2">Le meilleur moyen de me contacter</p>
-        <a href="/cdn-cgi/l/email-protection#badbd4d3c9dbd2d7dfdec0dbd3defaddd7dbd3d694d9d5d7" class="text-accent-blue font-mono text-sm hover:underline">
-          <span class="__cf_email__" data-cfemail="d8b9b6b1abb9b0b5bdbca2b9b1bc98bfb5b9b1b4f6bbb7b5">[email&#160;protected]</span>
+        <a href="/cdn-cgi/l/email-protection#badbd4d3c9dbd2d7dfdec0dbd3defaddd7dbd3d694d9d5d7"
+          class="text-accent-blue font-mono text-sm hover:underline">
+          <span class="__cf_email__"
+            data-cfemail="d8b9b6b1abb9b0b5bdbca2b9b1bc98bfb5b9b1b4f6bbb7b5">[email&#160;protected]</span>
         </a>
       </div>
 
       <div class="p-6 bg-bg-secondary border border-border rounded-xl text-left">
         <div class="flex items-center gap-3 mb-3">
-          <div class="w-10 h-10 bg-accent-green/10 border border-accent-green rounded-lg flex items-center justify-center">
+          <div
+            class="w-10 h-10 bg-accent-green/10 border border-accent-green rounded-lg flex items-center justify-center">
             <svg class="w-5 h-5 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+              </path>
             </svg>
           </div>
           <h3 class="font-bold">Téléphone</h3>
@@ -763,7 +868,8 @@
   <!-- Floating CTA Button -->
   <a href="#contact" id="floatingCTA" class="floating-cta">
     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
     </svg>
     <span>Discutons</span>
   </a>
@@ -775,19 +881,22 @@
         <span class="text-text-primary font-mono font-bold text-lg">anis.dev</span>
         <span class="text-text-muted text-sm ml-2">© 2026 Anis Ahmed Zaid</span>
       </div>
-      
+
       <div class="flex gap-8 text-sm text-text-secondary">
-        <a href="https://linkedin.com/in/anis-ahmed-zaid" target="_blank" class="hover:text-text-primary transition-colors">LinkedIn</a>
-        <a href="/cdn-cgi/l/email-protection#7716191e04161f1a12130d161e1337101a161e1b5914181a" class="hover:text-text-primary transition-colors">Email</a>
+        <a href="https://linkedin.com/in/anis-ahmed-zaid" target="_blank"
+          class="hover:text-text-primary transition-colors">LinkedIn</a>
+        <a href="/cdn-cgi/l/email-protection#7716191e04161f1a12130d161e1337101a161e1b5914181a"
+          class="hover:text-text-primary transition-colors">Email</a>
       </div>
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script>
     // Mobile menu toggle
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    
+
     menuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
@@ -810,14 +919,14 @@
 
     window.addEventListener('scroll', () => {
       const currentScroll = window.pageYOffset;
-      
+
       // Show button after scrolling 300px
       if (currentScroll > 300) {
         floatingCTA.classList.add('visible');
       } else {
         floatingCTA.classList.remove('visible');
       }
-      
+
       lastScroll = currentScroll;
     });
 
@@ -842,3 +951,9 @@
         section.classList.add('scroll-reveal');
         section.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(section);
+      });
+    });
+  </script>
+</body>
+
+</html>
