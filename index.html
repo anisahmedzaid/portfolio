@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&family=Crimson+Pro:wght@400;600;700&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -31,7 +31,7 @@
             },
           },
           fontFamily: {
-            sans: ["Inter", "sans-serif"],
+            sans: ["Work Sans", "sans-serif"],
             mono: ["JetBrains Mono", "monospace"],
             serif: ["Crimson Pro", "serif"],
           },
@@ -41,7 +41,7 @@
   </script>
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Work Sans', sans-serif;
       background: linear-gradient(to bottom, transparent, #0a0a0b) #0a0a0b;
       -webkit-font-smoothing: antialiased;
     }
@@ -55,6 +55,59 @@
       opacity: 0.03;
       z-index: 50;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+    /* Floating Logos */
+    .floating-logos {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .floating-logo {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      opacity: 0.04;
+      color: #fafafa;
+      animation: float-space linear infinite;
+    }
+    .floating-logo svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.15));
+    }
+    @keyframes float-space {
+      0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+      }
+      25% {
+        transform: translate(80px, -100px) rotate(90deg) scale(1.2);
+      }
+      50% {
+        transform: translate(-60px, -200px) rotate(180deg) scale(0.8);
+      }
+      75% {
+        transform: translate(-100px, -100px) rotate(270deg) scale(1.1);
+      }
+      100% {
+        transform: translate(0, 0) rotate(360deg) scale(1);
+      }
+    }
+    section, header, footer {
+      position: relative;
+      z-index: 10;
+      background: #0a0a0b;
+    }
+    @media (max-width: 768px) {
+      .floating-logo {
+        width: 16px;
+        height: 16px;
+        opacity: 0.03;
+      }
     }
     .hover-lift {
       transition: all 0.3s ease;
@@ -101,34 +154,48 @@
       right: 2rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 1rem 1.5rem;
-      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-      color: white;
-      font-weight: 600;
+      gap: 0.75rem;
+      padding: 0.875rem 1.5rem;
+      background: #0a0a0b;
+      border: 1px solid #27272a;
+      color: #fafafa;
+      font-weight: 500;
       font-size: 0.875rem;
-      border-radius: 9999px;
-      box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      border-radius: 0.75rem;
+      box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
       z-index: 50;
       opacity: 0;
       transform: translateY(100px);
       transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
       cursor: pointer;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
     .floating-cta.visible {
       opacity: 1;
       transform: translateY(0);
     }
     .floating-cta:hover {
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 20px 60px rgba(59, 130, 246, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      border-color: #3b82f6;
+      box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(59, 130, 246, 0.3),
+        0 0 24px rgba(59, 130, 246, 0.15);
+    }
+    .floating-cta svg {
+      width: 1.125rem;
+      height: 1.125rem;
+      opacity: 0.8;
     }
     @media (max-width: 768px) {
       .floating-cta span {
         display: none;
       }
       .floating-cta {
-        padding: 1rem;
+        padding: 0.875rem;
         bottom: 1.5rem;
         right: 1.5rem;
       }
@@ -171,6 +238,81 @@
   <!-- Grain Overlay -->
   <div class="grain" aria-hidden="true"></div>
 
+  <!-- Floating Logos Background -->
+  <!-- Floating Logos Background -->
+  <div class="floating-logos" aria-hidden="true">
+    <!-- Python -->
+    <div class="floating-logo" style="top: 15%; left: 10%; animation-delay: 0s; animation-duration: 12s;">
+      <svg viewBox="0 0 256 255" xmlns="http://www.w3.org/2000/svg"><path d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072z" fill="#366994"/><path d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897z" fill="#FFC331"/></svg>
+    </div>
+
+    <!-- n8n -->
+    <div class="floating-logo" style="top: 60%; right: 8%; animation-delay: 2s; animation-duration: 14s;">
+      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><circle cx="140" cy="180" r="35" fill="#FF6D5A"/><circle cx="256" cy="150" r="35" fill="#FF6D5A"/><circle cx="372" cy="180" r="35" fill="#FF6D5A"/><circle cx="140" cy="332" r="35" fill="#FF6D5A"/><circle cx="372" cy="332" r="35" fill="#FF6D5A"/></svg>
+    </div>
+
+    <!-- OpenAI -->
+    <div class="floating-logo" style="top: 75%; left: 15%; animation-delay: 5s; animation-duration: 11s;">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 10L90 50L50 90L10 50Z" fill="currentColor" opacity="0.9"/></svg>
+    </div>
+
+    <!-- Docker -->
+    <div class="floating-logo" style="top: 25%; right: 18%; animation-delay: 1s; animation-duration: 13s;">
+      <svg viewBox="0 0 256 185" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="40" width="30" height="25" fill="#2496ED"/><rect x="55" y="40" width="30" height="25" fill="#2496ED"/><rect x="90" y="40" width="30" height="25" fill="#2496ED"/><rect x="125" y="40" width="30" height="25" fill="#2496ED"/><rect x="55" y="10" width="30" height="25" fill="#2496ED"/><rect x="90" y="10" width="30" height="25" fill="#2496ED"/></svg>
+    </div>
+
+    <!-- Anthropic -->
+    <div class="floating-logo" style="top: 40%; left: 20%; animation-delay: 6s; animation-duration: 15s;">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#D97757" rx="15"/><text x="50" y="65" font-size="45" font-weight="bold" fill="#fff" text-anchor="middle" font-family="sans-serif">A</text></svg>
+    </div>
+
+    <!-- Supabase -->
+    <div class="floating-logo" style="top: 82%; right: 15%; animation-delay: 8s; animation-duration: 16s;">
+      <svg viewBox="0 0 109 113" xmlns="http://www.w3.org/2000/svg"><path d="M63.708 110.284l-43.151-54.347c-5.093-6.414-.525-15.874 7.665-15.874h45.22l-1.007 67.251c-.069 4.598-5.867 6.571-8.727 2.97z" fill="#3ECF8E"/></svg>
+    </div>
+
+    <!-- Netlify -->
+    <div class="floating-logo" style="top: 50%; right: 5%; animation-delay: 3s; animation-duration: 17s;">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="35" height="35" fill="#00C7B7"/><rect x="55" y="10" width="35" height="35" fill="#00C7B7"/><rect x="10" y="55" width="35" height="35" fill="#00C7B7"/><rect x="55" y="55" width="35" height="35" fill="#00C7B7"/></svg>
+    </div>
+
+    <!-- Gemini -->
+    <div class="floating-logo" style="top: 10%; right: 22%; animation-delay: 10s; animation-duration: 18s;">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" fill="#4285F4"/><path d="M50 20L65 45L50 70L35 45Z" fill="#fff" opacity="0.9"/></svg>
+    </div>
+
+    <!-- LangChain -->
+    <div class="floating-logo" style="top: 92%; left: 8%; animation-delay: 12s; animation-duration: 14s;">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="25" cy="50" r="15" fill="#00D4FF" opacity="0.8"/><circle cx="50" cy="35" r="15" fill="#00D4FF" opacity="0.8"/><circle cx="75" cy="50" r="15" fill="#00D4FF" opacity="0.8"/></svg>
+    </div>
+
+    <!-- Vercel -->
+    <div class="floating-logo" style="top: 55%; left: 25%; animation-delay: 14s; animation-duration: 13s;">
+      <svg viewBox="0 0 116 100" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M58 0L116 100H0L58 0z"/></svg>
+    </div>
+
+    <!-- Duplicates -->
+    <div class="floating-logo" style="top: 28%; left: 5%; animation-delay: 0.5s; animation-duration: 12s;">
+      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><circle cx="256" cy="256" r="35" fill="#FF6D5A"/></svg>
+    </div>
+
+    <div class="floating-logo" style="top: 65%; right: 28%; animation-delay: 4s; animation-duration: 11s;">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#D97757" rx="15"/></svg>
+    </div>
+
+    <div class="floating-logo" style="top: 35%; left: 30%; animation-delay: 7s; animation-duration: 15s;">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="#2496ED" opacity="0.7"/></svg>
+    </div>
+
+    <div class="floating-logo" style="top: 48%; right: 12%; animation-delay: 9s; animation-duration: 14s;">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="25" y="25" width="50" height="50" fill="#3ECF8E" opacity="0.7"/></svg>
+    </div>
+
+    <div class="floating-logo" style="top: 88%; left: 22%; animation-delay: 11s; animation-duration: 16s;">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><polygon points="50,10 90,90 10,90" fill="#00C7B7" opacity="0.7"/></svg>
+    </div>
+  </div>
+
   <!-- Header -->
   <header class="fixed top-0 left-0 right-0 z-40 border-b border-border-subtle bg-background/80 backdrop-blur-xl">
     <nav class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -182,7 +324,7 @@
       <!-- Desktop Nav -->
       <div class="hidden md:flex items-center gap-8">
         <a href="#services" class="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">Services</a>
-        <a href="#process" class="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">Comment</a>
+        <a href="#process" class="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">Process</a>
         <a href="#contact" class="text-sm font-medium bg-bg-elevated border border-border px-4 py-2 rounded-md hover:bg-bg-hover hover:border-text-muted transition-colors">Discutons</a>
       </div>
 
@@ -197,7 +339,7 @@
     <!-- Mobile Nav -->
     <div id="mobileMenu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-bg-secondary border-b border-border p-6 flex flex-col gap-4">
       <a href="#services" class="text-text-secondary hover:text-text-primary">Services</a>
-      <a href="#process" class="text-text-secondary hover:text-text-primary">Comment</a>
+      <a href="#process" class="text-text-secondary hover:text-text-primary">Process</a>
       <a href="#contact" class="text-text-secondary hover:text-text-primary">Discutons</a>
     </div>
   </header>
@@ -223,29 +365,13 @@
           <span class="text-accent-amber font-semibold">vous font gagner des heures chaque jour</span>.
         </p>
         
-        <div class="flex flex-wrap gap-4 mb-10">
-          <a href="#contact" class="px-6 py-3 bg-white text-black font-bold rounded-lg hover:translate-y-[-2px] hover:shadow-xl transition-all">
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#contact" class="inline-flex items-center justify-center px-8 py-3.5 bg-white text-black font-bold rounded-lg hover:translate-y-[-2px] hover:shadow-xl transition-all text-center">
             Démarrer un projet
           </a>
-          <a href="#services" class="px-6 py-3 bg-bg-elevated border border-border font-medium rounded-lg hover:bg-bg-hover hover:border-text-muted transition-all">
+          <a href="#services" class="inline-flex items-center justify-center px-8 py-3.5 bg-bg-elevated border border-border font-medium rounded-lg hover:bg-bg-hover hover:border-text-muted transition-all text-center">
             Voir mes services
           </a>
-        </div>
-
-        <!-- Stats -->
-        <div class="grid grid-cols-3 gap-6 p-6 bg-bg-secondary border border-border rounded-xl">
-          <div>
-            <div class="text-2xl font-bold text-accent-blue font-mono">10+</div>
-            <div class="text-sm text-text-muted">Workflows créés</div>
-          </div>
-          <div>
-            <div class="text-2xl font-bold text-accent-amber font-mono">5+</div>
-            <div class="text-sm text-text-muted">Clients satisfaits</div>
-          </div>
-          <div>
-            <div class="text-2xl font-bold text-accent-green font-mono">48h</div>
-            <div class="text-sm text-text-muted">Livraison moyenne</div>
-          </div>
         </div>
       </div>
 
@@ -267,34 +393,44 @@
               <span class="text-text-muted">:</span>
               <span class="text-accent-amber">~</span>
               <span class="text-text-muted">$</span>
-              <span class="text-text-primary"> cat services.json</span>
+              <span class="text-text-primary"> cat portfolio.json</span>
             </div>
             <div class="text-text-muted pl-2">
               <span class="text-accent-amber">{</span>
             </div>
             <div class="pl-4 space-y-1">
               <div>
-                <span class="text-accent-blue">"chatbots"</span>
+                <span class="text-accent-blue">"expertise"</span>
+                <span class="text-text-muted">: [</span>
+              </div>
+              <div class="pl-4">
+                <span class="text-accent-green">"Agents vocaux téléphoniques"</span>
+                <span class="text-text-muted">,</span>
+              </div>
+              <div class="pl-4">
+                <span class="text-accent-green">"Chatbots RAG"</span>
+                <span class="text-text-muted">,</span>
+              </div>
+              <div class="pl-4">
+                <span class="text-accent-green">"Automatisation Google"</span>
+                <span class="text-text-muted">,</span>
+              </div>
+              <div class="pl-4">
+                <span class="text-accent-green">"Lead generation"</span>
+              </div>
+              <div>
+                <span class="text-text-muted">],</span>
+              </div>
+              <div>
+                <span class="text-accent-blue">"disponible"</span>
                 <span class="text-text-muted">: </span>
-                <span class="text-accent-green">"LLM + RAG"</span>
+                <span class="text-accent-green">true</span>
                 <span class="text-text-muted">,</span>
               </div>
               <div>
-                <span class="text-accent-blue">"automation"</span>
+                <span class="text-accent-blue">"délai_réponse"</span>
                 <span class="text-text-muted">: </span>
-                <span class="text-accent-green">"n8n workflows"</span>
-                <span class="text-text-muted">,</span>
-              </div>
-              <div>
-                <span class="text-accent-blue">"ai_agents"</span>
-                <span class="text-text-muted">: </span>
-                <span class="text-accent-green">"OpenAI + Gemini"</span>
-                <span class="text-text-muted">,</span>
-              </div>
-              <div>
-                <span class="text-accent-blue">"mlops"</span>
-                <span class="text-text-muted">: </span>
-                <span class="text-accent-green">"Deploy + Monitor"</span>
+                <span class="text-accent-green">"24h"</span>
               </div>
             </div>
             <div class="text-text-muted pl-2">
@@ -308,13 +444,10 @@
               <span class="text-text-primary"> npm run deploy</span>
             </div>
             <div class="text-accent-green">
-              ✓ Workflow deployed in 2.3s
-            </div>
-            <div class="text-accent-green">
-              ✓ AI agent running
+              ✓ Workflow deployed successfully
             </div>
             <div class="text-text-muted">
-              Ready to automate ▊
+              Ready to automate your business ▊
             </div>
           </div>
         </div>
@@ -484,7 +617,7 @@
   </section>
 
   <!-- Process Section -->
-  <section id="process" class="py-20 px-6 max-w-6xl mx-auto">
+  <section id="process" class="py-20 px-6 max-w-7xl mx-auto">
     <div class="mb-12">
       <div class="font-mono text-sm text-text-muted mb-3">
         <span class="text-accent-blue">~</span>
@@ -579,7 +712,7 @@
     </div>
     
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-      <a href="/cdn-cgi/l/email-protection#2a4b4443594b42474f4e504b434e6a4d474b434604494547" class="px-10 py-4 bg-white text-black font-bold rounded-lg text-lg hover:translate-y-[-2px] hover:shadow-xl transition-all flex items-center gap-3 w-full sm:w-auto justify-center">
+      <a href="/cdn-cgi/l/email-protection#690807001a0801040c0d1308000d290e04080005470a0604" class="px-10 py-4 bg-white text-black font-bold rounded-lg text-lg hover:translate-y-[-2px] hover:shadow-xl transition-all flex items-center gap-3 w-full sm:w-auto justify-center">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
         </svg>
@@ -605,8 +738,8 @@
           <h3 class="font-bold">Email</h3>
         </div>
         <p class="text-text-secondary text-sm mb-2">Le meilleur moyen de me contacter</p>
-        <a href="/cdn-cgi/l/email-protection#afcec1c6dccec7c2cacbd5cec6cbefc8c2cec6c381ccc0c2" class="text-accent-blue font-mono text-sm hover:underline">
-          <span class="__cf_email__" data-cfemail="e5848b8c96848d8880819f848c81a58288848c89cb868a88">[email&#160;protected]</span>
+        <a href="/cdn-cgi/l/email-protection#badbd4d3c9dbd2d7dfdec0dbd3defaddd7dbd3d694d9d5d7" class="text-accent-blue font-mono text-sm hover:underline">
+          <span class="__cf_email__" data-cfemail="d8b9b6b1abb9b0b5bdbca2b9b1bc98bfb5b9b1b4f6bbb7b5">[email&#160;protected]</span>
         </a>
       </div>
 
@@ -625,33 +758,14 @@
         </a>
       </div>
     </div>
-
-    <!-- FAQ rapide -->
-    <div class="mt-16 p-8 bg-bg-elevated border border-border rounded-xl text-left max-w-3xl mx-auto">
-      <h3 class="text-xl font-bold mb-6 text-center">Questions fréquentes</h3>
-      <div class="space-y-4">
-        <div>
-          <p class="font-semibold text-accent-blue mb-2">→ Quel est votre délai de réponse ?</p>
-          <p class="text-text-secondary text-sm pl-4">Maximum 24h, souvent sous quelques heures.</p>
-        </div>
-        <div>
-          <p class="font-semibold text-accent-amber mb-2">→ Proposez-vous de la maintenance ?</p>
-          <p class="text-text-secondary text-sm pl-4">Oui, support 30 jours inclus + contrats de maintenance mensuels disponibles.</p>
-        </div>
-        <div>
-          <p class="font-semibold text-accent-green mb-2">→ Travaillez-vous en remote ?</p>
-          <p class="text-text-secondary text-sm pl-4">100% remote ou sur site selon vos besoins. Basé en France, disponible pour la France et l'international.</p>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- Floating CTA Button -->
   <a href="#contact" id="floatingCTA" class="floating-cta">
     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
     </svg>
-    <span class="ml-2">Discutons</span>
+    <span>Discutons</span>
   </a>
 
   <!-- Footer -->
@@ -664,16 +778,12 @@
       
       <div class="flex gap-8 text-sm text-text-secondary">
         <a href="https://linkedin.com/in/anis-ahmed-zaid" target="_blank" class="hover:text-text-primary transition-colors">LinkedIn</a>
-        <a href="/cdn-cgi/l/email-protection#42232c2b31232a2f272638232b2602252f232b2e6c212d2f" class="hover:text-text-primary transition-colors">Email</a>
-      </div>
-      
-      <div class="text-xs text-text-muted font-mono">
-        Built with passion & code
+        <a href="/cdn-cgi/l/email-protection#7716191e04161f1a12130d161e1337101a161e1b5914181a" class="hover:text-text-primary transition-colors">Email</a>
       </div>
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Mobile menu toggle
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -732,16 +842,3 @@
         section.classList.add('scroll-reveal');
         section.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(section);
-      });
-
-      // Also animate individual cards within sections
-      const cards = document.querySelectorAll('.group');
-      cards.forEach((card, index) => {
-        card.classList.add('scroll-reveal');
-        card.style.transitionDelay = `${(index % 4) * 0.1}s`;
-        observer.observe(card);
-      });
-    });
-  </script>
-</body>
-</html>
