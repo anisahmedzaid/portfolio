@@ -134,44 +134,6 @@
       transform: translateY(-4px);
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .fade-in {
-      animation: fadeIn 0.6s ease-out forwards;
-    }
-
-    @keyframes slideInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    .scroll-reveal.revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
 
     /* Floating CTA Button */
     .floating-cta {
@@ -429,10 +391,10 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="relative z-10 bg-background pt-32 pb-20 px-6 max-w-7xl mx-auto mb-32">
+  <section class="relative z-10 bg-background pt-32 pb-20 px-6 max-w-7xl mx-auto mb-16">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <!-- Left: Text -->
-      <div class="fade-in">
+      <div>
         <div class="mb-6 font-mono text-sm text-text-muted flex items-center gap-2">
           <span class="text-accent-green">●</span>
           <span>Freelance disponible · Réponse sous 24h</span>
@@ -542,7 +504,7 @@
   </section>
 
   <!-- Services & Réalisations Section -->
-  <section id="services" class="relative z-10 bg-background py-32 px-6 max-w-7xl mx-auto my-32">
+  <section id="services" class="relative z-10 bg-background py-20 px-6 max-w-7xl mx-auto my-16">
     <div class="mb-12">
       <div class="font-mono text-sm text-text-muted mb-3">
         <span class="text-accent-blue">~</span>
@@ -707,7 +669,7 @@
   </section>
 
   <!-- Process Section -->
-  <section id="process" class="relative z-10 bg-background py-32 px-6 max-w-7xl mx-auto my-32">
+  <section id="process" class="relative z-10 bg-background py-20 px-6 max-w-7xl mx-auto my-16">
     <div class="mb-12">
       <div class="font-mono text-sm text-text-muted mb-3">
         <span class="text-accent-blue">~</span>
@@ -788,7 +750,7 @@
   </section>
 
   <!-- CTA / Contact -->
-  <section id="contact" class="relative z-10 bg-background py-32 px-6 text-center max-w-4xl mx-auto mb-32">
+  <section id="contact" class="relative z-10 bg-background py-20 px-6 text-center max-w-4xl mx-auto mb-16">
     <div class="mb-12">
       <div class="inline-block mb-6 px-4 py-2 bg-accent-blue/10 border border-accent-blue rounded-full">
         <span class="text-accent-blue font-mono text-sm">● Disponible maintenant</span>
@@ -926,29 +888,6 @@
       lastScroll = currentScroll;
     });
 
-    // Scroll reveal animation for sections
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-        }
-      });
-    }, observerOptions);
-
-    // Add scroll-reveal class to sections and observe them
-    document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('section:not(.pt-32)');
-      sections.forEach((section, index) => {
-        section.classList.add('scroll-reveal');
-        section.style.transitionDelay = `${index * 0.1}s`;
-        observer.observe(section);
-      });
-    });
   </script>
 </body>
 
