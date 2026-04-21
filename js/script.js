@@ -22,21 +22,3 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Floating CTA Button - Show after scrolling down
-const floatingCTA = document.getElementById('floatingCTA');
-let lastScroll = 0;
-
-if (floatingCTA) {
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    // Show button after scrolling 300px
-    if (currentScroll > 300) {
-      floatingCTA.classList.add('visible');
-    } else {
-      floatingCTA.classList.remove('visible');
-    }
-
-    lastScroll = currentScroll;
-  });
-}
