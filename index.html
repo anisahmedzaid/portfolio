@@ -124,36 +124,7 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Tailwind Configuration -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            background: "#0a0a0b",
-            "bg-secondary": "#111113",
-            "bg-elevated": "#18181b",
-            "bg-hover": "#222225",
-            border: "#27272a",
-            "border-subtle": "#1f1f23",
-            text: {
-              primary: "#fafafa",
-              secondary: "#a1a1aa",
-              muted: "#71717a",
-            },
-            accent: {
-              blue: "#3b82f6",
-              amber: "#f59e0b",
-              green: "#22c55e",
-            },
-          },
-          fontFamily: {
-            sans: ["Work Sans", "sans-serif"],
-            mono: ["JetBrains Mono", "monospace"],
-          },
-        },
-      },
-    };
-  </script>
+  <script src="js/tailwind-config.js"></script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -773,9 +744,11 @@
   <!-- Footer -->
   <footer class="border-t border-border-subtle py-8 px-6 bg-background">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-      <div class="text-text-muted text-sm flex items-center gap-4">
+      <div class="text-text-muted text-sm flex flex-wrap justify-center md:justify-start items-center gap-x-6 gap-y-2">
         <span>© 2026 Anis Ahmed Zaid</span>
         <a href="/mentions-legales.html" class="hover:text-text-secondary transition-colors">Mentions légales</a>
+        <a href="/privacy-policy.html" class="hover:text-text-secondary transition-colors">Confidentialité</a>
+        <a href="/terms-of-service.html" class="hover:text-text-secondary transition-colors">CGU</a>
       </div>
 
       <div class="text-text-primary font-mono font-bold text-lg">
