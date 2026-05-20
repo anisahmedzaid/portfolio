@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anis Ahmed Zaid — Agents Vocaux IA pour PME | Plus aucun appel manqué</title>
+  <title>Anis Ahmed Zaid — Agent Vocal IA pour PME | Décrochez à chaque appel</title>
 
   <!-- SEO Fondations -->
   <meta name="description" content="Agents vocaux IA pour PME françaises. Votre téléphone répond 24h/24 : prise de RDV, gestion des urgences, qualification. Opérationnel en 2 semaines. Appel découverte gratuit.">
@@ -63,12 +63,9 @@
         "founder": { "@id": "https://anisahmedzaid.com/#person" },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Services d'automatisation IA",
+          "name": "Agents Vocaux IA pour PME",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agents Vocaux Téléphoniques IA" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chatbots RAG Intelligents" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatisation Workflows n8n" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lead Generation IA" } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agents Vocaux Téléphoniques IA" } }
           ]
         }
       },
@@ -85,10 +82,10 @@
           },
           {
             "@type": "Question",
-            "name": "Quelle est la différence entre un chatbot et un agent IA ?",
+            "name": "Est-ce que l'agent sonne comme un robot ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Un chatbot répond à des questions prédéfinies. Un agent IA raisonne, prend des décisions et exécute des actions autonomes (appeler une API, envoyer un email, prendre un RDV) en fonction du contexte."
+              "text": "Non. Les voix utilisées sont indiscernables d'une vraie personne. L'agent s'exprime naturellement, comprend les interruptions et s'adapte au ton de la conversation. Vous choisissez le prénom et le style de voix lors de la configuration."
             }
           },
           {
@@ -109,10 +106,10 @@
           },
           {
             "@type": "Question",
-            "name": "Mes données sont-elles sécurisées avec vos solutions ?",
+            "name": "Que se passe-t-il si l'appel est trop complexe pour l'agent ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui. Je peux déployer des solutions en self-hosting (n8n sur votre serveur, modèles locaux) où vos données ne quittent pas votre infrastructure. Toutes mes solutions respectent le RGPD."
+              "text": "L'agent sait reconnaître ses limites. Si une demande dépasse ce qu'il peut traiter, il propose de transférer l'appel ou de planifier un rappel. Le client est toujours pris en charge."
             }
           }
         ]
@@ -177,123 +174,39 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="relative z-10 bg-background pt-32 pb-8 px-6 max-w-7xl mx-auto">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <!-- Left: Text -->
-      <div>
-        <div class="mb-4 font-mono text-sm text-text-muted flex items-center gap-2">
-          <span class="text-accent-green">●</span>
-          <span>Freelance disponible · Réponse sous 24h</span>
-        </div>
-
-        <h1 class="text-5xl md:text-6xl font-bold mb-3 tracking-tight leading-tight">
-          Plus aucun appel manqué.<br>
-          <span class="text-accent-blue">Jamais.</span>
-        </h1>
-
-        <p class="text-xl text-text-secondary mb-5 leading-relaxed">
-          Un agent vocal IA décroche à votre place, prend les RDV et gère les urgences.
-          Dentaires, plombiers, vétérinaires, artisans — chaque appel sans réponse est
-          <span class="text-accent-amber font-semibold">un client perdu</span>.
-          Opérationnel en 2 semaines.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#contact"
-            class="inline-flex items-center justify-center px-8 py-3 bg-white text-black font-bold rounded-lg hover:translate-y-[-2px] hover:shadow-xl transition-all text-center">
-            Démarrer un projet
-          </a>
-          <a href="#services"
-            class="inline-flex items-center justify-center px-8 py-3 bg-bg-elevated border border-border font-medium rounded-lg hover:bg-bg-hover hover:border-text-muted transition-all text-center">
-            Voir mes services
-          </a>
-        </div>
-      </div>
-
-      <!-- Right: Terminal Window -->
-      <div class="perspective-container">
-        <div class="terminal-window bg-bg-elevated border border-border rounded-xl overflow-hidden shadow-2xl">
-          <!-- Terminal Header -->
-          <div class="flex items-center gap-2 px-4 py-3 bg-bg-secondary border-b border-border">
-            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-            <div class="w-3 h-3 rounded-full bg-amber-500"></div>
-            <div class="w-3 h-3 rounded-full bg-accent-green"></div>
-            <span class="ml-2 text-xs text-text-muted font-mono">~/automation-workflow</span>
-          </div>
-
-          <!-- Terminal Content -->
-          <div class="p-6 font-mono text-sm space-y-2">
-            <div>
-              <span class="text-accent-blue">anis@freelance</span>
-              <span class="text-text-muted">:</span>
-              <span class="text-accent-amber">~</span>
-              <span class="text-text-muted">$</span>
-              <span class="text-text-primary"> cat agent-vocal.json</span>
-            </div>
-            <div class="text-text-muted pl-2">
-              <span class="text-accent-amber">{</span>
-            </div>
-            <div class="pl-4 space-y-1">
-              <div>
-                <span class="text-accent-blue">"cibles"</span>
-                <span class="text-text-muted">: [</span>
-              </div>
-              <div class="pl-4">
-                <span class="text-accent-green">"Dentaires"</span>
-                <span class="text-text-muted">,</span>
-              </div>
-              <div class="pl-4">
-                <span class="text-accent-green">"Plombiers"</span>
-                <span class="text-text-muted">,</span>
-              </div>
-              <div class="pl-4">
-                <span class="text-accent-green">"Vétérinaires"</span>
-                <span class="text-text-muted">,</span>
-              </div>
-              <div class="pl-4">
-                <span class="text-accent-green">"Artisans, beauté, garages"</span>
-              </div>
-              <div>
-                <span class="text-text-muted">],</span>
-              </div>
-              <div>
-                <span class="text-accent-blue">"livraison"</span>
-                <span class="text-text-muted">: </span>
-                <span class="text-accent-green">"&lt; 2 semaines"</span>
-                <span class="text-text-muted">,</span>
-              </div>
-              <div>
-                <span class="text-accent-blue">"disponible"</span>
-                <span class="text-text-muted">: </span>
-                <span class="text-accent-green">true</span>
-              </div>
-            </div>
-            <div class="text-text-muted pl-2">
-              <span class="text-accent-amber">}</span>
-            </div>
-            <div class="pt-2">
-              <span class="text-accent-blue">anis@freelance</span>
-              <span class="text-text-muted">:</span>
-              <span class="text-accent-amber">~</span>
-              <span class="text-text-muted">$</span>
-              <span class="text-text-primary"> deploy --live</span>
-            </div>
-            <div class="text-accent-green">
-              ✓ Agent vocal opérationnel
-            </div>
-            <div class="text-text-muted">
-              Prêt à décrocher 24h/24 ▊
-            </div>
-          </div>
-        </div>
-      </div>
+  <section class="relative z-10 bg-background pt-32 pb-8 px-6 max-w-4xl mx-auto text-center">
+    <div class="mb-5 text-sm text-text-muted">
+      Votre standard téléphonique 24h/24 · 7j/7
     </div>
+
+    <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
+      Décrochez à chaque appel.<br>
+      <span class="text-accent-blue">Même la nuit.</span>
+    </h1>
+
+    <p class="text-xl text-text-secondary mb-8 leading-relaxed max-w-2xl mx-auto">
+      Un agent vocal IA décroche à votre place, prend les RDV et répond aux urgences.
+      <span class="text-accent-amber font-semibold">Chaque appel sans réponse est un client perdu.</span>
+      Opérationnel en 2 semaines.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://calendly.com/aaz-meeting/30min" target="_blank" rel="noopener noreferrer"
+        class="inline-flex items-center justify-center px-8 py-3 bg-white text-black font-bold rounded-lg hover:translate-y-[-2px] hover:shadow-xl transition-all text-center">
+        Réserver un appel découverte
+      </a>
+      <a href="#process"
+        class="inline-flex items-center justify-center px-8 py-3 bg-bg-elevated border border-border font-medium rounded-lg hover:bg-bg-hover hover:border-text-muted transition-all text-center">
+        Voir comment ça marche
+      </a>
+    </div>
+    <p class="text-sm text-text-muted mt-8">Anis Ahmed Zaid · Ingénieur IA freelance · Basé en France</p>
   </section>
 
   <!-- Separator -->
   <div class="w-full h-px bg-border-subtle my-8 relative z-10"></div>
 
-  <!-- Services & Réalisations Section -->
+  <!-- Services Section -->
   <section id="services" class="relative z-10 bg-background py-8 px-6 max-w-7xl mx-auto">
     <div class="mb-6">
       <div class="font-mono text-sm text-text-muted mb-3">
@@ -301,12 +214,10 @@
         <span class="text-text-muted">/</span>
         <span class="text-text-primary">services</span>
       </div>
-      <h2 class="text-5xl font-sans font-semibold tracking-tight mb-4">Services & Réalisations</h2>
+      <h2 class="text-5xl font-sans font-semibold tracking-tight mb-4">Services</h2>
     </div>
 
-    <!-- macOS Window Container -->
     <div class="macos-window bg-bg-elevated border border-border rounded-xl overflow-hidden shadow-2xl">
-      <!-- macOS Header -->
       <div class="flex items-center gap-2 px-4 py-3 bg-bg-secondary border-b border-border">
         <div class="w-3 h-3 rounded-full bg-red-500"></div>
         <div class="w-3 h-3 rounded-full bg-amber-500"></div>
@@ -314,24 +225,19 @@
         <span class="ml-2 text-xs text-text-muted font-mono">services.md</span>
       </div>
 
-      <!-- Content Grid -->
       <div class="p-8 grid md:grid-cols-2 gap-6">
         <!-- Agents Vocaux - Featured Full Width -->
         <div class="service-block md:col-span-2 p-6 bg-bg-secondary/50 border border-accent-blue/40 rounded-lg hover:border-accent-blue transition-all">
-          <div class="flex items-start justify-between mb-4">
-            <div class="font-mono text-xs text-text-muted">
-              <span class="text-accent-blue">~</span>
-              <span class="text-text-muted">/</span>
-              <span class="text-text-primary">vocal-agents</span>
-            </div>
-            <span class="px-2 py-1 bg-accent-blue/10 text-accent-blue text-xs font-mono rounded">SERVICE PRINCIPAL</span>
+          <div class="font-mono text-xs text-text-muted mb-4">
+            <span class="text-accent-blue">~</span>
+            <span class="text-text-muted">/</span>
+            <span class="text-text-primary">vocal-agents</span>
           </div>
           <div class="grid md:grid-cols-2 gap-6">
             <div>
               <h3 class="text-2xl font-sans font-semibold tracking-tight mb-3">Agents Vocaux Téléphoniques</h3>
               <p class="text-text-secondary mb-4 leading-relaxed">
-                Un agent IA décroche à votre place, prend les RDV et gère les urgences 24h/24.
-                Dentaires, plombiers, vétérinaires, artisans — chaque appel sans réponse est un client perdu.
+                Un agent IA décroche à votre place, prend les RDV, gère les urgences et répond aux questions courantes. 24h/24, sur votre numéro existant.
               </p>
               <div class="space-y-2 text-sm mb-4">
                 <div class="flex items-center gap-2 text-text-muted">
@@ -389,81 +295,9 @@
             </div>
           </div>
         </div>
-
-        <!-- Chatbots RAG -->
-        <div
-          class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-amber transition-all">
-          <div class="font-mono text-xs text-text-muted mb-4">
-            <span class="text-accent-blue">~</span>
-            <span class="text-text-muted">/</span>
-            <span class="text-text-primary">chatbots</span>
-          </div>
-          <h3 class="text-2xl font-sans font-semibold tracking-tight mb-3">Chatbots Intelligents</h3>
-          <p class="text-text-secondary mb-4 leading-relaxed">
-            Assistants conversationnels avec RAG adaptés à votre base de connaissances.
-            Réponses précises basées sur vos documents, FAQ et données métier.
-          </p>
-          <div class="space-y-2 text-sm mb-4">
-            <div class="flex items-center gap-2 text-text-muted">
-              <span class="text-accent-green font-mono">→</span>
-              <span>Intégration de vos documents</span>
-            </div>
-            <div class="flex items-center gap-2 text-text-muted">
-              <span class="text-accent-green font-mono">→</span>
-              <span>Support client automatisé</span>
-            </div>
-            <div class="flex items-center gap-2 text-text-muted">
-              <span class="text-accent-green font-mono">→</span>
-              <span>Déploiement site/Slack/WhatsApp</span>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">LangChain</span>
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">RAG</span>
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">OpenAI</span>
-          </div>
-        </div>
-
-        <!-- Automatisation Google Workspace -->
-        <div
-          class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-green transition-all">
-          <div class="font-mono text-xs text-text-muted mb-4">
-            <span class="text-accent-blue">~</span>
-            <span class="text-text-muted">/</span>
-            <span class="text-text-primary">google-workspace</span>
-          </div>
-          <h3 class="text-2xl font-sans font-semibold tracking-tight mb-3">Automatisation Google Workspace</h3>
-          <p class="text-text-secondary mb-4 leading-relaxed">
-            De la simple automatisation d'emails à la réponse automatique aux avis Google.
-            Gmail, Sheets, Drive, Calendar : tous vos outils Google connectés et automatisés.
-          </p>
-          <div class="space-y-2 text-sm mb-4">
-            <div class="flex items-center gap-2 text-text-muted">
-              <span class="text-accent-green font-mono">→</span>
-              <span>Emails automatisés intelligents</span>
-            </div>
-            <div class="flex items-center gap-2 text-text-muted">
-              <span class="text-accent-green font-mono">→</span>
-              <span>Réponses auto aux avis Google</span>
-            </div>
-            <div class="flex items-center gap-2 text-text-muted">
-              <span class="text-accent-green font-mono">→</span>
-              <span>Synchronisation multi-outils</span>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">n8n</span>
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">Google APIs</span>
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">OpenAI</span>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
-
-  <!-- Separator -->
-  <div class="w-full h-px bg-border-subtle my-8 relative z-10"></div>
 
   <!-- Process Section -->
   <section id="process" class="relative z-10 bg-background py-8 px-6 max-w-7xl mx-auto">
@@ -476,9 +310,7 @@
       <h2 class="text-5xl font-sans font-semibold tracking-tight mb-4">Comment je travaille</h2>
     </div>
 
-    <!-- macOS Window Container -->
     <div class="macos-window bg-bg-elevated border border-border rounded-xl overflow-hidden shadow-2xl">
-      <!-- macOS Header -->
       <div class="flex items-center gap-2 px-4 py-3 bg-bg-secondary border-b border-border">
         <div class="w-3 h-3 rounded-full bg-red-500"></div>
         <div class="w-3 h-3 rounded-full bg-amber-500"></div>
@@ -486,49 +318,57 @@
         <span class="ml-2 text-xs text-text-muted font-mono">workflow.md</span>
       </div>
 
-      <!-- Content Grid -->
       <div class="p-8 grid md:grid-cols-2 gap-8">
-        <!-- Étape 1 -->
-        <div
-          class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-blue transition-all">
+        <div class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-blue transition-all">
           <div class="font-mono text-xs text-text-muted mb-4">
-            <span class="text-accent-blue">~</span>
-            <span class="text-text-muted">/</span>
-            <span class="text-text-primary">decouverte</span>
+            <span class="text-accent-blue">~</span><span class="text-text-muted">/</span><span class="text-text-primary">decouverte</span>
+            <span class="ml-3 text-text-muted">J1 – J2</span>
           </div>
-          <h3 class="text-2xl font-sans font-semibold tracking-tight mb-3">Découverte & Cadrage</h3>
+          <h3 class="text-2xl font-sans font-semibold tracking-tight mb-3">Appel découverte</h3>
+          <p class="text-text-secondary leading-relaxed">
+            J'analyse vos flux d'appels actuels, vos scénarios courants et vos contraintes agenda. Vous n'avez rien à préparer.
+          </p>
+        </div>
+
+        <div class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-amber transition-all">
+          <div class="font-mono text-xs text-text-muted mb-4">
+            <span class="text-accent-blue">~</span><span class="text-text-muted">/</span><span class="text-text-primary">configuration</span>
+            <span class="ml-3 text-text-muted">J3 – J7</span>
+          </div>
+          <h3 class="text-2xl font-sans font-semibold tracking-tight mb-3">Configuration</h3>
+          <p class="text-text-secondary leading-relaxed">
+            Je configure l'agent, rédige les scripts sur-mesure et connecte votre agenda et votre numéro de téléphone.
+          </p>
+        </div>
+
+        <div class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-green transition-all">
+          <div class="font-mono text-xs text-text-muted mb-4">
+            <span class="text-accent-blue">~</span><span class="text-text-muted">/</span><span class="text-text-primary">validation</span>
+            <span class="ml-3 text-text-muted">J8 – J10</span>
+          </div>
+          <h3 class="text-2xl font-sans font-semibold tracking-tight mb-3">Tests & validation</h3>
+          <p class="text-text-secondary leading-relaxed">
+            Vous écoutez les appels tests et validez. J'ajuste jusqu'à ce que chaque scénario soit parfait.
+          </p>
+        </div>
+
+        <div class="service-block p-6 bg-bg-secondary/50 border border-accent-blue/40 rounded-lg hover:border-accent-blue transition-all">
+          <div class="font-mono text-xs text-text-muted mb-4">
+            <span class="text-accent-blue">~</span><span class="text-text-muted">/</span><span class="text-text-primary">deploiement</span>
+            <span class="ml-3 text-accent-green">J11 – J14 · live</span>
+          </div>
+          <h3 class="text-2xl font-sans font-semibold tracking-tight mb-3">Déploiement live</h3>
           <p class="text-text-secondary leading-relaxed mb-4">
-            On discute de vos besoins, objectifs et contraintes. J'analyse votre workflow actuel,
-            identifie les opportunités d'automatisation et vous propose une solution adaptée.
+            L'agent est actif sur votre ligne. Support inclus 30 jours pour tout ajustement post-lancement.
           </p>
           <a href="https://calendly.com/aaz-meeting/30min" target="_blank" rel="noopener noreferrer"
             class="inline-flex items-center gap-2 font-mono text-xs text-accent-blue hover:underline">
             <span class="text-text-muted">→</span> Appel 30min · Gratuit · Réserver maintenant ↗
           </a>
         </div>
-
-        <!-- Étape 2 -->
-        <div
-          class="service-block p-6 bg-bg-secondary/50 border border-border-subtle rounded-lg hover:border-accent-amber transition-all">
-          <div class="font-mono text-xs text-text-muted mb-4">
-            <span class="text-accent-blue">~</span>
-            <span class="text-text-muted">/</span>
-            <span class="text-text-primary">developpement</span>
-          </div>
-          <h3 class="text-2xl font-sans font-semibold tracking-tight mb-3">Développement & Livraison</h3>
-          <p class="text-text-secondary leading-relaxed mb-4">
-            Je crée votre solution en itérations courtes avec démos régulières.
-            Vous validez à chaque étape, je m'adapte à vos retours et livre une solution clé en main.
-            Support 30 jours inclus.
-          </p>
-          <div class="font-mono text-xs text-accent-amber">
-            <span class="text-text-muted">→</span> Livraisons hebdo · Support 30j
-          </div>
-        </div>
       </div>
     </div>
 
-    <!-- Stats -->
     <div class="mt-8 p-6 bg-bg-elevated border border-border rounded-xl">
       <div class="grid md:grid-cols-3 gap-6 text-center">
         <div>
@@ -540,8 +380,8 @@
           <div class="text-sm text-text-muted">Livraison agent vocal</div>
         </div>
         <div>
-          <div class="text-3xl font-sans font-semibold tracking-tight text-accent-green mb-2">100%</div>
-          <div class="text-sm text-text-muted">Clients satisfaits</div>
+          <div class="text-3xl font-sans font-semibold tracking-tight text-accent-green mb-2">30 jours</div>
+          <div class="text-sm text-text-muted">Support inclus après livraison</div>
         </div>
       </div>
     </div>
@@ -554,7 +394,7 @@
   <section id="contact" class="relative z-10 bg-background py-8 px-6 text-center max-w-4xl mx-auto mb-8">
     <div class="mb-6">
       <div class="inline-block mb-6 px-4 py-2 bg-accent-blue/10 border border-accent-blue rounded-full">
-        <span class="text-accent-blue font-mono text-sm">● Disponible maintenant</span>
+        <span class="text-accent-blue font-mono text-sm">Disponible maintenant</span>
       </div>
       <h2 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
         Votre prochain appel<br />
@@ -686,13 +526,13 @@
       <!-- Q2 -->
       <details class="group bg-bg-elevated border border-border rounded-xl overflow-hidden">
         <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-bg-hover transition-colors">
-          <span class="font-semibold text-text-primary">Quelle est la différence entre un chatbot et un agent IA ?</span>
+          <span class="font-semibold text-text-primary">Est-ce que l'agent sonne comme un robot ?</span>
           <svg class="w-5 h-5 text-text-muted group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
         </summary>
         <div class="px-5 pb-5 text-text-secondary leading-relaxed border-t border-border pt-4">
-          Un chatbot répond à des questions prédéfinies. Un <strong class="text-text-primary">agent IA</strong> raisonne, prend des décisions et exécute des actions autonomes (appeler une API, envoyer un email, prendre un RDV) en fonction du contexte. C'est la différence entre un répondeur automatique et un vrai assistant.
+          Non. Les voix utilisées (ElevenLabs) sont indiscernables d'une vraie personne. L'agent s'exprime naturellement, comprend les interruptions, les accents, et s'adapte au ton de la conversation. Vous choisissez le prénom et le style de voix lors de la configuration.
         </div>
       </details>
 
@@ -725,13 +565,13 @@
       <!-- Q5 -->
       <details class="group bg-bg-elevated border border-border rounded-xl overflow-hidden">
         <summary class="flex items-center justify-between p-5 cursor-pointer list-none hover:bg-bg-hover transition-colors">
-          <span class="font-semibold text-text-primary">Mes données sont-elles sécurisées ? Conformité RGPD ?</span>
+          <span class="font-semibold text-text-primary">Que se passe-t-il si l'appel est trop complexe pour l'agent ?</span>
           <svg class="w-5 h-5 text-text-muted group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
         </summary>
         <div class="px-5 pb-5 text-text-secondary leading-relaxed border-t border-border pt-4">
-          Oui. Je peux déployer des solutions en <strong class="text-text-primary">self-hosting</strong> (n8n sur votre serveur, modèles locaux) où vos données ne quittent pas votre infrastructure. Toutes mes solutions respectent le RGPD et les données restent en Europe.
+          L'agent sait reconnaître ses limites. Si une demande dépasse ce qu'il peut traiter, il propose de transférer l'appel à un membre de votre équipe ou de planifier un rappel. Rien n'est perdu — le client est toujours pris en charge.
         </div>
       </details>
     </div>
