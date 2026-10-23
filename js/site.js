@@ -4,6 +4,34 @@ const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
+// Day / night theme
+const themeBtn = document.getElementById('themeBtn');
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+const syncTheme = () => {
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  themeBtn.setAttribute('aria-label', dark ? 'Passer au thème clair' : 'Passer au thème sombre');
+  themeMeta.setAttribute('content', dark ? '#141311' : '#f7f5f0');
+};
+if (themeBtn) {
+  syncTheme();
+  themeBtn.addEventListener('click', () => {
+    const root = document.documentElement;
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    const apply = () => { root.setAttribute('data-theme', next); syncTheme(); };
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (document.startViewTransition && !reduce) {
+      document.startViewTransition(apply);
+    } else if (!reduce) {
+      root.classList.add('theme-fade');
+      apply();
+      setTimeout(() => root.classList.remove('theme-fade'), 500);
+    } else {
+      apply();
+    }
+  });
+}
+
 // Demo 01 · email triage (fictional emails, precomputed outputs)
 const MAILS = [
   {

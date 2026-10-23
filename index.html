@@ -11,6 +11,15 @@
   <link rel="canonical" href="https://anisahmedzaid.com/">
   <link rel="alternate" hreflang="fr" href="https://anisahmedzaid.com/">
   <meta name="theme-color" content="#f7f5f0">
+  <script>
+    // Apply saved or system theme before first paint
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <meta property="og:type" content="profile">
@@ -41,7 +50,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Geist:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
 </head>
 
@@ -49,12 +58,18 @@
   <header class="top" id="top">
     <div class="wrap">
       <a href="/" class="name">Anis Ahmed Zaid</a>
+      <div class="right">
       <nav aria-label="Navigation principale">
         <a href="#projets">Projets</a>
         <a href="#parcours" class="hide-sm">Parcours</a>
         <a href="#contact" class="hide-sm">Contact</a>
         <a href="/cv/CV-Anis-Ahmed-Zaid.pdf" class="cv" target="_blank" rel="noopener">CV</a>
       </nav>
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Passer au thème sombre">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </button>
+      </div>
     </div>
   </header>
 
