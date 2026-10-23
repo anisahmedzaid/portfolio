@@ -3,8 +3,6 @@
 > Version texte de `index.html` (portfolio, recherche de CDI), régénérée le 23/10/2026.
 > Source des faits : `vault/job-search/master-cv.md` (statuts : seules paie et veille sont en service). Pas de tiret long.
 
-Ouvert au CDI · Île-de-France ou remote
-
 # Ingénieur IA.
 Je construis des systèmes à base de LLM.
 
@@ -167,6 +165,8 @@ Lycée Pothier, Orléans
 Contact
 
 ## Vous recrutez un ingénieur IA junior ? Parlons-en.
+
+Ouvert à un CDI comme à des missions en freelance, en Île-de-France ou en remote.
 
 contact@anisahmedzaid.com
 
