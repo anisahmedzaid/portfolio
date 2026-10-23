@@ -1,19 +1,19 @@
 # anisahmedzaid.com · contenu de la page
 
 > Version texte de `index.html` (portfolio, recherche de CDI), régénérée le 23/10/2026.
-> Source des faits : `vault/job-search/master-cv.md`. Pas de tiret long.
+> Source des faits : `vault/job-search/master-cv.md` (statuts : seules paie et veille sont en service). Pas de tiret long.
 
 Ouvert au CDI · Île-de-France ou remote
 
 # Ingénieur IA.
-LLM, RAG et agents en production.
+Je construis des systèmes à base de LLM.
 
 Je suis Anis, diplômé de l'ENSICAEN en 2025 (spécialité IA et traitement d'images).
-Depuis septembre 2025, je conçois et mets en production des systèmes à base de LLM
-pour des PME, seul et de bout en bout.
+Depuis septembre 2025, en indépendant, je conçois et livre des systèmes à base de LLM
+et des automatisations pour des PME, seul et de bout en bout.
 
-Je cherche maintenant un poste d'ingénieur IA / ML dans une équipe, pour travailler
-sur des systèmes plus grands et apprendre aux côtés d'ingénieurs plus expérimentés.
+Je cherche maintenant un poste d'ingénieur IA / ML dans une équipe produit ou data,
+sur des systèmes utilisés à plus grande échelle.
 
 Télécharger le CV
 LinkedIn
@@ -23,11 +23,11 @@ Projets
 
 ## Ce que j'ai construit
 
-Deux systèmes en production et un projet de recherche. Pour chacun : le problème,
+Deux systèmes livrés à des clients et un projet d'école. Pour chacun : le problème,
 ce que j'ai fait, et une démo ou un schéma pour voir comment ça marche.
 
-01 En production
-Client PME
+01 Livré au client
+PME
 
 ### Un assistant qui trie les emails et prépare les réponses
 
@@ -35,36 +35,36 @@ Une boîte mail professionnelle reçoit trop de messages pour être traitée à 
 Le but : gagner du temps sans jamais laisser un modèle répondre seul à un client.
 
 Chaque email est classé dans l'une de 10 catégories métier, résumé, puis le modèle rédige un brouillon.
-Rien ne part automatiquement : une personne relit, corrige et envoie. Le brouillon n'invente pas
-d'informations qu'il n'a pas, il laisse un champ à compléter.
+Rien ne part automatiquement : une personne relit, corrige et envoie. Des garde-fous empêchent
+le brouillon d'inventer des informations absentes de l'email.
 
-Validation Recette sur 16 scénarios avant la mise en production
+Validation Recette sur 16 scénarios avant la livraison
 
 Confidentialité Une version 100 % locale avec Ollama, pour un client qui ne voulait pas que ses emails sortent de chez lui
 
-Outils LLM (API et local via Ollama), Python
+Outils LLM via API et en local (Ollama)
 
 [Démo interactive : Démo · choisissez un email]
 
-02 En production
+02 Livré au client
 Organisme de formation
 
 ### Un chatbot qui répond à partir des documents, et un agent vocal à l'accueil
 
-Les mêmes questions reviennent sans cesse, par écrit et au téléphone, alors que les réponses
-existent déjà dans les documents de l'organisme.
+Les réponses aux questions courantes existent déjà dans les documents
+de l'organisme. Encore faut-il les retrouver, par écrit comme au téléphone.
 
 J'ai construit un chatbot RAG : les documents sont découpés, transformés en embeddings et stockés dans
 une base vectorielle Supabase. À chaque question, le système retrouve les passages utiles et le LLM
 répond à partir d'eux. Les données en tableau sont interrogées en SQL plutôt que par similarité.
-Un agent vocal temps réel prend en charge l'accueil téléphonique.
+J'ai aussi construit un agent vocal temps réel pour l'accueil téléphonique.
 
 Outils Embeddings, Supabase, SQL, OpenAI, n8n, Retell, ElevenLabs
 
 [Démo interactive : Comment une question est traitée]
 
-03 Projet de recherche
-Laboratoire GREYC
+03 Projet d'école
+Avec le laboratoire GREYC
 oct. 2024 à jan. 2025
 
 ### Chercher dans la Tapisserie de Bayeux avec des mots
@@ -82,8 +82,8 @@ Outils Python, OpenAI CLIP, similarité vectorielle
 
 Aussi
 
-Automatisations métier en production. Préparation de la paie avec Google Apps Script,
-audit de justificatifs, veille concurrentielle. Moins visibles, mais utilisées par de vrais clients.
+Automatisations en service chez le client. La préparation mensuelle de la paie
+(Google Apps Script) et une veille concurrentielle automatisée tournent aujourd'hui en production. J'ai aussi livré un audit automatique de justificatifs.
 
 Hackathon LCL Paris, 3 e place (sept. 2024). Un chatbot expert des cartes bancaires,
 développé en 26 heures avec Gemini sur Google Cloud.
@@ -116,7 +116,7 @@ Agents Pilotage d'agents en langage naturel chez ALTEN, agent vocal d'accueil (R
 
 Machine Learning et vision Modèle d'aide à la radiothérapie (données DICOM), spécialité traitement d'images à l'ENSICAEN TensorFlow / Keras, Scikit-learn, Pandas, NumPy
 
-Python et SQL Dans tous les projets ci-dessus
+Python et SQL Python sur tous les projets, SQL pour les données structurées du chatbot
 
 Outils Supabase, n8n, Git, GCP, Docker (bases)
 
@@ -132,7 +132,7 @@ sept. 2025 à aujourd'hui
 
 Île-de-France
 
-Conception et mise en production de systèmes IA pour des PME, du cadrage au suivi : les projets 01 et 02, et des automatisations métier.
+Conception et livraison de systèmes IA pour des PME, du cadrage à la recette : les projets 01 et 02, et des automatisations métier, dont la paie et la veille, en service chez le client.
 
 fév. à août 2025
 
