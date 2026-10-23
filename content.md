@@ -55,7 +55,7 @@ de l'organisme. Encore faut-il les retrouver, par écrit comme au téléphone.
 J'ai construit un chatbot RAG : les documents sont découpés, transformés en embeddings et stockés dans
 une base vectorielle Supabase. À chaque question, le système retrouve les passages utiles et le LLM
 répond à partir d'eux. Les données en tableau sont interrogées en SQL plutôt que par similarité.
-J'ai aussi construit un agent vocal temps réel pour l'accueil téléphonique.
+J'ai aussi construit un agent vocal temps réel pour l'accueil téléphonique (Retell, ElevenLabs).
 
 Outils Embeddings, Supabase, SQL, OpenAI, n8n, Retell, ElevenLabs
 

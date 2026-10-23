@@ -143,7 +143,7 @@
             <p>J'ai construit un chatbot RAG : les documents sont découpés, transformés en embeddings et stockés dans
               une base vectorielle Supabase. À chaque question, le système retrouve les passages utiles et le LLM
               répond à partir d'eux. Les données en tableau sont interrogées en SQL plutôt que par similarité.
-              J'ai aussi construit un agent vocal temps réel pour l'accueil téléphonique.</p>
+              J'ai aussi construit un agent vocal temps réel pour l'accueil téléphonique (Retell, ElevenLabs).</p>
             <dl class="facts">
               <dt>Outils</dt><dd>Embeddings, Supabase, SQL, OpenAI, n8n, Retell, ElevenLabs</dd>
             </dl>
@@ -161,16 +161,7 @@
                 <div class="node"><b>Réponse</b><span>le LLM rédige à partir des éléments retrouvés</span></div>
               </div>
 
-              <div class="voice" id="voice">
-                <p><strong>Essayer l'agent vocal.</strong> Un agent de démonstration construit sur la même stack.
-                  Il utilise le micro de votre navigateur.</p>
-                <div class="voice-ctl">
-                  <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-                  <button type="button" id="voiceBtn">Lancer l'appel</button>
-                </div>
-                <div class="transcript" id="transcript" aria-live="polite"></div>
-              </div>
-              <figcaption>Schéma simplifié du pipeline. L'agent vocal est une démo publique, distincte de celui du client.</figcaption>
+              <figcaption>Schéma simplifié du pipeline.</figcaption>
             </figure>
           </div>
         </article>
