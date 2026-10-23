@@ -6,30 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anis Ahmed Zaid · Ingénieur IA (LLM, RAG, agents)</title>
 
-  <!-- SEO Fondations -->
   <meta name="description" content="Anis Ahmed Zaid, ingénieur IA diplômé de l'ENSICAEN (2025). Systèmes LLM en production : RAG, agents, traitement de documents. Ouvert à un CDI en Île-de-France ou en remote.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://anisahmedzaid.com/">
   <link rel="alternate" hreflang="fr" href="https://anisahmedzaid.com/">
-  <meta name="theme-color" content="#0a0a0b">
-
-  <!-- Favicon -->
+  <meta name="theme-color" content="#f7f5f0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://anisahmedzaid.com/">
   <meta property="og:title" content="Anis Ahmed Zaid · Ingénieur IA">
   <meta property="og:description" content="Ingénieur IA diplômé de l'ENSICAEN. LLM, RAG et agents en production. Ouvert au CDI.">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Anis Ahmed Zaid">
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Anis Ahmed Zaid · Ingénieur IA">
   <meta name="twitter:description" content="Ingénieur IA diplômé de l'ENSICAEN. LLM, RAG et agents en production. Ouvert au CDI.">
 
-  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,405 +39,305 @@
   }
   </script>
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Tailwind Configuration -->
-  <script src="js/tailwind-config.js"></script>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
-
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- Démo agent vocal (carte projet) -->
-  <style>
-    .da-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-    .da-wave-zone{width:56px;height:56px;flex-shrink:0}
-    .da-wave-svg{width:100%;height:100%;overflow:visible}
-    .da-border-ring{stroke:#fafafa;stroke-width:3;fill:none;opacity:.2;transition:opacity .5s}
-    .da-wr{stroke:#fafafa;stroke-width:2;fill:none;opacity:0;transform-box:fill-box;transform-origin:center}
-    .da-bar{fill:#fafafa;transform-box:fill-box;transform-origin:center}
-    @keyframes daRingP{0%{transform:scale(1);opacity:.45}100%{transform:scale(1.38);opacity:0}}
-    @keyframes daBarL{0%,100%{transform:scaleY(.6)}50%{transform:scaleY(2)}}
-    @keyframes daBarT{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(2.6)}}
-    .da-wave-zone.live .da-border-ring{opacity:.55}
-    .da-wave-zone.live .da-wr1{animation:daRingP 2.4s ease-out infinite}
-    .da-wave-zone.live .da-wr2{animation:daRingP 2.4s ease-out infinite 1.2s}
-    .da-wave-zone.live .da-bar{animation:daBarL 1s ease-in-out infinite}
-    .da-wave-zone.talking .da-border-ring{opacity:.9}
-    .da-wave-zone.talking .da-bar{animation:daBarT .45s ease-in-out infinite}
-    .da-wave-zone .da-b2{animation-delay:.1s!important}
-    .da-wave-zone .da-b3{animation-delay:.05s!important}
-    .da-cta.end{background:#18181b;color:#a1a1aa;border-color:#27272a}
-    .da-cta:disabled{opacity:.45;cursor:not-allowed}
-    .da-transcript{display:flex;flex-direction:column;gap:8px;margin-top:16px;max-height:170px;overflow-y:auto}
-    .da-transcript:empty{display:none}
-    .da-msg{padding:8px 12px;border-radius:12px;font-size:13px;line-height:1.5;max-width:90%}
-    .da-msg.agent{background:#222225;color:#fafafa;align-self:flex-start}
-    .da-msg.user{background:#3b82f6;color:#fff;align-self:flex-end}
-    @media(prefers-reduced-motion:reduce){.da-bar,.da-wr{animation:none!important}}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
 </head>
 
-<body class="bg-background text-text-primary">
-  <!-- Grain Overlay -->
-  <div class="grain" aria-hidden="true"></div>
-
-  <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-40 border-b border-border-subtle bg-background/80 backdrop-blur-xl">
-    <nav class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-      <a href="/" aria-label="Accueil, Anis Ahmed Zaid" class="font-mono font-bold text-lg text-text-primary">anis.ahmedzaid</a>
-
-      <!-- Desktop Nav -->
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#projets" class="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">Projets</a>
-        <a href="#parcours" class="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">Parcours</a>
-        <a href="#competences" class="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">Compétences</a>
-        <a href="/cv/CV-Anis-Ahmed-Zaid.pdf" target="_blank" rel="noopener"
-          class="text-sm font-medium bg-bg-elevated border border-border px-4 py-2 rounded-md hover:bg-bg-hover hover:border-text-muted transition-colors">CV (PDF)</a>
-      </div>
-
-      <!-- Mobile Menu Button -->
-      <button id="menuBtn" aria-label="Ouvrir le menu de navigation" class="md:hidden p-2 text-text-secondary">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </nav>
-
-    <!-- Mobile Nav -->
-    <div id="mobileMenu"
-      class="hidden md:hidden absolute top-16 left-0 right-0 bg-bg-secondary border-b border-border p-6 flex flex-col gap-4">
-      <a href="#projets" class="text-text-secondary hover:text-text-primary">Projets</a>
-      <a href="#parcours" class="text-text-secondary hover:text-text-primary">Parcours</a>
-      <a href="#competences" class="text-text-secondary hover:text-text-primary">Compétences</a>
-      <a href="/cv/CV-Anis-Ahmed-Zaid.pdf" target="_blank" rel="noopener" class="text-text-secondary hover:text-text-primary">CV (PDF)</a>
+<body>
+  <header class="top" id="top">
+    <div class="wrap">
+      <a href="/" class="name">Anis Ahmed Zaid</a>
+      <nav aria-label="Navigation principale">
+        <a href="#projets">Projets</a>
+        <a href="#parcours" class="hide-sm">Parcours</a>
+        <a href="#contact" class="hide-sm">Contact</a>
+        <a href="/cv/CV-Anis-Ahmed-Zaid.pdf" class="cv" target="_blank" rel="noopener">CV</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <!-- Hero -->
-    <section class="pt-32 pb-16 px-4 sm:px-6 max-w-5xl mx-auto">
-      <div class="mb-6 inline-flex items-center gap-2 text-sm text-text-muted font-mono">
-        <span class="w-2 h-2 rounded-full bg-accent-green inline-block"></span>
-        Ouvert au CDI · Île-de-France ou remote
-      </div>
-
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
-        Anis Ahmed Zaid<span class="hidden sm:inline text-text-muted"> · </span><br class="sm:hidden">Ingénieur IA
-      </h1>
-
-      <p class="text-lg md:text-xl text-text-secondary leading-relaxed max-w-3xl mb-4">
-        Diplômé de l'ENSICAEN en 2025 (spécialité IA et traitement d'images).
-        Je conçois et mets en production des systèmes à base de LLM : RAG, agents et traitement de documents.
+    <div class="hero wrap">
+      <div class="status">Ouvert au CDI · Île-de-France ou remote</div>
+      <h1>Ingénieur IA.<br><em>LLM, RAG et agents en production.</em></h1>
+      <p class="intro">
+        Je suis Anis, diplômé de l'ENSICAEN en 2025 (spécialité IA et traitement d'images).
+        Depuis septembre 2025, je conçois et mets en production des systèmes à base de LLM
+        pour des PME, seul et de bout en bout.
       </p>
-      <p class="text-base text-text-muted leading-relaxed max-w-3xl mb-10">
-        Depuis septembre 2025, ingénieur IA indépendant : je livre ces systèmes de bout en bout, du cadrage à la mise en production.
-        Je cherche maintenant un poste d'ingénieur IA / ML en équipe, sur des systèmes à plus grande échelle.
+      <p class="intro">
+        Je cherche maintenant un poste d'ingénieur IA / ML dans une équipe, pour travailler
+        sur des systèmes plus grands et apprendre aux côtés d'ingénieurs plus expérimentés.
       </p>
-
-      <div class="flex flex-col sm:flex-row gap-3">
-        <a href="/cv/CV-Anis-Ahmed-Zaid.pdf" target="_blank" rel="noopener"
-          class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-zinc-200 transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M6 20h12a2 2 0 002-2V8l-6-6H6a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-          CV (PDF)
-        </a>
-        <a href="https://linkedin.com/in/anis-ahmed-zaid" target="_blank" rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-bg-elevated border border-border font-medium rounded-lg hover:bg-bg-hover hover:border-text-muted transition-colors">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.850 3.370-1.850 3.601 0 4.267 2.370 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a href="mailto:contact@anisahmedzaid.com"
-          class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-bg-elevated border border-border font-medium rounded-lg hover:bg-bg-hover hover:border-text-muted transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          contact@anisahmedzaid.com
-        </a>
+      <div class="links">
+        <a class="btn" href="/cv/CV-Anis-Ahmed-Zaid.pdf" target="_blank" rel="noopener">Télécharger le CV</a>
+        <a href="https://linkedin.com/in/anis-ahmed-zaid" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:contact@anisahmedzaid.com">contact@anisahmedzaid.com</a>
       </div>
-    </section>
-
-    <div class="w-full h-px bg-border-subtle"></div>
+    </div>
 
     <!-- Projets -->
-    <section id="projets" class="py-16 px-4 sm:px-6 max-w-5xl mx-auto scroll-mt-16">
-      <div class="font-mono text-sm text-text-muted mb-3"><span class="text-accent-blue">~</span>/projets</div>
-      <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-10">Projets</h2>
+    <section id="projets">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="label">Projets</div>
+          <div>
+            <h2>Ce que j'ai construit</h2>
+            <p>Deux systèmes en production et un projet de recherche. Pour chacun : le problème,
+              ce que j'ai fait, et une démo ou un schéma pour voir comment ça marche.</p>
+          </div>
+        </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
+        <!-- 01 Email -->
+        <article class="case">
+          <div class="meta"><span class="num">01</span>En production<br>Client PME</div>
+          <div class="body">
+            <h3>Un assistant qui trie les emails et prépare les réponses</h3>
+            <p class="lede">Une boîte mail professionnelle reçoit trop de messages pour être traitée à la main.
+              Le but : gagner du temps sans jamais laisser un modèle répondre seul à un client.</p>
+            <p>Chaque email est classé dans l'une de 10 catégories métier, résumé, puis le modèle rédige un brouillon.
+              Rien ne part automatiquement : une personne relit, corrige et envoie. Le brouillon n'invente pas
+              d'informations qu'il n'a pas, il laisse un champ à compléter.</p>
+            <dl class="facts">
+              <dt>Validation</dt><dd>Recette sur 16 scénarios avant la mise en production</dd>
+              <dt>Confidentialité</dt><dd>Une version 100 % locale avec Ollama, pour un client qui ne voulait pas que ses emails sortent de chez lui</dd>
+              <dt>Outils</dt><dd>LLM (API et local via Ollama), Python</dd>
+            </dl>
 
-        <!-- Assistant email -->
-        <article class="p-6 bg-bg-secondary border border-border rounded-xl md:col-span-2">
-          <div class="font-mono text-xs text-text-muted mb-3">En production · client PME</div>
-          <h3 class="text-xl font-semibold mb-3">Assistant email par LLM</h3>
-          <p class="text-text-secondary leading-relaxed mb-4">
-            Tri et préparation des réponses d'une boîte mail professionnelle. Le modèle classe chaque message dans l'une de
-            10 catégories métier, le résume et rédige un brouillon. Rien n'est envoyé automatiquement : l'humain relit et valide.
-          </p>
-          <ul class="space-y-2 text-sm text-text-secondary mb-5">
-            <li class="flex gap-2"><span class="text-accent-green font-mono">→</span><span>Garde-fous contre l'invention de faits dans les brouillons</span></li>
-            <li class="flex gap-2"><span class="text-accent-green font-mono">→</span><span>Recette sur 16 scénarios avant mise en production</span></li>
-            <li class="flex gap-2"><span class="text-accent-green font-mono">→</span><span>Version 100 % locale (Ollama) pour un client sensible à la confidentialité</span></li>
-          </ul>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">LLM</span>
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">Classification</span>
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">Ollama</span>
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">Human in the loop</span>
+            <figure class="demo" aria-labelledby="mail-title">
+              <div class="demo-title" id="mail-title">Démo · choisissez un email</div>
+              <div class="mail-demo">
+                <div class="inbox" id="inbox" role="group" aria-label="Emails d'exemple"></div>
+                <div class="mail-out" id="mailOut" aria-live="polite"></div>
+              </div>
+              <figcaption>Exemple illustratif : emails fictifs, réponses préparées à l'avance pour la démo.
+                Les vraies catégories et données du client restent privées.</figcaption>
+            </figure>
           </div>
         </article>
 
-        <!-- RAG + vocal -->
-        <article class="p-6 bg-bg-secondary border border-border rounded-xl md:col-span-2">
-          <div class="font-mono text-xs text-text-muted mb-3">En production · organisme de formation</div>
-          <h3 class="text-xl font-semibold mb-3">Chatbot RAG et agent vocal d'accueil</h3>
-          <div class="grid md:grid-cols-2 gap-6">
-            <div>
-              <p class="text-text-secondary leading-relaxed mb-4">
-                Chatbot qui répond à partir de la base documentaire de l'organisme : ingestion, embeddings, base vectorielle
-                Supabase, retrieval puis réponse contextualisée. Les données tabulaires sont interrogées en SQL.
-                Un agent vocal temps réel prend en charge l'accueil téléphonique.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">RAG</span>
-                <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">Embeddings</span>
-                <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">Supabase</span>
-                <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">SQL</span>
-                <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">Retell</span>
-                <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">ElevenLabs</span>
-              </div>
-            </div>
+        <!-- 02 RAG + voix -->
+        <article class="case">
+          <div class="meta"><span class="num">02</span>En production<br>Organisme de formation</div>
+          <div class="body">
+            <h3>Un chatbot qui répond à partir des documents, et un agent vocal à l'accueil</h3>
+            <p class="lede">Les mêmes questions reviennent sans cesse, par écrit et au téléphone, alors que les réponses
+              existent déjà dans les documents de l'organisme.</p>
+            <p>J'ai construit un chatbot RAG : les documents sont découpés, transformés en embeddings et stockés dans
+              une base vectorielle Supabase. À chaque question, le système retrouve les passages utiles et le LLM
+              répond à partir d'eux. Les données en tableau sont interrogées en SQL plutôt que par similarité.
+              Un agent vocal temps réel prend en charge l'accueil téléphonique.</p>
+            <dl class="facts">
+              <dt>Outils</dt><dd>Embeddings, Supabase, SQL, OpenAI, n8n, Retell, ElevenLabs</dd>
+            </dl>
 
-            <!-- Démo vocale -->
-            <div class="p-5 bg-bg-elevated border border-border rounded-lg">
-              <div class="font-mono text-xs text-text-muted mb-2">démo</div>
-              <p class="text-sm text-text-secondary leading-relaxed mb-4">
-                Un agent vocal de démonstration, construit sur la même stack. Il passe par votre micro, depuis le navigateur.
-              </p>
-              <div class="da-row">
-                <div class="da-wave-zone" id="daBubbleZone" aria-hidden="true">
-                  <svg class="da-wave-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle class="da-wr da-wr1" cx="50" cy="50" r="44"/>
-                    <circle class="da-wr da-wr2" cx="50" cy="50" r="44"/>
-                    <circle class="da-border-ring" cx="50" cy="50" r="44"/>
-                    <g transform="translate(50,50)">
-                      <rect class="da-bar da-b1" x="-19" y="-8" width="8" height="16" rx="4"/>
-                      <rect class="da-bar da-b2" x="-4" y="-13" width="8" height="26" rx="4"/>
-                      <rect class="da-bar da-b3" x="11" y="-8" width="8" height="16" rx="4"/>
-                    </g>
-                  </svg>
+            <figure class="demo" aria-labelledby="rag-title">
+              <div class="demo-title" id="rag-title">Comment une question est traitée</div>
+              <div class="flow">
+                <div class="node"><b>Question</b><span>« Quelles sont les dates de la prochaine session ? »</span></div>
+                <div class="arrow" aria-hidden="true">→</div>
+                <div class="branch">
+                  <div class="node"><b>Documents</b><span>embedding de la question, recherche des passages proches dans Supabase</span></div>
+                  <div class="node"><b>Tableaux</b><span>requête SQL sur les données structurées</span></div>
                 </div>
-                <button class="da-cta px-5 py-2.5 bg-white text-black text-sm font-semibold rounded-lg border border-transparent hover:bg-zinc-200 transition-colors" id="daCallBtn">Lancer la démo vocale</button>
+                <div class="arrow" aria-hidden="true">→</div>
+                <div class="node"><b>Réponse</b><span>le LLM rédige à partir des éléments retrouvés</span></div>
               </div>
-              <div class="da-transcript" id="daTranscript" aria-live="polite"></div>
-            </div>
+
+              <div class="voice" id="voice">
+                <p><strong>Essayer l'agent vocal.</strong> Un agent de démonstration construit sur la même stack.
+                  Il utilise le micro de votre navigateur.</p>
+                <div class="voice-ctl">
+                  <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+                  <button type="button" id="voiceBtn">Lancer l'appel</button>
+                </div>
+                <div class="transcript" id="transcript" aria-live="polite"></div>
+              </div>
+              <figcaption>Schéma simplifié du pipeline. L'agent vocal est une démo publique, distincte de celui du client.</figcaption>
+            </figure>
           </div>
         </article>
 
-        <!-- Automatisations -->
-        <article class="p-6 bg-bg-secondary border border-border rounded-xl">
-          <div class="font-mono text-xs text-text-muted mb-3">En production · clients PME</div>
-          <h3 class="text-xl font-semibold mb-3">Automatisations métier</h3>
-          <p class="text-text-secondary leading-relaxed mb-4">
-            Préparation de la paie avec Google Apps Script, audit automatique de justificatifs et veille concurrentielle,
-            à la place de tâches manuelles répétitives.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">Apps Script</span>
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">n8n</span>
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">Google APIs</span>
+        <!-- 03 CLIP -->
+        <article class="case">
+          <div class="meta"><span class="num">03</span>Projet de recherche<br>Laboratoire GREYC<br>oct. 2024 à jan. 2025</div>
+          <div class="body">
+            <h3>Chercher dans la Tapisserie de Bayeux avec des mots</h3>
+            <p class="lede">La Tapisserie fait près de 70 mètres. Comment retrouver une scène sans la connaître,
+              juste en la décrivant, ou à partir d'une autre image ?</p>
+            <p>J'ai utilisé CLIP, un modèle qui place textes et images dans un même espace de vecteurs.
+              Une description et une scène qui parlent de la même chose se retrouvent proches :
+              la recherche devient un calcul de similarité.</p>
+            <dl class="facts">
+              <dt>Outils</dt><dd>Python, OpenAI CLIP, similarité vectorielle</dd>
+            </dl>
+
+            <figure class="demo" aria-labelledby="clip-title">
+              <div class="demo-title" id="clip-title">L'idée en une image · choisissez une requête</div>
+              <div class="clip">
+                <svg viewBox="0 0 600 320" role="img" aria-label="Espace d'embeddings : la requête texte se place près des scènes qui lui correspondent">
+                  <g id="clipLinks"></g>
+                  <g data-k="navires"><circle class="pt" cx="390" cy="74" r="10"/><text class="pt-label" x="406" y="78">navires</text></g>
+                  <g data-k="navires"><circle class="pt" cx="424" cy="118" r="10"/><text class="pt-label" x="440" y="122">débarquement</text></g>
+                  <g data-k="comete"><circle class="pt" cx="404" cy="250" r="10"/><text class="pt-label" x="420" y="254">la comète</text></g>
+                  <g data-k="cavaliers"><circle class="pt" cx="112" cy="232" r="10"/><text class="pt-label" x="128" y="236">cavalerie</text></g>
+                  <g data-k="cavaliers"><circle class="pt" cx="160" cy="276" r="10"/><text class="pt-label" x="176" y="280">bataille d'Hastings</text></g>
+                  <g data-k="repas"><circle class="pt" cx="96" cy="70" r="10"/><text class="pt-label" x="112" y="74">le banquet</text></g>
+                  <g data-k="serment"><circle class="pt" cx="250" cy="150" r="10"/><text class="pt-label" x="266" y="154">le serment</text></g>
+                  <g id="clipQ" class="q" transform="translate(260,160)"><rect x="-7" y="-7" width="14" height="14" rx="2" transform="rotate(45)"/></g>
+                </svg>
+                <div class="queries" id="queries">
+                  <p>Requête texte :</p>
+                </div>
+              </div>
+              <figcaption>Schéma illustratif en 2D : les vrais embeddings CLIP ont des centaines de dimensions.
+                Les points sont des scènes de la Tapisserie, le losange est la requête.</figcaption>
+            </figure>
           </div>
         </article>
 
-        <!-- CLIP Bayeux -->
-        <article class="p-6 bg-bg-secondary border border-border rounded-xl">
-          <div class="font-mono text-xs text-text-muted mb-3">Projet académique · GREYC · 2024 à 2025</div>
-          <h3 class="text-xl font-semibold mb-3">Recherche multimodale, Tapisserie de Bayeux</h3>
-          <p class="text-text-secondary leading-relaxed mb-4">
-            Recherche dans la Tapisserie de Bayeux par texte ou par image, à partir d'embeddings CLIP
-            et de similarité vectorielle. Projet d'école mené avec le laboratoire GREYC.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">Python</span>
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">OpenAI CLIP</span>
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">Computer Vision</span>
-          </div>
-        </article>
-
-        <!-- Hackathon LCL -->
-        <article class="p-6 bg-bg-secondary border border-border rounded-xl md:col-span-2">
-          <div class="font-mono text-xs text-text-muted mb-3">Hackathon LCL Paris · sept. 2024 · <span class="text-accent-amber">3<sup>e</sup> place</span></div>
-          <h3 class="text-xl font-semibold mb-3">Chatbot expert cartes bancaires</h3>
-          <p class="text-text-secondary leading-relaxed mb-4">
-            Assistant conversationnel spécialisé sur les cartes bancaires, développé en 26 heures sur Google Cloud.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">Gemini</span>
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">GCP</span>
-            <span class="px-2 py-1 bg-bg-elevated text-text-muted text-xs font-mono rounded">Python</span>
-          </div>
-        </article>
+        <!-- Aussi -->
+        <div class="also">
+          <div class="label">Aussi</div>
+          <ul>
+            <li><b>Automatisations métier en production.</b> Préparation de la paie avec Google Apps Script,
+              audit de justificatifs, veille concurrentielle. Moins visibles, mais utilisées par de vrais clients.</li>
+            <li><b>Hackathon LCL Paris, 3<sup>e</sup> place (sept. 2024).</b> Un chatbot expert des cartes bancaires,
+              développé en 26 heures avec Gemini sur Google Cloud.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <div class="w-full h-px bg-border-subtle"></div>
-
-    <!-- Parcours -->
-    <section id="parcours" class="py-16 px-4 sm:px-6 max-w-5xl mx-auto scroll-mt-16">
-      <div class="font-mono text-sm text-text-muted mb-3"><span class="text-accent-blue">~</span>/parcours</div>
-      <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-10">Parcours</h2>
-
-      <ol class="border-l border-border space-y-10 ml-1">
-        <li class="pl-6 relative">
-          <span class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-accent-blue"></span>
-          <div class="font-mono text-xs text-text-muted mb-1">sept. 2025 à aujourd'hui</div>
-          <h3 class="text-lg font-semibold">Ingénieur IA indépendant</h3>
-          <p class="text-text-secondary leading-relaxed mt-2">
-            Conception et mise en production de systèmes IA pour des PME, de bout en bout : assistant email par LLM,
-            chatbot RAG, agent vocal d'accueil, automatisations métier.
-          </p>
-          <p class="text-sm text-text-muted mt-2 font-mono">Python, OpenAI et Claude APIs, Ollama, Supabase, SQL, n8n, Retell</p>
-        </li>
-        <li class="pl-6 relative">
-          <span class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-text-muted"></span>
-          <div class="font-mono text-xs text-text-muted mb-1">fév. 2025 à août 2025</div>
-          <h3 class="text-lg font-semibold">Ingénieur IA, stage de fin d'études · ALTEN Labs, Rennes</h3>
-          <p class="text-text-secondary leading-relaxed mt-2">
-            Adaptation et déploiement d'un système de pilotage d'agents en langage naturel basé sur des LLM.
-            Intégration de modèles locaux et hébergés, conteneurisation et mise en service.
-          </p>
-          <p class="text-sm text-text-muted mt-2 font-mono">Python, OpenAI, Ollama, Docker</p>
-        </li>
-        <li class="pl-6 relative">
-          <span class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-text-muted"></span>
-          <div class="font-mono text-xs text-text-muted mb-1">mai 2024 à août 2024</div>
-          <h3 class="text-lg font-semibold">Stage Machine Learning, radiothérapie · Hôpital C. Mahmoudi, Tizi-Ouzou</h3>
-          <p class="text-text-secondary leading-relaxed mt-2">
-            Modèle de Machine Learning d'aide aux physiciens médicaux en radiothérapie, à partir de données DICOM.
-          </p>
-          <p class="text-sm text-text-muted mt-2 font-mono">Python, Keras, Pydicom, Scikit-learn, Pandas</p>
-        </li>
-        <li class="pl-6 relative">
-          <span class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-text-muted"></span>
-          <div class="font-mono text-xs text-text-muted mb-1">2022 à 2025</div>
-          <h3 class="text-lg font-semibold">Diplôme d'ingénieur · ENSICAEN, Caen</h3>
-          <p class="text-text-secondary leading-relaxed mt-2">Spécialité intelligence artificielle et traitement d'images.</p>
-        </li>
-        <li class="pl-6 relative">
-          <span class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-text-muted"></span>
-          <div class="font-mono text-xs text-text-muted mb-1">2020 à 2022</div>
-          <h3 class="text-lg font-semibold">Classes préparatoires · Lycée Pothier, Orléans</h3>
-          <p class="text-text-secondary leading-relaxed mt-2">MPSI puis PSI.</p>
-        </li>
-      </ol>
+    <!-- Méthode -->
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div class="label">Méthode</div>
+          <h2>Ce que j'ai appris à faire seul</h2>
+        </div>
+        <div class="principles">
+          <div>
+            <h3>Tester avant de livrer</h3>
+            <p>Un système LLM se valide sur des cas concrets écrits à l'avance, comme les 16 scénarios de l'assistant email, pas sur une impression.</p>
+          </div>
+          <div>
+            <h3>Garder l'humain dans la boucle</h3>
+            <p>Sur les actions qui engagent, le modèle prépare et une personne décide. Aucun email ne part sans relecture.</p>
+          </div>
+          <div>
+            <h3>Choisir le modèle pour le besoin</h3>
+            <p>Coût, latence, confidentialité : selon le client, un modèle via API ou un modèle local avec Ollama.</p>
+          </div>
+        </div>
+      </div>
     </section>
-
-    <div class="w-full h-px bg-border-subtle"></div>
 
     <!-- Compétences -->
-    <section id="competences" class="py-16 px-4 sm:px-6 max-w-5xl mx-auto scroll-mt-16">
-      <div class="font-mono text-sm text-text-muted mb-3"><span class="text-accent-blue">~</span>/competences</div>
-      <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-10">Compétences</h2>
-
-      <dl class="grid sm:grid-cols-2 gap-x-10 gap-y-6">
-        <div>
-          <dt class="font-mono text-xs text-text-muted mb-2">Langages</dt>
-          <dd class="text-text-secondary">Python, SQL</dd>
+    <section id="competences">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="label">Compétences</div>
+          <div>
+            <h2>Et où je les ai utilisées</h2>
+          </div>
         </div>
-        <div>
-          <dt class="font-mono text-xs text-text-muted mb-2">LLM</dt>
-          <dd class="text-text-secondary">OpenAI, Claude, Gemini, Ollama (modèles locaux)</dd>
-        </div>
-        <div>
-          <dt class="font-mono text-xs text-text-muted mb-2">IA appliquée</dt>
-          <dd class="text-text-secondary">RAG, agents, NLP, computer vision</dd>
-        </div>
-        <div>
-          <dt class="font-mono text-xs text-text-muted mb-2">Machine Learning</dt>
-          <dd class="text-text-secondary">TensorFlow / Keras, Scikit-learn, Pandas, NumPy</dd>
-        </div>
-        <div>
-          <dt class="font-mono text-xs text-text-muted mb-2">Données et outils</dt>
-          <dd class="text-text-secondary">Supabase, n8n, Git, GCP, Docker (base)</dd>
-        </div>
-        <div>
-          <dt class="font-mono text-xs text-text-muted mb-2">Langues</dt>
-          <dd class="text-text-secondary">Français (natif), anglais (C1), arabe (B2)</dd>
-        </div>
-      </dl>
+        <table class="skills">
+          <tbody>
+            <tr><th>LLM : OpenAI, Claude, Gemini, Ollama</th><td>Assistant email, chatbot RAG, agents chez ALTEN, hackathon LCL<small>API hébergées et modèles locaux</small></td></tr>
+            <tr><th>RAG et embeddings</th><td>Chatbot de l'organisme de formation, recherche CLIP sur la Tapisserie<small>Supabase comme base vectorielle</small></td></tr>
+            <tr><th>Agents</th><td>Pilotage d'agents en langage naturel chez ALTEN, agent vocal d'accueil (Retell)</td></tr>
+            <tr><th>Machine Learning et vision</th><td>Modèle d'aide à la radiothérapie (données DICOM), spécialité traitement d'images à l'ENSICAEN<small>TensorFlow / Keras, Scikit-learn, Pandas, NumPy</small></td></tr>
+            <tr><th>Python et SQL</th><td>Dans tous les projets ci-dessus</td></tr>
+            <tr><th>Outils</th><td>Supabase, n8n, Git, GCP, Docker (bases)</td></tr>
+            <tr><th>Langues</th><td>Français (natif), anglais (C1), arabe (B2)</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
-    <div class="w-full h-px bg-border-subtle"></div>
+    <!-- Parcours -->
+    <section id="parcours">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="label">Parcours</div>
+          <h2>D'où je viens</h2>
+        </div>
+        <ol class="timeline">
+          <li>
+            <div class="when">sept. 2025 à aujourd'hui</div>
+            <div>
+              <h3>Ingénieur IA indépendant</h3>
+              <div class="where">Île-de-France</div>
+              <p>Conception et mise en production de systèmes IA pour des PME, du cadrage au suivi : les projets 01 et 02, et des automatisations métier.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">fév. à août 2025</div>
+            <div>
+              <h3>Ingénieur IA, stage de fin d'études</h3>
+              <div class="where">ALTEN Labs, Rennes</div>
+              <p>Adaptation et déploiement d'un système de pilotage d'agents en langage naturel basé sur des LLM. Intégration de modèles locaux et hébergés, conteneurisation avec Docker.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">mai à août 2024</div>
+            <div>
+              <h3>Stage Machine Learning en radiothérapie</h3>
+              <div class="where">Hôpital C. Mahmoudi, Tizi-Ouzou</div>
+              <p>Modèle de Machine Learning pour assister les physiciens médicaux, à partir de données DICOM (Keras, Pydicom, Scikit-learn).</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">2022 à 2025</div>
+            <div>
+              <h3>Diplôme d'ingénieur</h3>
+              <div class="where">ENSICAEN, Caen</div>
+              <p>Spécialité intelligence artificielle et traitement d'images.</p>
+            </div>
+          </li>
+          <li>
+            <div class="when">2020 à 2022</div>
+            <div>
+              <h3>Classes préparatoires MPSI puis PSI</h3>
+              <div class="where">Lycée Pothier, Orléans</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-16 px-4 sm:px-6 max-w-5xl mx-auto scroll-mt-16">
-      <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Contact</h2>
-      <p class="text-text-secondary leading-relaxed max-w-2xl mb-8">
-        Je recherche un CDI d'ingénieur IA / ML / GenAI en Île-de-France ou en remote, disponible immédiatement.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-3">
-        <a href="mailto:contact@anisahmedzaid.com"
-          class="inline-flex items-center justify-center px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-zinc-200 transition-colors">contact@anisahmedzaid.com</a>
-        <a href="https://linkedin.com/in/anis-ahmed-zaid" target="_blank" rel="noopener noreferrer"
-          class="inline-flex items-center justify-center px-6 py-3 bg-bg-elevated border border-border font-medium rounded-lg hover:bg-bg-hover hover:border-text-muted transition-colors">LinkedIn</a>
-        <a href="/cv/CV-Anis-Ahmed-Zaid.pdf" target="_blank" rel="noopener"
-          class="inline-flex items-center justify-center px-6 py-3 bg-bg-elevated border border-border font-medium rounded-lg hover:bg-bg-hover hover:border-text-muted transition-colors">CV (PDF)</a>
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="label">Contact</div>
+          <div>
+            <h2>Vous recrutez un ingénieur IA junior ? Parlons-en.</h2>
+            <a class="mail" href="mailto:contact@anisahmedzaid.com">contact@anisahmedzaid.com</a>
+            <div class="links">
+              <a class="btn" href="/cv/CV-Anis-Ahmed-Zaid.pdf" target="_blank" rel="noopener">Télécharger le CV</a>
+              <a href="https://linkedin.com/in/anis-ahmed-zaid" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-border-subtle py-8 px-6 bg-background">
-    <div class="max-w-5xl mx-auto text-text-muted text-sm flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
+  <footer>
+    <div class="wrap">
       <span>© 2026 Anis Ahmed Zaid</span>
-      <a href="/mentions-legales.html" class="hover:text-text-secondary transition-colors">Mentions légales</a>
-      <a href="/privacy-policy.html" class="hover:text-text-secondary transition-colors">Confidentialité</a>
-      <a href="/terms-of-service.html" class="hover:text-text-secondary transition-colors">CGU</a>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/privacy-policy.html">Confidentialité</a>
+      <a href="/terms-of-service.html">CGU</a>
     </div>
   </footer>
 
-  <!-- Project Logic -->
-  <script src="js/script.js"></script>
-
-  <!-- Démo agent vocal -->
-  <script>
-  (function(){
-    const TOKEN_URL="https://n8n.srv1623813.hstgr.cloud/webhook/demo-token";
-    const LABEL="Lancer la démo vocale";
-    const $=id=>document.getElementById(id);
-    const zone=$('daBubbleZone'),btn=$('daCallBtn'),trEl=$('daTranscript');
-    if(!zone||!btn) return;
-
-    function render(arr){if(!arr||!arr.length)return;trEl.innerHTML='';
-      arr.forEach(t=>{const d=document.createElement('div');d.className='da-msg '+(t.role==='agent'?'agent':'user');d.textContent=t.content||'';trEl.appendChild(d);});
-      trEl.scrollTop=trEl.scrollHeight;}
-
-    let retell=null,inCall=false;
-    async function start(){
-      btn.disabled=true;btn.textContent='Connexion';
-      try{
-        const r=await fetch(TOKEN_URL,{cache:'no-store'});
-        if(r.status===429){btn.textContent='Réessayez plus tard';setTimeout(()=>{btn.textContent=LABEL;btn.disabled=false;},2500);return;}
-        const {access_token}=await r.json();
-        if(!access_token)throw new Error('token');
-        const {RetellWebClient}=await import('https://esm.sh/retell-client-js-sdk@2');
-        retell=new RetellWebClient();
-        retell.on('call_started',()=>{inCall=true;zone.classList.add('live');btn.textContent='Terminer';btn.classList.add('end');btn.disabled=false;});
-        retell.on('call_ended',()=>end());
-        retell.on('agent_start_talking',()=>zone.classList.add('talking'));
-        retell.on('agent_stop_talking',()=>zone.classList.remove('talking'));
-        retell.on('update',u=>{if(u&&u.transcript)render(u.transcript);});
-        retell.on('error',()=>end());
-        await retell.startCall({accessToken:access_token});
-      }catch(e){btn.textContent=LABEL;btn.disabled=false;}
-    }
-    function end(){inCall=false;zone.classList.remove('live','talking');btn.textContent=LABEL;btn.classList.remove('end');btn.disabled=false;}
-    btn.addEventListener('click',()=>{inCall?(retell&&retell.stopCall(),end()):start();});
-  })();
-  </script>
+  <script src="js/site.js"></script>
 </body>
 
 </html>

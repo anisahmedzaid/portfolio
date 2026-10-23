@@ -1,68 +1,174 @@
 # anisahmedzaid.com · contenu de la page
 
-> Version texte de `index.html` (portfolio, recherche de CDI). Mise à jour le 23/10/2026.
+> Version texte de `index.html` (portfolio, recherche de CDI), régénérée le 23/10/2026.
 > Source des faits : `vault/job-search/master-cv.md`. Pas de tiret long.
 
-## Hero
 Ouvert au CDI · Île-de-France ou remote
 
-# Anis Ahmed Zaid · Ingénieur IA
+# Ingénieur IA.
+LLM, RAG et agents en production.
 
-Diplômé de l'ENSICAEN en 2025 (spécialité IA et traitement d'images).
-Je conçois et mets en production des systèmes à base de LLM : RAG, agents et traitement de documents.
+Je suis Anis, diplômé de l'ENSICAEN en 2025 (spécialité IA et traitement d'images).
+Depuis septembre 2025, je conçois et mets en production des systèmes à base de LLM
+pour des PME, seul et de bout en bout.
 
-Depuis septembre 2025, ingénieur IA indépendant : je livre ces systèmes de bout en bout, du cadrage à la mise en production.
-Je cherche maintenant un poste d'ingénieur IA / ML en équipe, sur des systèmes à plus grande échelle.
+Je cherche maintenant un poste d'ingénieur IA / ML dans une équipe, pour travailler
+sur des systèmes plus grands et apprendre aux côtés d'ingénieurs plus expérimentés.
 
-Boutons : [CV (PDF)](/cv/CV-Anis-Ahmed-Zaid.pdf) · [LinkedIn](https://linkedin.com/in/anis-ahmed-zaid) · [contact@anisahmedzaid.com](mailto:contact@anisahmedzaid.com)
+Télécharger le CV
+LinkedIn
+contact@anisahmedzaid.com
 
-## Projets
+Projets
 
-### Assistant email par LLM (en production, client PME)
-Tri et préparation des réponses d'une boîte mail professionnelle. Le modèle classe chaque message dans l'une de 10 catégories métier, le résume et rédige un brouillon. Rien n'est envoyé automatiquement : l'humain relit et valide.
-- Garde-fous contre l'invention de faits dans les brouillons
-- Recette sur 16 scénarios avant mise en production
-- Version 100 % locale (Ollama) pour un client sensible à la confidentialité
+## Ce que j'ai construit
 
-Tags : LLM, Classification, Ollama, Human in the loop
+Deux systèmes en production et un projet de recherche. Pour chacun : le problème,
+ce que j'ai fait, et une démo ou un schéma pour voir comment ça marche.
 
-### Chatbot RAG et agent vocal d'accueil (en production, organisme de formation)
-Chatbot qui répond à partir de la base documentaire de l'organisme : ingestion, embeddings, base vectorielle Supabase, retrieval puis réponse contextualisée. Les données tabulaires sont interrogées en SQL. Un agent vocal temps réel prend en charge l'accueil téléphonique.
+01 En production
+Client PME
 
-Démo : agent vocal de démonstration sur la même stack, bouton « Lancer la démo vocale » (Retell, micro du navigateur).
+### Un assistant qui trie les emails et prépare les réponses
 
-Tags : RAG, Embeddings, Supabase, SQL, Retell, ElevenLabs
+Une boîte mail professionnelle reçoit trop de messages pour être traitée à la main.
+Le but : gagner du temps sans jamais laisser un modèle répondre seul à un client.
 
-### Automatisations métier (en production, clients PME)
-Préparation de la paie avec Google Apps Script, audit automatique de justificatifs et veille concurrentielle, à la place de tâches manuelles répétitives.
+Chaque email est classé dans l'une de 10 catégories métier, résumé, puis le modèle rédige un brouillon.
+Rien ne part automatiquement : une personne relit, corrige et envoie. Le brouillon n'invente pas
+d'informations qu'il n'a pas, il laisse un champ à compléter.
 
-Tags : Apps Script, n8n, Google APIs
+Validation Recette sur 16 scénarios avant la mise en production
 
-### Recherche multimodale, Tapisserie de Bayeux (projet académique, GREYC, 2024 à 2025)
-Recherche dans la Tapisserie de Bayeux par texte ou par image, à partir d'embeddings CLIP et de similarité vectorielle. Projet d'école mené avec le laboratoire GREYC.
+Confidentialité Une version 100 % locale avec Ollama, pour un client qui ne voulait pas que ses emails sortent de chez lui
 
-Tags : Python, OpenAI CLIP, Computer Vision
+Outils LLM (API et local via Ollama), Python
 
-### Chatbot expert cartes bancaires (Hackathon LCL Paris, sept. 2024, 3e place)
-Assistant conversationnel spécialisé sur les cartes bancaires, développé en 26 heures sur Google Cloud.
+[Démo interactive : Démo · choisissez un email]
 
-Tags : Gemini, GCP, Python
+02 En production
+Organisme de formation
 
-## Parcours
-- **sept. 2025 à aujourd'hui · Ingénieur IA indépendant.** Conception et mise en production de systèmes IA pour des PME, de bout en bout : assistant email par LLM, chatbot RAG, agent vocal d'accueil, automatisations métier. Python, OpenAI et Claude APIs, Ollama, Supabase, SQL, n8n, Retell.
-- **fév. 2025 à août 2025 · Ingénieur IA, stage de fin d'études · ALTEN Labs, Rennes.** Adaptation et déploiement d'un système de pilotage d'agents en langage naturel basé sur des LLM. Intégration de modèles locaux et hébergés, conteneurisation et mise en service. Python, OpenAI, Ollama, Docker.
-- **mai 2024 à août 2024 · Stage Machine Learning, radiothérapie · Hôpital C. Mahmoudi, Tizi-Ouzou.** Modèle de Machine Learning d'aide aux physiciens médicaux en radiothérapie, à partir de données DICOM. Python, Keras, Pydicom, Scikit-learn, Pandas.
-- **2022 à 2025 · Diplôme d'ingénieur · ENSICAEN, Caen.** Spécialité intelligence artificielle et traitement d'images.
-- **2020 à 2022 · Classes préparatoires · Lycée Pothier, Orléans.** MPSI puis PSI.
+### Un chatbot qui répond à partir des documents, et un agent vocal à l'accueil
 
-## Compétences
-- Langages : Python, SQL
-- LLM : OpenAI, Claude, Gemini, Ollama (modèles locaux)
-- IA appliquée : RAG, agents, NLP, computer vision
-- Machine Learning : TensorFlow / Keras, Scikit-learn, Pandas, NumPy
-- Données et outils : Supabase, n8n, Git, GCP, Docker (base)
-- Langues : français (natif), anglais (C1), arabe (B2)
+Les mêmes questions reviennent sans cesse, par écrit et au téléphone, alors que les réponses
+existent déjà dans les documents de l'organisme.
 
-## Contact
-Je recherche un CDI d'ingénieur IA / ML / GenAI en Île-de-France ou en remote, disponible immédiatement.
-contact@anisahmedzaid.com · LinkedIn · CV (PDF)
+J'ai construit un chatbot RAG : les documents sont découpés, transformés en embeddings et stockés dans
+une base vectorielle Supabase. À chaque question, le système retrouve les passages utiles et le LLM
+répond à partir d'eux. Les données en tableau sont interrogées en SQL plutôt que par similarité.
+Un agent vocal temps réel prend en charge l'accueil téléphonique.
+
+Outils Embeddings, Supabase, SQL, OpenAI, n8n, Retell, ElevenLabs
+
+[Démo interactive : Comment une question est traitée]
+
+03 Projet de recherche
+Laboratoire GREYC
+oct. 2024 à jan. 2025
+
+### Chercher dans la Tapisserie de Bayeux avec des mots
+
+La Tapisserie fait près de 70 mètres. Comment retrouver une scène sans la connaître,
+juste en la décrivant, ou à partir d'une autre image ?
+
+J'ai utilisé CLIP, un modèle qui place textes et images dans un même espace de vecteurs.
+Une description et une scène qui parlent de la même chose se retrouvent proches :
+la recherche devient un calcul de similarité.
+
+Outils Python, OpenAI CLIP, similarité vectorielle
+
+[Démo interactive : L'idée en une image · choisissez une requête]
+
+Aussi
+
+Automatisations métier en production. Préparation de la paie avec Google Apps Script,
+audit de justificatifs, veille concurrentielle. Moins visibles, mais utilisées par de vrais clients.
+
+Hackathon LCL Paris, 3 e place (sept. 2024). Un chatbot expert des cartes bancaires,
+développé en 26 heures avec Gemini sur Google Cloud.
+
+Méthode
+
+## Ce que j'ai appris à faire seul
+
+### Tester avant de livrer
+
+Un système LLM se valide sur des cas concrets écrits à l'avance, comme les 16 scénarios de l'assistant email, pas sur une impression.
+
+### Garder l'humain dans la boucle
+
+Sur les actions qui engagent, le modèle prépare et une personne décide. Aucun email ne part sans relecture.
+
+### Choisir le modèle pour le besoin
+
+Coût, latence, confidentialité : selon le client, un modèle via API ou un modèle local avec Ollama.
+
+Compétences
+
+## Et où je les ai utilisées
+
+LLM : OpenAI, Claude, Gemini, Ollama Assistant email, chatbot RAG, agents chez ALTEN, hackathon LCL API hébergées et modèles locaux
+
+RAG et embeddings Chatbot de l'organisme de formation, recherche CLIP sur la Tapisserie Supabase comme base vectorielle
+
+Agents Pilotage d'agents en langage naturel chez ALTEN, agent vocal d'accueil (Retell)
+
+Machine Learning et vision Modèle d'aide à la radiothérapie (données DICOM), spécialité traitement d'images à l'ENSICAEN TensorFlow / Keras, Scikit-learn, Pandas, NumPy
+
+Python et SQL Dans tous les projets ci-dessus
+
+Outils Supabase, n8n, Git, GCP, Docker (bases)
+
+Langues Français (natif), anglais (C1), arabe (B2)
+
+Parcours
+
+## D'où je viens
+
+sept. 2025 à aujourd'hui
+
+### Ingénieur IA indépendant
+
+Île-de-France
+
+Conception et mise en production de systèmes IA pour des PME, du cadrage au suivi : les projets 01 et 02, et des automatisations métier.
+
+fév. à août 2025
+
+### Ingénieur IA, stage de fin d'études
+
+ALTEN Labs, Rennes
+
+Adaptation et déploiement d'un système de pilotage d'agents en langage naturel basé sur des LLM. Intégration de modèles locaux et hébergés, conteneurisation avec Docker.
+
+mai à août 2024
+
+### Stage Machine Learning en radiothérapie
+
+Hôpital C. Mahmoudi, Tizi-Ouzou
+
+Modèle de Machine Learning pour assister les physiciens médicaux, à partir de données DICOM (Keras, Pydicom, Scikit-learn).
+
+2022 à 2025
+
+### Diplôme d'ingénieur
+
+ENSICAEN, Caen
+
+Spécialité intelligence artificielle et traitement d'images.
+
+2020 à 2022
+
+### Classes préparatoires MPSI puis PSI
+
+Lycée Pothier, Orléans
+
+Contact
+
+## Vous recrutez un ingénieur IA junior ? Parlons-en.
+
+contact@anisahmedzaid.com
+
+Télécharger le CV
+LinkedIn
