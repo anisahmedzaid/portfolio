@@ -2,7 +2,7 @@
 
 > Version Markdown de https://anisahmedzaid.com/ pour les agents et les outils de lecture.
 > Ingénieur IA diplômé de l'ENSICAEN (2025), passé par ALTEN Labs. L'IA générative appliquée à de vrais problèmes d'entreprise.
-> Cherche un CDI d'ingénieur IA / ML en Île-de-France ou en remote ; ouvert aussi à des missions freelance.
+> Cherche un poste d'ingénieur IA / ML en Île-de-France ou en remote (CDI ou missions freelance).
 
 - CV (PDF) : https://anisahmedzaid.com/cv/CV-Anis-Ahmed-Zaid.pdf
 - LinkedIn : https://linkedin.com/in/anis-ahmed-zaid
@@ -12,7 +12,7 @@
 
 Je suis Anis Ahmed Zaid, ingénieur ENSICAEN (2025, IA et traitement d'images), passé par ALTEN Labs. Depuis septembre 2025, en indépendant, je conçois seul des outils d'IA générative et des automatisations pour des entreprises : tri d'emails par LLM, chatbot RAG, agent vocal, préparation de paie.
 
-Je cherche un CDI d'ingénieur IA / ML dans une équipe produit ou data, sur des systèmes utilisés à plus grande échelle.
+Je cherche maintenant à rejoindre une équipe produit ou data comme ingénieur IA / ML, sur des systèmes utilisés à plus grande échelle.
 
 ## Projets : trois clients, un projet d'école
 

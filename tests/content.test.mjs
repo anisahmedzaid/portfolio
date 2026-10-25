@@ -44,7 +44,7 @@ test('skim view (headings only) tells who, what and the proof', () => {
 
 test('first screen says who, where he trained and what he builds', () => {
   const hero = main.slice(0, main.indexOf('<section'));
-  for (const proof of ['ENSICAEN', 'ALTEN Labs', 'IA générative', 'CDI']) {
+  for (const proof of ['ENSICAEN', 'ALTEN Labs', 'IA générative', 'ingénieur IA / ML']) {
     assert.ok(text(hero).includes(proof), proof);
   }
 });
