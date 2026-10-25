@@ -78,7 +78,7 @@ test('portrait is on the page and in the Person JSON-LD', () => {
   const person = JSON.parse(block)['@graph'].find((n) => n['@type'] === 'Person');
   assert.match(person.image.url, /^https:\/\/anisahmedzaid\.com\/img\/.+\.jpg$/);
   const local = person.image.url.replace('https://anisahmedzaid.com/', '');
-  for (const f of [local, ...[...html.matchAll(/\/(img\/[^ "]+\.(?:jpg|webp))/g)].map((m) => m[1])]) {
+  for (const f of [local, ...[...html.matchAll(/\/(img\/[^ "]+\.(?:jpg|png|webp))/g)].map((m) => m[1])]) {
     assert.ok(existsSync(new URL(f, root)), f);
   }
 });
