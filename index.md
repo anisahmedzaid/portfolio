@@ -12,13 +12,6 @@
 
 Je suis Anis Ahmed Zaid, ingénieur ENSICAEN (2025, IA et traitement d'images), passé par ALTEN Labs. Depuis septembre 2025, en indépendant, je conçois seul des outils d'IA générative et des automatisations pour des entreprises : tri d'emails par LLM, chatbot RAG, agent vocal, préparation de paie.
 
-**En bref**
-
-- **16/16** emails de recette traités correctement par l'assistant email
-- **100 %** local : un modèle open source sur un serveur privé, sans API externe
-- **2** automatisations en production chez des clients
-- **3e** au hackathon LCL Paris, en 26 heures
-
 Je cherche un CDI d'ingénieur IA / ML dans une équipe produit ou data, sur des systèmes utilisés à plus grande échelle.
 
 ## Projets : trois clients, un projet d'école

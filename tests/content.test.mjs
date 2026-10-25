@@ -42,9 +42,9 @@ test('skim view (headings only) tells who, what and the proof', () => {
   }
 });
 
-test('first screen states concrete proof points', () => {
+test('first screen says who, where he trained and what he builds', () => {
   const hero = main.slice(0, main.indexOf('<section'));
-  for (const proof of ['16/16', '100 %', 'en production', 'hackathon LCL', 'ALTEN Labs', 'IA générative']) {
+  for (const proof of ['ENSICAEN', 'ALTEN Labs', 'IA générative', 'CDI']) {
     assert.ok(text(hero).includes(proof), proof);
   }
 });
