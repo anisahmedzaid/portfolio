@@ -44,7 +44,7 @@ test('skim view (headings only) tells who, what and the proof', () => {
 
 test('first screen states concrete proof points', () => {
   const hero = main.slice(0, main.indexOf('<section'));
-  for (const proof of ['16/16', '100 %', 'En prod', 'hackathon LCL', 'ALTEN Labs', 'IA générative']) {
+  for (const proof of ['16/16', '100 %', 'en production', 'hackathon LCL', 'ALTEN Labs', 'IA générative']) {
     assert.ok(text(hero).includes(proof), proof);
   }
 });

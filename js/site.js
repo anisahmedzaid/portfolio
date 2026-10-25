@@ -35,25 +35,28 @@ if (themeBtn) {
 // Demo 01 · email triage (fictional emails, precomputed outputs)
 const MAILS = [
   {
-    from: 'Cabinet Martin',
-    subject: 'Facture de mars introuvable',
-    category: 'Facturation',
-    summary: "Le client n'a pas reçu la facture de mars et demande qu'on la lui renvoie.",
-    draft: "Bonjour,\n\nMerci pour votre message. Vous trouverez ci-joint la facture de mars ([numéro de facture à compléter]).\n\nN'hésitez pas à revenir vers nous si besoin.\n\nCordialement",
+    from: 'Gestion Lavoie',
+    subject: 'Bacs non ramassés depuis lundi',
+    category: 'Ramassage manqué',
+    tone: 'Frustré',
+    summary: "Les bacs de l'immeuble n'ont pas été vidés lundi. Le gestionnaire demande un passage rapide.",
+    draft: "Bonjour,\n\nMerci de nous avoir signalé ce ramassage manqué, et toutes nos excuses pour le désagrément. Nous organisons un nouveau passage le [date de passage à compléter].\n\nCordialement",
   },
   {
-    from: 'Julie R.',
-    subject: 'Disponibilités semaine prochaine ?',
-    category: 'Demande de rendez-vous',
-    summary: 'Une prospecte souhaite un rendez-vous la semaine prochaine pour présenter son projet.',
-    draft: "Bonjour Julie,\n\nMerci pour votre intérêt. Nous pouvons vous proposer les créneaux suivants : [créneaux à proposer].\n\nDites-nous celui qui vous convient le mieux.\n\nCordialement",
+    from: 'David Miller',
+    subject: 'When is my next pickup?',
+    category: 'Faible priorité',
+    tone: 'Neutre',
+    summary: 'Un client demande la date de son prochain ramassage.',
+    draft: "Hello David,\n\nThank you for your message. Your next pickup is scheduled on [date à compléter]. Feel free to reach out if you need anything else.\n\nBest regards",
   },
   {
-    from: 'M. Bernard',
-    subject: 'Commande reçue incomplète',
-    category: 'Réclamation',
-    summary: 'Le client signale une commande livrée incomplète et attend une solution.',
-    draft: "Bonjour,\n\nNous sommes désolés pour ce désagrément. Pour traiter votre demande au plus vite, pourriez-vous nous indiquer [référence de la commande à vérifier] ?\n\nNous revenons vers vous dès que possible.\n\nCordialement",
+    from: 'Résidences du Parc',
+    subject: 'Demande de soumission pour 3 immeubles',
+    category: 'Nouveau client',
+    tone: 'Neutre',
+    summary: 'Un propriétaire demande un devis pour la collecte de trois immeubles.',
+    draft: "Bonjour,\n\nMerci pour votre demande. Pour vous préparer une soumission, pourriez-vous nous préciser [nombre de logements et fréquence souhaitée à compléter] ?\n\nCordialement",
   },
 ];
 
@@ -69,6 +72,7 @@ if (inbox && mailOut) {
     mailOut.innerHTML = `
       <div class="fade">
         <div class="row"><span>Catégorie</span><span><span class="tag">${esc(m.category)}</span></span></div>
+        <div class="row"><span>Ton</span><span>${esc(m.tone)}</span></div>
         <div class="row"><span>Résumé</span><span>${esc(m.summary)}</span></div>
         <div class="draft">${draft}</div>
         <div class="draft-state">Brouillon enregistré, en attente de relecture. Rien n'a été envoyé.</div>

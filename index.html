@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anis Ahmed Zaid · Ingénieur IA (LLM, RAG, agents)</title>
 
-  <meta name="description" content="Anis Ahmed Zaid, ingénieur IA (ENSICAEN 2025, ex-ALTEN Labs) : IA générative, LLM, RAG et agents, testés avant livraison. Projets, parcours et CV.">
+  <meta name="description" content="Anis Ahmed Zaid, ingénieur IA (ENSICAEN 2025, ex-ALTEN Labs) : assistant email par LLM, chatbot RAG, agents, automatisations. Projets, parcours et CV.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://anisahmedzaid.com/">
   <link rel="alternate" hreflang="fr" href="https://anisahmedzaid.com/">
@@ -148,16 +148,16 @@
         <source type="image/webp" srcset="/img/anis-ahmed-zaid-480.webp 480w, /img/anis-ahmed-zaid-800.webp 800w" sizes="(max-width: 860px) 140px, 220px">
         <img src="/img/anis-ahmed-zaid-480.png" width="480" height="480" alt="Portrait d'Anis Ahmed Zaid, ingénieur IA" fetchpriority="high">
       </picture>
-      <h1><span class="sr-only">Anis Ahmed Zaid, </span>Ingénieur IA.<br><em>Du prototype LLM à l'outil livré et testé.</em></h1>
+      <h1><span class="sr-only">Anis Ahmed Zaid, </span>Ingénieur IA.<br><em>L'IA générative appliquée à de vrais problèmes d'entreprise.</em></h1>
       <p class="intro">
         Je suis Anis Ahmed Zaid, ingénieur ENSICAEN (2025, IA et traitement d'images), passé par ALTEN Labs.
-        Depuis septembre 2025, en indépendant, je conçois seul des outils d'IA générative pour des PME :
-        RAG, agents, traitement d'emails, avec des modèles hébergés ou 100 % locaux.
+        Depuis septembre 2025, en indépendant, je conçois seul des outils d'IA générative et des automatisations
+        pour des entreprises : tri d'emails par LLM, chatbot RAG, agent vocal, préparation de paie.
       </p>
       <ul class="proof" aria-label="En bref">
-        <li><b>16/16</b>scénarios de recette validés avant livraison</li>
-        <li><b>100 %</b>local avec Ollama pour un client sensible à la confidentialité</li>
-        <li><b>En prod</b>automatisation de la paie, utilisée chaque mois</li>
+        <li><b>16/16</b>emails de recette traités correctement par l'assistant email</li>
+        <li><b>100 %</b>local : un modèle open source sur un serveur privé, sans API externe</li>
+        <li><b>2</b>automatisations en production chez des clients</li>
         <li><b>3<sup>e</sup></b>au hackathon LCL Paris, en 26 heures</li>
       </ul>
       <p class="intro">
@@ -177,27 +177,28 @@
         <div class="section-head">
           <div class="label">Projets</div>
           <div>
-            <h2>Projets : du besoin à l'outil livré</h2>
-            <p>Deux outils d'IA générative livrés à des clients, une automatisation en production et un projet
-              de recherche multimodale. Pour chacun : le problème, mes choix techniques, le résultat.</p>
+            <h2>Projets : trois clients, un projet d'école</h2>
+            <p>Pour chacun : le contexte, ce que j'ai construit, comment je l'ai vérifié.</p>
           </div>
         </div>
 
         <!-- 01 Email -->
         <article class="case">
-          <div class="meta"><span class="num">01</span>Livré au client<br>PME</div>
+          <div class="meta"><span class="num">01</span>Livré au client<br>Juin 2026</div>
           <div class="body">
-            <h3>Assistant email par LLM : tri en 10 catégories et brouillons relus par un humain</h3>
-            <p class="lede">Une boîte mail professionnelle reçoit trop de messages pour être traitée à la main.
-              Le but : gagner du temps sans jamais laisser un modèle répondre seul à un client.</p>
-            <p>Chaque email est classé dans l'une de 10 catégories métier, résumé, puis le modèle rédige un brouillon.
-              Rien ne part automatiquement : une personne relit, corrige et envoie. Les consignes du modèle
-              (prompt engineering) l'empêchent d'inventer des informations absentes de l'email.</p>
+            <h3>Assistant email par LLM pour une entreprise de collecte de déchets au Québec</h3>
+            <p class="lede">Plaintes, ramassages manqués, demandes de devis : les emails arrivaient en vrac.
+              Le but : ne plus perdre de clients sur des emails restés sans réponse.</p>
+            <p>À chaque email reçu, le système le classe dans l'une de 10 catégories métier (urgent, plainte, ramassage
+              manqué, nouveau client…), résume le problème et le ton du client, puis range l'email sous le bon libellé Gmail. Il prépare aussi
+              un brouillon de réponse dans la langue du client, en français ou en anglais.
+              Aucun email ne part seul : le workflow ne contient tout simplement aucune étape d'envoi.</p>
             <dl class="facts">
-              <dt>Mon rôle</dt><dd>Seul, du cadrage avec le client à la livraison</dd>
-              <dt>Résultat</dt><dd>16 scénarios de recette sur 16 validés avant la livraison</dd>
-              <dt>Choix clé</dt><dd>Une version 100 % locale avec Ollama, pour un client qui ne voulait pas que ses emails sortent de chez lui</dd>
-              <dt>Outils</dt><dd>LLM via API et en local (Ollama), classification, NLP</dd>
+              <dt>Mon rôle</dt><dd>Seul, du cadrage avec le client à la livraison (workflow et guide d'installation)</dd>
+              <dt>Recette</dt><dd>16 emails de test sur 16 traités correctement : 10 catégories exactes, aucune date ni promesse inventée, réponses en français et en anglais</dd>
+              <dt>Robustesse</dt><dd>Un bug de concurrence trouvé en recette (deux emails dans la même minute) puis corrigé ; validé ensuite sur 20 emails simultanés, sans perte</dd>
+              <dt>Choix clé</dt><dd>Un modèle open source (Qwen 2.5) exécuté en local avec Ollama sur un serveur privé : les emails ne partent vers aucune API d'IA externe</dd>
+              <dt>Outils</dt><dd>n8n, Ollama, Gmail API, Telegram, prompt engineering</dd>
             </dl>
 
             <figure class="demo" aria-labelledby="mail-title">
@@ -207,26 +208,28 @@
                 <div class="mail-out" id="mailOut" aria-live="polite"></div>
               </div>
               <figcaption>Exemple illustratif : emails fictifs, réponses préparées à l'avance pour la démo.
-                Les vraies catégories et données du client restent privées.</figcaption>
+                Les catégories et le format « [à compléter] » sont ceux du vrai système ; les données du client restent privées.</figcaption>
             </figure>
           </div>
         </article>
 
         <!-- 02 RAG + voix -->
         <article class="case">
-          <div class="meta"><span class="num">02</span>Livré au client<br>Organisme de formation</div>
+          <div class="meta"><span class="num">02</span>Livré au client<br>Mai 2026</div>
           <div class="body">
-            <h3>Chatbot RAG sur la base documentaire d'un organisme de formation, et agent vocal d'accueil</h3>
-            <p class="lede">Les réponses aux questions courantes existent déjà dans les documents
-              de l'organisme. Encore faut-il les retrouver, par écrit comme au téléphone.</p>
-            <p>J'ai construit un chatbot RAG : les documents sont découpés, transformés en embeddings et stockés dans
-              une base vectorielle Supabase. À chaque question, le système retrouve les passages utiles et le LLM
-              répond à partir d'eux. Les données en tableau sont interrogées en SQL plutôt que par similarité.
-              J'ai aussi construit un agent vocal temps réel pour l'accueil téléphonique (Retell, ElevenLabs).</p>
+            <h3>Chatbot RAG et agent vocal pour un centre de formation en médecines alternatives</h3>
+            <p class="lede">Les visiteurs posaient les mêmes questions, alors que les réponses existaient déjà
+              dans les documents du centre (PDF, tableaux Excel ou CSV).</p>
+            <p>Une chaîne d'ingestion lit les documents depuis Google Drive (PDF, Excel, CSV), les découpe,
+              calcule leurs embeddings et les range dans une base vectorielle Supabase ; les tableaux sont stockés
+              ligne par ligne pour être interrogés en SQL. Côté conversation, un agent choisit son outil selon la
+              question : recherche sémantique, lecture d'un document entier ou requête SQL, avec une mémoire
+              de conversation. Le chatbot s'ajoute au site du client avec une seule balise script.
+              J'ai aussi conçu l'agent vocal d'accueil téléphonique (Retell, ElevenLabs).</p>
             <dl class="facts">
-              <dt>Mon rôle</dt><dd>Seul, de la conception à la livraison</dd>
-              <dt>Choix clé</dt><dd>Chaque question va vers la bonne source : recherche vectorielle pour le texte, SQL pour les tableaux</dd>
-              <dt>Outils</dt><dd>Embeddings, Supabase, SQL, OpenAI, n8n, Retell, ElevenLabs</dd>
+              <dt>Mon rôle</dt><dd>Seul, de la conception à la livraison du code et des guides</dd>
+              <dt>Choix clé</dt><dd>Un agent qui choisit entre recherche vectorielle et SQL : le texte et les tableaux ne se cherchent pas de la même façon</dd>
+              <dt>Outils</dt><dd>n8n, OpenAI (chat et embeddings), Supabase, PostgreSQL, Retell, ElevenLabs, JavaScript, PHP</dd>
             </dl>
 
             <figure class="demo" aria-labelledby="rag-title">
@@ -249,16 +252,18 @@
 
         <!-- 03 Paie -->
         <article class="case">
-          <div class="meta"><span class="num">03</span>En production<br>Depuis plusieurs mois</div>
+          <div class="meta"><span class="num">03</span>En production<br>Depuis mai 2026</div>
           <div class="body">
-            <h3>Paie automatisée en production, utilisée chaque mois par le client</h3>
-            <p class="lede">Moins visible qu'un chatbot, mais c'est l'outil qui tourne vraiment :
-              chaque mois, il remplace quelques heures de préparation manuelle.</p>
-            <p>J'ai automatisé la préparation mensuelle de la paie avec Google Apps Script. Elle est en production
-              chez le client depuis plusieurs mois. Une veille concurrentielle automatisée tourne aussi chez un client.</p>
+            <h3>Préparation des salaires automatisée, en production pour une société de portage salarial</h3>
+            <p class="lede">Chaque mois, il fallait reprendre l'export de paie à la main pour préparer les fichiers
+              de salaires et la commande de titres-restaurant.</p>
+            <p>J'ai écrit un script Google Apps Script qui transforme l'export de paie en un tableau consolidé
+              (brut, charges, coût global par salarié) et remplit la commande de titres-restaurant.
+              Il est livré avec une batterie de tests et tourne en production depuis mai 2026.</p>
             <dl class="facts">
               <dt>Résultat</dt><dd>Quelques heures de travail manuel économisées chaque mois</dd>
-              <dt>Outils</dt><dd>Google Apps Script, Google APIs</dd>
+              <dt>Fiabilité</dt><dd>Livré avec une batterie de tests sur des fichiers de paie de démonstration</dd>
+              <dt>Outils</dt><dd>Google Apps Script, Google Sheets, JavaScript, Python (tests)</dd>
             </dl>
           </div>
         </article>
@@ -305,9 +310,13 @@
         <div class="also">
           <div class="label">Aussi</div>
           <ul>
+            <li><b>Veille concurrentielle hebdomadaire, en production.</b> Un workflow n8n qui suit les concurrents
+              d'une entreprise de marketing et produit une synthèse chaque semaine.</li>
+            <li><b>Audit des justificatifs comptables par LLM.</b> Chaque mois, repérer dans les emails factures et reçus,
+              extraire émetteur, date et montant, signaler les pièces manquantes et préparer l'envoi au comptable.
+              Livré à la société de portage.</li>
             <li><b>Hackathon LCL Paris, 3<sup>e</sup> place (sept. 2024).</b> Un prototype de chatbot expert des cartes bancaires,
               développé en 26 heures avec Gemini sur Google Cloud.</li>
-            <li><b>Audit automatique de justificatifs.</b> Livré à un client PME.</li>
           </ul>
         </div>
       </div>
@@ -323,15 +332,15 @@
         <div class="principles">
           <div>
             <h3>Tester avant de livrer</h3>
-            <p>Un système LLM se valide sur des cas concrets écrits à l'avance, pas sur une impression : 16 scénarios sur 16 pour l'assistant email.</p>
+            <p>Un système LLM se valide sur des cas concrets écrits à l'avance, pas sur une impression : 16 emails de test pour l'assistant, cas limites compris.</p>
           </div>
           <div>
             <h3>Garder l'humain dans la boucle</h3>
-            <p>Sur les actions qui engagent, le modèle prépare et une personne décide. Aucun email ne part sans relecture.</p>
+            <p>Sur les actions qui engagent, le modèle prépare et une personne décide. Si une information manque, le brouillon écrit « [à compléter] » au lieu de l'inventer.</p>
           </div>
           <div>
             <h3>Choisir le modèle pour le besoin</h3>
-            <p>Coût, latence, confidentialité : selon le client, un modèle via API ou un modèle local avec Ollama.</p>
+            <p>Coût, latence, confidentialité : selon le client, un modèle via API (OpenAI) ou un modèle open source en local avec Ollama.</p>
           </div>
         </div>
       </div>
@@ -349,13 +358,13 @@
         <table class="skills">
           <tbody>
             <tr><th>LLM : OpenAI, Claude, Gemini, Ollama</th><td>Assistant email, chatbot RAG, agents chez ALTEN, hackathon LCL<small>API hébergées et modèles locaux</small></td></tr>
-            <tr><th>IA générative et prompt engineering</th><td>Consignes anti-invention et sorties structurées de l'assistant email<small>Catégorie, résumé et brouillon pour chaque email</small></td></tr>
+            <tr><th>IA générative et prompt engineering</th><td>Assistant email : catégorie, résumé, ton et brouillon en une sortie JSON, consignes anti-invention<small>Audit des justificatifs comptables par LLM</small></td></tr>
             <tr><th>RAG et embeddings</th><td>Chatbot de l'organisme de formation, recherche CLIP sur la Tapisserie<small>Supabase comme base vectorielle</small></td></tr>
-            <tr><th>Agents et NLP</th><td>Prototype de pilotage d'agents en langage naturel chez ALTEN Labs, agent vocal d'accueil (Retell), classification d'emails</td></tr>
+            <tr><th>Agents et NLP</th><td>Agent RAG qui choisit ses outils (recherche vectorielle, SQL), prototype de pilotage d'agents chez ALTEN Labs, agent vocal (Retell), classification d'emails</td></tr>
             <tr><th>Prototypage rapide</th><td>Chatbot en 26 heures au hackathon LCL (3<sup>e</sup> place), prototype de recherche chez ALTEN Labs</td></tr>
             <tr><th>Machine Learning et vision</th><td>Modèle d'aide à la radiothérapie (données DICOM), spécialité traitement d'images à l'ENSICAEN<small>TensorFlow / Keras, Scikit-learn, Pandas, NumPy</small></td></tr>
             <tr><th>Python et SQL</th><td>Python sur tous les projets, SQL pour les données structurées du chatbot</td></tr>
-            <tr><th>Outils</th><td>Supabase, n8n, Git, GCP, Docker (bases)</td></tr>
+            <tr><th>Automatisation et outils</th><td>n8n (workflows en production), Google Apps Script, Supabase, Git, GCP, Docker (bases)</td></tr>
             <tr><th>Langues</th><td>Français (natif), anglais (C1), arabe (B2)</td></tr>
           </tbody>
         </table>
@@ -375,7 +384,7 @@
             <div>
               <h3>Ingénieur IA indépendant</h3>
               <div class="where">Île-de-France</div>
-              <p>Conception et livraison d'outils d'IA générative et d'automatisations pour des PME, du cadrage à la recette : projets 01 à 03. Deux automatisations sont en production chez les clients.</p>
+              <p>Conception et livraison d'outils d'IA générative et d'automatisations pour des entreprises, du cadrage à la recette : projets 01 à 03. Deux automatisations sont en production chez les clients (paie et veille concurrentielle).</p>
             </div>
           </li>
           <li>

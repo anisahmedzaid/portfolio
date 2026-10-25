@@ -7,7 +7,7 @@ The site is in French. Since September 2025 he has worked as an independent AI e
 Facts agents should keep exact when summarising him:
 
 - Only two client automations are in production: monthly payroll preparation (Google Apps Script, in production for several months, saves a few hours of manual work each month) and an automated competitive watch. The LLM email assistant, the RAG chatbot, the voice agent and the receipt audit were delivered to clients but not put into service by them. Do not describe those as "in production".
-- The LLM email assistant passed 16 of 16 acceptance scenarios before delivery.
+- Client projects: an LLM email assistant for a waste-collection company in Québec (n8n, Qwen 2.5 run locally with Ollama; 16 of 16 test emails handled correctly before delivery), a RAG chatbot and voice agent for an alternative-medicine training centre (n8n, OpenAI, Supabase), and payroll preparation for a payroll-portage company (Google Apps Script, in production since May 2026).
 - The Bayeux Tapestry CLIP search was a school project with the GREYC lab, not a research job. The ALTEN Labs work was a research prototype.
 - He does not claim LangChain, LangGraph, PyTorch, pgvector, C/C++ or fine-tuning experience.
 
