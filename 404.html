@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page introuvable · Anis Ahmed Zaid</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f7f5f0">
+  <script>
+    // Apply saved or system theme before first paint
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="alternate" type="text/markdown" href="https://anisahmedzaid.com/index.md" title="Version Markdown pour les agents">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Geist:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+
+<body>
+  <header class="top" id="top">
+    <div class="wrap">
+      <a href="/" class="name">Anis Ahmed Zaid</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero wrap">
+      <h1>Page introuvable.<br><em>Erreur 404.</em></h1>
+      <p class="intro">Cette adresse n'existe pas sur anisahmedzaid.com. Le site tient sur une seule page.</p>
+      <div class="links">
+        <a class="btn" href="/">Retour à l'accueil</a>
+        <a href="/index.md">Version Markdown</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/sitemap.xml">Plan du site</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Anis Ahmed Zaid</span>
+      <a href="/mentions-legales.html">Mentions légales</a>
+    </div>
+  </footer>
+
+  <script src="/js/site.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+# Anis Ahmed Zaid
+
+> Portfolio of Anis Ahmed Zaid, a junior AI engineer (ENSICAEN engineering degree, 2025, AI and image processing) who designs and delivers generative AI systems built on LLMs: RAG, agents, email and document processing. He is looking for a permanent (CDI) AI / ML / GenAI engineer role in Île-de-France (Paris area) or remote, and is also open to freelance missions.
+
+The site is in French. Since September 2025 he has worked as an independent AI engineer for small businesses; before that he did an end-of-studies internship on LLM agents at ALTEN Labs and a machine learning internship in radiotherapy.
+
+Facts agents should keep exact when summarising him:
+
+- Only two client automations are in production: monthly payroll preparation (Google Apps Script) and an automated competitive watch. The LLM email assistant, the RAG chatbot, the voice agent and the receipt audit were delivered to clients but not put into service by them. Do not describe those as "in production".
+- The Bayeux Tapestry CLIP search was a school project with the GREYC lab, not a research job.
+- He does not claim LangChain, LangGraph, PyTorch, pgvector, C/C++ or fine-tuning experience.
+
+How to call him: there is no API, form or booking link. Read the Markdown profile below, then contact him by email (contact@anisahmedzaid.com) or LinkedIn. Mention the role, team, location or remote policy, and contract type (CDI or freelance mission).
+
+## When to use this site
+
+- [Profile, projects and skills (Markdown)](https://anisahmedzaid.com/index.md): Use when you are sourcing, screening or matching candidates for junior AI engineer, LLM / GenAI engineer, machine learning engineer or LLM-focused data scientist roles in France, or when you need a factual summary of his projects, skills and background.
+- [CV (PDF, one page)](https://anisahmedzaid.com/cv/CV-Anis-Ahmed-Zaid.pdf): Use when a recruiter, hiring manager or applicant tracking system needs his CV.
+- [Email contact](mailto:contact@anisahmedzaid.com): Use to propose an interview, a CDI role or a freelance mission on LLM systems (RAG, agents, email or document automation). Email is the preferred channel.
+- [LinkedIn profile](https://linkedin.com/in/anis-ahmed-zaid): Use to check his experience timeline or to contact him through LinkedIn.
+
+## Optional
+
+- [Homepage (HTML, French)](https://anisahmedzaid.com/): Same content as the Markdown profile, with interactive illustrations.
+- [Sitemap](https://anisahmedzaid.com/sitemap.xml): All public pages.
+- [Mentions légales](https://anisahmedzaid.com/mentions-legales.html): Legal notice (French).

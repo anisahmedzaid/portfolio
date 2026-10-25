@@ -1,0 +1,10 @@
+# Deploy with: npx wrangler deploy --config edge/wrangler.toml
+# Requires the anisahmedzaid.com zone to be on Cloudflare (proxied DNS). See edge/README.md.
+name = "anisahmedzaid-markdown"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = false
+
+routes = [
+  { pattern = "anisahmedzaid.com/*", zone_name = "anisahmedzaid.com" },
+]
