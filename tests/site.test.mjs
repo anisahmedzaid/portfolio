@@ -4,7 +4,8 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 
 const root = new URL('../', import.meta.url);
-const read = (p) => readFileSync(new URL(p, root), 'utf8');
+// Git may check files out with CRLF on Windows; GitHub Pages serves the LF version.
+const read = (p) => readFileSync(new URL(p, root), 'utf8').replace(/\r\n/g, '\n');
 const SITE = 'https://anisahmedzaid.com';
 
 test('.nojekyll is present so .md and .txt files are served raw', () => {
@@ -48,18 +49,38 @@ test('homepage advertises the Markdown twin and llms.txt', () => {
   assert.match(html, /href="https:\/\/anisahmedzaid\.com\/llms\.txt"/);
 });
 
-test('Person JSON-LD is valid and has a description', () => {
+test('JSON-LD is a ProfilePage whose main entity is the Person, with a description', () => {
   const html = read('index.html');
   const block = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1];
-  const data = JSON.parse(block);
-  assert.equal(data['@type'], 'Person');
-  assert.equal(data.name, 'Anis Ahmed Zaid');
-  assert.ok(typeof data.description === 'string' && data.description.length > 50);
+  const { '@graph': graph } = JSON.parse(block);
+  const byType = Object.fromEntries(graph.map((n) => [n['@type'], n]));
+  const person = byType.Person;
+  assert.equal(person.name, 'Anis Ahmed Zaid');
+  assert.ok(typeof person.description === 'string' && person.description.length > 50);
+  assert.equal(byType.ProfilePage.mainEntity['@id'], person['@id']);
+  assert.equal(byType.ProfilePage.isPartOf['@id'], byType.WebSite['@id']);
 });
 
-test('h1 carries the brand name for search engines', () => {
-  assert.match(read('index.html'), /<h1><span class="sr-only">Anis Ahmed Zaid, <\/span>Ingénieur IA\./);
+test('brand name is in the title, h1 and visible intro', () => {
+  const html = read('index.html');
+  assert.match(html, /<title>Anis Ahmed Zaid · /);
+  assert.match(html, /<h1><span class="sr-only">Anis Ahmed Zaid, <\/span>Ingénieur IA\./);
+  assert.match(html, /Je suis Anis Ahmed Zaid, diplômé de l'ENSICAEN/);
   assert.match(read('css/site.css'), /\.sr-only \{/);
+});
+
+test('meta description is under 160 characters and names the person', () => {
+  const desc = read('index.html').match(/<meta name="description" content="([^"]*)">/)[1];
+  assert.ok(desc.length <= 160, `${desc.length} chars`);
+  assert.match(desc, /^Anis Ahmed Zaid/);
+});
+
+test('sitemap only lists indexable pages', () => {
+  const locs = [...read('sitemap.xml').matchAll(/<loc>https:\/\/anisahmedzaid\.com\/(.*?)<\/loc>/g)].map((m) => m[1]);
+  assert.ok(locs.includes(''));
+  for (const path of locs.filter(Boolean)) {
+    assert.doesNotMatch(read(path), /<meta name="robots" content="noindex/, `${path} is noindex`);
+  }
 });
 
 test('custom 404 page explains the error and links to agent resources', () => {

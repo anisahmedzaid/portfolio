@@ -3,25 +3,5 @@
   <url>
     <loc>https://anisahmedzaid.com/</loc>
     <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://anisahmedzaid.com/mentions-legales.html</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://anisahmedzaid.com/privacy-policy.html</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://anisahmedzaid.com/terms-of-service.html</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 </urlset>
