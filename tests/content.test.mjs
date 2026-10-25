@@ -64,3 +64,10 @@ test('copy has no long dashes and no runaway sentences', () => {
   const longest = Math.max(...paragraphs.flatMap((p) => p.split(/(?<=[.!?])\s+/)).map((s) => s.trim().split(' ').length));
   assert.ok(longest <= 45, `longest sentence ${longest} words`);
 });
+
+test('French punctuation: no-break space before : ; ? ! and no stray control characters', () => {
+  const raw = main.replace(/<[^>]+>/g, '\n');
+  assert.doesNotMatch(raw, /[\u0000-\u0008\u000b\u000c\u000e-\u001f]/, 'control character in page text');
+  const bad = raw.match(/ [:;?!»]/g) || [];
+  assert.equal(bad.length, 0, `${bad.length} ordinary spaces before high punctuation`);
+});

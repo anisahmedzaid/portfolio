@@ -152,7 +152,7 @@
       <p class="intro">
         Je suis Anis Ahmed Zaid, ingénieur ENSICAEN (2025, IA et traitement d'images), passé par ALTEN Labs.
         Depuis septembre 2025, en indépendant, je conçois seul des outils d'IA générative et des automatisations
-        pour des entreprises : tri d'emails par LLM, chatbot RAG, agent vocal, préparation de paie.
+        pour des entreprises : tri d'emails par LLM, chatbot RAG, agent vocal, préparation de paie.
       </p>
       <p class="intro">
         Je cherche un CDI d'ingénieur IA / ML dans une équipe produit ou data,
@@ -171,8 +171,8 @@
         <div class="section-head">
           <div class="label">Projets</div>
           <div>
-            <h2>Projets : trois clients, un projet d'école</h2>
-            <p>Pour chacun : le contexte, ce que j'ai construit, comment je l'ai vérifié.</p>
+            <h2>Projets : trois clients, un projet d'école</h2>
+            <p>Pour chacun : le contexte, ce que j'ai construit, comment je l'ai vérifié.</p>
           </div>
         </div>
 
@@ -181,17 +181,17 @@
           <div class="meta"><span class="num">01</span>Livré au client<br>Juin 2026</div>
           <div class="body">
             <h3>Assistant email par LLM pour une entreprise de collecte de déchets au Québec</h3>
-            <p class="lede">Plaintes, ramassages manqués, demandes de devis : les emails arrivaient en vrac.
-              Le but : ne plus perdre de clients sur des emails restés sans réponse.</p>
+            <p class="lede">Plaintes, ramassages manqués, demandes de devis : les emails arrivaient en vrac.
+              Le but : ne plus perdre de clients sur des emails restés sans réponse.</p>
             <p>À chaque email reçu, le système le classe dans l'une de 10 catégories métier (urgent, plainte, ramassage
               manqué, nouveau client…), résume le problème et le ton du client, puis range l'email sous le bon libellé Gmail. Il prépare aussi
               un brouillon de réponse dans la langue du client, en français ou en anglais.
-              Aucun email ne part seul : le workflow ne contient tout simplement aucune étape d'envoi.</p>
+              Aucun email ne part seul : le workflow ne contient tout simplement aucune étape d'envoi.</p>
             <dl class="facts">
               <dt>Mon rôle</dt><dd>Seul, du cadrage avec le client à la livraison (workflow et guide d'installation)</dd>
-              <dt>Recette</dt><dd>16 emails de test sur 16 traités correctement : 10 catégories exactes, aucune date ni promesse inventée, réponses en français et en anglais</dd>
-              <dt>Robustesse</dt><dd>Un bug de concurrence trouvé en recette (deux emails dans la même minute) puis corrigé ; validé ensuite sur 20 emails simultanés, sans perte</dd>
-              <dt>Choix clé</dt><dd>Un modèle open source (Qwen 2.5) exécuté en local avec Ollama sur un serveur privé : les emails ne partent vers aucune API d'IA externe</dd>
+              <dt>Recette</dt><dd>16 emails de test sur 16 traités correctement : 10 catégories exactes, aucune date ni promesse inventée, réponses en français et en anglais</dd>
+              <dt>Robustesse</dt><dd>Un bug de concurrence trouvé en recette (deux emails dans la même minute) puis corrigé ; validé ensuite sur 20 emails simultanés, sans perte</dd>
+              <dt>Choix clé</dt><dd>Un modèle open source (Qwen 2.5) exécuté en local avec Ollama sur un serveur privé : les emails ne partent vers aucune API d'IA externe</dd>
               <dt>Outils</dt><dd>n8n, Ollama, Gmail API, Telegram, prompt engineering</dd>
             </dl>
 
@@ -201,8 +201,8 @@
                 <div class="inbox" id="inbox" role="group" aria-label="Emails d'exemple"></div>
                 <div class="mail-out" id="mailOut" aria-live="polite"></div>
               </div>
-              <figcaption>Exemple illustratif : emails fictifs, réponses préparées à l'avance pour la démo.
-                Les catégories et le format « [à compléter] » sont ceux du vrai système ; les données du client restent privées.</figcaption>
+              <figcaption>Exemple illustratif : emails fictifs, réponses préparées à l'avance pour la démo.
+                Les catégories et le format « [à compléter] » sont ceux du vrai système ; les données du client restent privées.</figcaption>
             </figure>
           </div>
         </article>
@@ -215,21 +215,21 @@
             <p class="lede">Les visiteurs posaient les mêmes questions, alors que les réponses existaient déjà
               dans les documents du centre (PDF, tableaux Excel ou CSV).</p>
             <p>Une chaîne d'ingestion lit les documents depuis Google Drive (PDF, Excel, CSV), les découpe,
-              calcule leurs embeddings et les range dans une base vectorielle Supabase ; les tableaux sont stockés
+              calcule leurs embeddings et les range dans une base vectorielle Supabase ; les tableaux sont stockés
               ligne par ligne pour être interrogés en SQL. Côté conversation, un agent choisit son outil selon la
-              question : recherche sémantique, lecture d'un document entier ou requête SQL, avec une mémoire
+              question : recherche sémantique, lecture d'un document entier ou requête SQL, avec une mémoire
               de conversation. Le chatbot s'ajoute au site du client avec une seule balise script.
               J'ai aussi conçu l'agent vocal d'accueil téléphonique (Retell, ElevenLabs).</p>
             <dl class="facts">
               <dt>Mon rôle</dt><dd>Seul, de la conception à la livraison du code et des guides</dd>
-              <dt>Choix clé</dt><dd>Un agent qui choisit entre recherche vectorielle et SQL : le texte et les tableaux ne se cherchent pas de la même façon</dd>
+              <dt>Choix clé</dt><dd>Un agent qui choisit entre recherche vectorielle et SQL : le texte et les tableaux ne se cherchent pas de la même façon</dd>
               <dt>Outils</dt><dd>n8n, OpenAI (chat et embeddings), Supabase, PostgreSQL, Retell, ElevenLabs, JavaScript, PHP</dd>
             </dl>
 
             <figure class="demo" aria-labelledby="rag-title">
               <div class="demo-title" id="rag-title">Comment une question est traitée</div>
               <div class="flow">
-                <div class="node"><b>Question</b><span>« Quelles sont les dates de la prochaine session ? »</span></div>
+                <div class="node"><b>Question</b><span>« Quelles sont les dates de la prochaine session ? »</span></div>
                 <div class="arrow" aria-hidden="true">→</div>
                 <div class="branch">
                   <div class="node"><b>Documents</b><span>embedding de la question, recherche des passages proches dans Supabase</span></div>
@@ -268,9 +268,9 @@
           <div class="body">
             <h3>Recherche multimodale texte-image dans la Tapisserie de Bayeux (CLIP)</h3>
             <p class="lede">La Tapisserie fait près de 70 mètres. Comment retrouver une scène sans la connaître,
-              juste en la décrivant, ou à partir d'une autre image ?</p>
+              juste en la décrivant, ou à partir d'une autre image ?</p>
             <p>J'ai utilisé CLIP, un modèle qui place textes et images dans un même espace de vecteurs.
-              Une description et une scène qui parlent de la même chose se retrouvent proches :
+              Une description et une scène qui parlent de la même chose se retrouvent proches :
               la recherche devient un calcul de similarité.</p>
             <dl class="facts">
               <dt>Outils</dt><dd>Python, OpenAI CLIP, embeddings, similarité vectorielle, computer vision</dd>
@@ -291,10 +291,10 @@
                   <g id="clipQ" class="q" transform="translate(260,160)"><rect x="-7" y="-7" width="14" height="14" rx="2" transform="rotate(45)"/></g>
                 </svg>
                 <div class="queries" id="queries">
-                  <p>Requête texte :</p>
+                  <p>Requête texte :</p>
                 </div>
               </div>
-              <figcaption>Schéma illustratif en 2D : les vrais embeddings CLIP ont des centaines de dimensions.
+              <figcaption>Schéma illustratif en 2D : les vrais embeddings CLIP ont des centaines de dimensions.
                 Les points sont des scènes de la Tapisserie, le losange est la requête.</figcaption>
             </figure>
           </div>
@@ -321,20 +321,20 @@
       <div class="wrap">
         <div class="section-head">
           <div class="label">Méthode</div>
-          <h2>Ma méthode : tester, garder l'humain, choisir le bon modèle</h2>
+          <h2>Ma méthode : tester, garder l'humain, choisir le bon modèle</h2>
         </div>
         <div class="principles">
           <div>
             <h3>Tester avant de livrer</h3>
-            <p>Un système LLM se valide sur des cas concrets écrits à l'avance, pas sur une impression : 16 emails de test pour l'assistant, cas limites compris.</p>
+            <p>Un système LLM se valide sur des cas concrets écrits à l'avance, pas sur une impression : 16 emails de test pour l'assistant, cas limites compris.</p>
           </div>
           <div>
             <h3>Garder l'humain dans la boucle</h3>
-            <p>Sur les actions qui engagent, le modèle prépare et une personne décide. Si une information manque, le brouillon écrit « [à compléter] » au lieu de l'inventer.</p>
+            <p>Sur les actions qui engagent, le modèle prépare et une personne décide. Si une information manque, le brouillon écrit « [à compléter] » au lieu de l'inventer.</p>
           </div>
           <div>
             <h3>Choisir le modèle pour le besoin</h3>
-            <p>Coût, latence, confidentialité : selon le client, un modèle via API (OpenAI) ou un modèle open source en local avec Ollama.</p>
+            <p>Coût, latence, confidentialité : selon le client, un modèle via API (OpenAI) ou un modèle open source en local avec Ollama.</p>
           </div>
         </div>
       </div>
@@ -351,8 +351,8 @@
         </div>
         <table class="skills">
           <tbody>
-            <tr><th>LLM : OpenAI, Claude, Gemini, Ollama</th><td>Assistant email, chatbot RAG, agents chez ALTEN, hackathon LCL<small>API hébergées et modèles locaux</small></td></tr>
-            <tr><th>IA générative et prompt engineering</th><td>Assistant email : catégorie, résumé, ton et brouillon en une sortie JSON, consignes anti-invention<small>Audit des justificatifs comptables par LLM</small></td></tr>
+            <tr><th>LLM : OpenAI, Claude, Gemini, Ollama</th><td>Assistant email, chatbot RAG, agents chez ALTEN, hackathon LCL<small>API hébergées et modèles locaux</small></td></tr>
+            <tr><th>IA générative et prompt engineering</th><td>Assistant email : catégorie, résumé, ton et brouillon en une sortie JSON, consignes anti-invention<small>Audit des justificatifs comptables par LLM</small></td></tr>
             <tr><th>RAG et embeddings</th><td>Chatbot de l'organisme de formation, recherche CLIP sur la Tapisserie<small>Supabase comme base vectorielle</small></td></tr>
             <tr><th>Agents et NLP</th><td>Agent RAG qui choisit ses outils (recherche vectorielle, SQL), prototype de pilotage d'agents chez ALTEN Labs, agent vocal (Retell), classification d'emails</td></tr>
             <tr><th>Prototypage rapide</th><td>Chatbot en 26 heures au hackathon LCL (3<sup>e</sup> place), prototype de recherche chez ALTEN Labs</td></tr>
@@ -378,7 +378,7 @@
             <div>
               <h3>Ingénieur IA indépendant</h3>
               <div class="where">Île-de-France</div>
-              <p>Conception et livraison d'outils d'IA générative et d'automatisations pour des entreprises, du cadrage à la recette : projets 01 à 03. Deux automatisations sont en production chez les clients (paie et veille concurrentielle).</p>
+              <p>Conception et livraison d'outils d'IA générative et d'automatisations pour des entreprises, du cadrage à la recette : projets 01 à 03. Deux automatisations sont en production chez les clients (paie et veille concurrentielle).</p>
             </div>
           </li>
           <li>
@@ -386,7 +386,7 @@
             <div>
               <h3>Ingénieur IA, stage de fin d'études</h3>
               <div class="where">ALTEN Labs, Rennes</div>
-              <p>Prototype de recherche : pilotage d'agents en langage naturel à base de LLM. Intégration de modèles locaux (Ollama) et hébergés (OpenAI), conteneurisation avec Docker.</p>
+              <p>Prototype de recherche : pilotage d'agents en langage naturel à base de LLM. Intégration de modèles locaux (Ollama) et hébergés (OpenAI), conteneurisation avec Docker.</p>
             </div>
           </li>
           <li>
@@ -422,7 +422,7 @@
         <div class="section-head">
           <div class="label">Contact</div>
           <div>
-            <h2>Vous recrutez un ingénieur IA junior ? Parlons-en.</h2>
+            <h2>Vous recrutez un ingénieur IA junior ? Parlons-en.</h2>
             <p class="open">Ouvert à un CDI comme à des missions en freelance, en Île-de-France ou en remote.</p>
             <a class="mail" href="mailto:contact@anisahmedzaid.com">contact@anisahmedzaid.com</a>
             <div class="links">
