@@ -69,6 +69,20 @@ test('brand name is in the title, h1 and visible intro', () => {
   assert.match(read('css/site.css'), /\.sr-only \{/);
 });
 
+test('portrait is on the page and in the Person JSON-LD', () => {
+  const html = read('index.html');
+  const img = html.match(/<picture class="portrait">[\s\S]*?<img ([^>]*)>/)[1];
+  assert.match(img, /alt="Portrait d'Anis Ahmed Zaid[^"]*"/);
+  assert.match(img, /width="\d+" height="\d+"/, 'explicit size avoids layout shift');
+  const block = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1];
+  const person = JSON.parse(block)['@graph'].find((n) => n['@type'] === 'Person');
+  assert.match(person.image.url, /^https:\/\/anisahmedzaid\.com\/img\/.+\.jpg$/);
+  const local = person.image.url.replace('https://anisahmedzaid.com/', '');
+  for (const f of [local, ...[...html.matchAll(/\/(img\/[^ "]+\.(?:jpg|webp))/g)].map((m) => m[1])]) {
+    assert.ok(existsSync(new URL(f, root)), f);
+  }
+});
+
 test('meta description is under 160 characters and names the person', () => {
   const desc = read('index.html').match(/<meta name="description" content="([^"]*)">/)[1];
   assert.ok(desc.length <= 160, `${desc.length} chars`);

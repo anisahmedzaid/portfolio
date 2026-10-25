@@ -8,6 +8,7 @@
 - LinkedIn : https://linkedin.com/in/anis-ahmed-zaid
 - Email : contact@anisahmedzaid.com
 - Guide pour les agents : https://anisahmedzaid.com/llms.txt
+- Photo : https://anisahmedzaid.com/img/anis-ahmed-zaid-800.jpg
 
 Je suis Anis Ahmed Zaid, diplômé de l'ENSICAEN en 2025 (spécialité IA et traitement d'images). Depuis septembre 2025, en indépendant, je conçois et livre des systèmes à base de LLM et des automatisations pour des PME, seul et de bout en bout.
 
