@@ -65,7 +65,7 @@ test('brand name is in the title, h1 and visible intro', () => {
   const html = read('index.html');
   assert.match(html, /<title>Anis Ahmed Zaid · /);
   assert.match(html, /<h1><span class="sr-only">Anis Ahmed Zaid, <\/span>Ingénieur IA\./);
-  assert.match(html, /Je suis Anis Ahmed Zaid, diplômé de l'ENSICAEN/);
+  assert.match(html, /Je suis Anis Ahmed Zaid, ingénieur ENSICAEN/);
   assert.match(read('css/site.css'), /\.sr-only \{/);
 });
 

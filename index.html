@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anis Ahmed Zaid · Ingénieur IA (LLM, RAG, agents)</title>
 
-  <meta name="description" content="Anis Ahmed Zaid, ingénieur IA (ENSICAEN 2025) : systèmes à base de LLM, RAG et agents. Projets, parcours et CV. Ouvert à un CDI en Île-de-France ou en remote.">
+  <meta name="description" content="Anis Ahmed Zaid, ingénieur IA (ENSICAEN 2025, ex-ALTEN Labs) : IA générative, LLM, RAG et agents, testés avant livraison. Projets, parcours et CV.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://anisahmedzaid.com/">
   <link rel="alternate" hreflang="fr" href="https://anisahmedzaid.com/">
@@ -148,14 +148,20 @@
         <source type="image/webp" srcset="/img/anis-ahmed-zaid-480.webp 480w, /img/anis-ahmed-zaid-800.webp 800w" sizes="(max-width: 860px) 140px, 220px">
         <img src="/img/anis-ahmed-zaid-480.png" width="480" height="480" alt="Portrait d'Anis Ahmed Zaid, ingénieur IA" fetchpriority="high">
       </picture>
-      <h1><span class="sr-only">Anis Ahmed Zaid, </span>Ingénieur IA.<br><em>Je construis des systèmes à base de LLM.</em></h1>
+      <h1><span class="sr-only">Anis Ahmed Zaid, </span>Ingénieur IA.<br><em>Du prototype LLM à l'outil livré et testé.</em></h1>
       <p class="intro">
-        Je suis Anis Ahmed Zaid, diplômé de l'ENSICAEN en 2025 (spécialité IA et traitement d'images).
-        Depuis septembre 2025, en indépendant, je conçois et livre des systèmes à base de LLM
-        et des automatisations pour des PME, seul et de bout en bout.
+        Je suis Anis Ahmed Zaid, ingénieur ENSICAEN (2025, IA et traitement d'images), passé par ALTEN Labs.
+        Depuis septembre 2025, en indépendant, je conçois seul des outils d'IA générative pour des PME :
+        RAG, agents, traitement d'emails, avec des modèles hébergés ou 100 % locaux.
       </p>
+      <ul class="proof" aria-label="En bref">
+        <li><b>16/16</b>scénarios de recette validés avant livraison</li>
+        <li><b>100 %</b>local avec Ollama pour un client sensible à la confidentialité</li>
+        <li><b>En prod</b>automatisation de la paie, utilisée chaque mois</li>
+        <li><b>3<sup>e</sup></b>au hackathon LCL Paris, en 26 heures</li>
+      </ul>
       <p class="intro">
-        Je cherche maintenant un poste d'ingénieur IA / ML dans une équipe produit ou data,
+        Je cherche un CDI d'ingénieur IA / ML dans une équipe produit ou data,
         sur des systèmes utilisés à plus grande échelle.
       </p>
       <div class="links">
@@ -171,9 +177,9 @@
         <div class="section-head">
           <div class="label">Projets</div>
           <div>
-            <h2>Ce que j'ai construit</h2>
-            <p>Deux systèmes livrés à des clients et un projet d'école. Pour chacun : le problème,
-              ce que j'ai fait, et une démo ou un schéma pour voir comment ça marche.</p>
+            <h2>Projets : du besoin à l'outil livré</h2>
+            <p>Deux outils d'IA générative livrés à des clients, une automatisation en production et un projet
+              de recherche multimodale. Pour chacun : le problème, mes choix techniques, le résultat.</p>
           </div>
         </div>
 
@@ -181,16 +187,17 @@
         <article class="case">
           <div class="meta"><span class="num">01</span>Livré au client<br>PME</div>
           <div class="body">
-            <h3>Un assistant qui trie les emails et prépare les réponses</h3>
+            <h3>Assistant email par LLM : tri en 10 catégories et brouillons relus par un humain</h3>
             <p class="lede">Une boîte mail professionnelle reçoit trop de messages pour être traitée à la main.
               Le but : gagner du temps sans jamais laisser un modèle répondre seul à un client.</p>
             <p>Chaque email est classé dans l'une de 10 catégories métier, résumé, puis le modèle rédige un brouillon.
-              Rien ne part automatiquement : une personne relit, corrige et envoie. Des garde-fous empêchent
-              le brouillon d'inventer des informations absentes de l'email.</p>
+              Rien ne part automatiquement : une personne relit, corrige et envoie. Les consignes du modèle
+              (prompt engineering) l'empêchent d'inventer des informations absentes de l'email.</p>
             <dl class="facts">
-              <dt>Validation</dt><dd>Recette sur 16 scénarios avant la livraison</dd>
-              <dt>Confidentialité</dt><dd>Une version 100 % locale avec Ollama, pour un client qui ne voulait pas que ses emails sortent de chez lui</dd>
-              <dt>Outils</dt><dd>LLM via API et en local (Ollama)</dd>
+              <dt>Mon rôle</dt><dd>Seul, du cadrage avec le client à la livraison</dd>
+              <dt>Résultat</dt><dd>16 scénarios de recette sur 16 validés avant la livraison</dd>
+              <dt>Choix clé</dt><dd>Une version 100 % locale avec Ollama, pour un client qui ne voulait pas que ses emails sortent de chez lui</dd>
+              <dt>Outils</dt><dd>LLM via API et en local (Ollama), classification, NLP</dd>
             </dl>
 
             <figure class="demo" aria-labelledby="mail-title">
@@ -209,7 +216,7 @@
         <article class="case">
           <div class="meta"><span class="num">02</span>Livré au client<br>Organisme de formation</div>
           <div class="body">
-            <h3>Un chatbot qui répond à partir des documents, et un agent vocal à l'accueil</h3>
+            <h3>Chatbot RAG sur la base documentaire d'un organisme de formation, et agent vocal d'accueil</h3>
             <p class="lede">Les réponses aux questions courantes existent déjà dans les documents
               de l'organisme. Encore faut-il les retrouver, par écrit comme au téléphone.</p>
             <p>J'ai construit un chatbot RAG : les documents sont découpés, transformés en embeddings et stockés dans
@@ -217,6 +224,8 @@
               répond à partir d'eux. Les données en tableau sont interrogées en SQL plutôt que par similarité.
               J'ai aussi construit un agent vocal temps réel pour l'accueil téléphonique (Retell, ElevenLabs).</p>
             <dl class="facts">
+              <dt>Mon rôle</dt><dd>Seul, de la conception à la livraison</dd>
+              <dt>Choix clé</dt><dd>Chaque question va vers la bonne source : recherche vectorielle pour le texte, SQL pour les tableaux</dd>
               <dt>Outils</dt><dd>Embeddings, Supabase, SQL, OpenAI, n8n, Retell, ElevenLabs</dd>
             </dl>
 
@@ -238,18 +247,34 @@
           </div>
         </article>
 
-        <!-- 03 CLIP -->
+        <!-- 03 Paie -->
         <article class="case">
-          <div class="meta"><span class="num">03</span>Projet d'école<br>Avec le laboratoire GREYC<br>oct. 2024 à jan. 2025</div>
+          <div class="meta"><span class="num">03</span>En production<br>Depuis plusieurs mois</div>
           <div class="body">
-            <h3>Chercher dans la Tapisserie de Bayeux avec des mots</h3>
+            <h3>Paie automatisée en production, utilisée chaque mois par le client</h3>
+            <p class="lede">Moins visible qu'un chatbot, mais c'est l'outil qui tourne vraiment :
+              chaque mois, il remplace quelques heures de préparation manuelle.</p>
+            <p>J'ai automatisé la préparation mensuelle de la paie avec Google Apps Script. Elle est en production
+              chez le client depuis plusieurs mois. Une veille concurrentielle automatisée tourne aussi chez un client.</p>
+            <dl class="facts">
+              <dt>Résultat</dt><dd>Quelques heures de travail manuel économisées chaque mois</dd>
+              <dt>Outils</dt><dd>Google Apps Script, Google APIs</dd>
+            </dl>
+          </div>
+        </article>
+
+        <!-- 04 CLIP -->
+        <article class="case">
+          <div class="meta"><span class="num">04</span>Projet d'école<br>Avec le laboratoire GREYC<br>oct. 2024 à jan. 2025</div>
+          <div class="body">
+            <h3>Recherche multimodale texte-image dans la Tapisserie de Bayeux (CLIP)</h3>
             <p class="lede">La Tapisserie fait près de 70 mètres. Comment retrouver une scène sans la connaître,
               juste en la décrivant, ou à partir d'une autre image ?</p>
             <p>J'ai utilisé CLIP, un modèle qui place textes et images dans un même espace de vecteurs.
               Une description et une scène qui parlent de la même chose se retrouvent proches :
               la recherche devient un calcul de similarité.</p>
             <dl class="facts">
-              <dt>Outils</dt><dd>Python, OpenAI CLIP, similarité vectorielle</dd>
+              <dt>Outils</dt><dd>Python, OpenAI CLIP, embeddings, similarité vectorielle, computer vision</dd>
             </dl>
 
             <figure class="demo" aria-labelledby="clip-title">
@@ -280,10 +305,9 @@
         <div class="also">
           <div class="label">Aussi</div>
           <ul>
-            <li><b>Automatisations en service chez le client.</b> La préparation mensuelle de la paie
-              (Google Apps Script) et une veille concurrentielle automatisée tournent aujourd'hui en production. J'ai aussi livré un audit automatique de justificatifs.</li>
-            <li><b>Hackathon LCL Paris, 3<sup>e</sup> place (sept. 2024).</b> Un chatbot expert des cartes bancaires,
+            <li><b>Hackathon LCL Paris, 3<sup>e</sup> place (sept. 2024).</b> Un prototype de chatbot expert des cartes bancaires,
               développé en 26 heures avec Gemini sur Google Cloud.</li>
+            <li><b>Audit automatique de justificatifs.</b> Livré à un client PME.</li>
           </ul>
         </div>
       </div>
@@ -294,12 +318,12 @@
       <div class="wrap">
         <div class="section-head">
           <div class="label">Méthode</div>
-          <h2>Ce que j'ai appris à faire seul</h2>
+          <h2>Ma méthode : tester, garder l'humain, choisir le bon modèle</h2>
         </div>
         <div class="principles">
           <div>
             <h3>Tester avant de livrer</h3>
-            <p>Un système LLM se valide sur des cas concrets écrits à l'avance, comme les 16 scénarios de l'assistant email, pas sur une impression.</p>
+            <p>Un système LLM se valide sur des cas concrets écrits à l'avance, pas sur une impression : 16 scénarios sur 16 pour l'assistant email.</p>
           </div>
           <div>
             <h3>Garder l'humain dans la boucle</h3>
@@ -319,14 +343,16 @@
         <div class="section-head">
           <div class="label">Compétences</div>
           <div>
-            <h2>Et où je les ai utilisées</h2>
+            <h2>Compétences, et le projet qui les prouve</h2>
           </div>
         </div>
         <table class="skills">
           <tbody>
             <tr><th>LLM : OpenAI, Claude, Gemini, Ollama</th><td>Assistant email, chatbot RAG, agents chez ALTEN, hackathon LCL<small>API hébergées et modèles locaux</small></td></tr>
+            <tr><th>IA générative et prompt engineering</th><td>Consignes anti-invention et sorties structurées de l'assistant email<small>Catégorie, résumé et brouillon pour chaque email</small></td></tr>
             <tr><th>RAG et embeddings</th><td>Chatbot de l'organisme de formation, recherche CLIP sur la Tapisserie<small>Supabase comme base vectorielle</small></td></tr>
-            <tr><th>Agents</th><td>Pilotage d'agents en langage naturel chez ALTEN, agent vocal d'accueil (Retell)</td></tr>
+            <tr><th>Agents et NLP</th><td>Prototype de pilotage d'agents en langage naturel chez ALTEN Labs, agent vocal d'accueil (Retell), classification d'emails</td></tr>
+            <tr><th>Prototypage rapide</th><td>Chatbot en 26 heures au hackathon LCL (3<sup>e</sup> place), prototype de recherche chez ALTEN Labs</td></tr>
             <tr><th>Machine Learning et vision</th><td>Modèle d'aide à la radiothérapie (données DICOM), spécialité traitement d'images à l'ENSICAEN<small>TensorFlow / Keras, Scikit-learn, Pandas, NumPy</small></td></tr>
             <tr><th>Python et SQL</th><td>Python sur tous les projets, SQL pour les données structurées du chatbot</td></tr>
             <tr><th>Outils</th><td>Supabase, n8n, Git, GCP, Docker (bases)</td></tr>
@@ -341,7 +367,7 @@
       <div class="wrap">
         <div class="section-head">
           <div class="label">Parcours</div>
-          <h2>D'où je viens</h2>
+          <h2>Parcours</h2>
         </div>
         <ol class="timeline">
           <li>
@@ -349,7 +375,7 @@
             <div>
               <h3>Ingénieur IA indépendant</h3>
               <div class="where">Île-de-France</div>
-              <p>Conception et livraison de systèmes IA pour des PME, du cadrage à la recette : les projets 01 et 02, et des automatisations métier, dont la paie et la veille, en service chez le client.</p>
+              <p>Conception et livraison d'outils d'IA générative et d'automatisations pour des PME, du cadrage à la recette : projets 01 à 03. Deux automatisations sont en production chez les clients.</p>
             </div>
           </li>
           <li>
@@ -357,7 +383,7 @@
             <div>
               <h3>Ingénieur IA, stage de fin d'études</h3>
               <div class="where">ALTEN Labs, Rennes</div>
-              <p>Adaptation et déploiement d'un système de pilotage d'agents en langage naturel basé sur des LLM. Intégration de modèles locaux et hébergés, conteneurisation avec Docker.</p>
+              <p>Prototype de recherche : pilotage d'agents en langage naturel à base de LLM. Intégration de modèles locaux (Ollama) et hébergés (OpenAI), conteneurisation avec Docker.</p>
             </div>
           </li>
           <li>
