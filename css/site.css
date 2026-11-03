@@ -110,6 +110,13 @@ p { margin: 0 0 1em; }
   background: var(--ink); color: var(--paper); text-decoration: none; font-weight: var(--w-strong);
 }
 .btn:hover { background: var(--accent); color: var(--paper); }
+.ai-copy { margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--rule); max-width: 760px; font-size: 15px; color: var(--ink-2); }
+.ai-copy p { margin: 0 0 12px; }
+.ai-copy strong { color: var(--ink); font-weight: var(--w-strong); }
+.ai-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; }
+.ai-actions button { font: inherit; color: var(--accent-ink); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.ai-actions a { color: var(--accent-ink); }
+.ai-status { color: var(--ink-3); }
 
 /* Sections */
 section { padding: 96px 0; border-top: 1px solid var(--rule); }

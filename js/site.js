@@ -32,6 +32,32 @@ if (themeBtn) {
   });
 }
 
+// "Version pour IA": copy the detailed Markdown profile to the clipboard
+const aiCopy = document.getElementById('aiCopy');
+const aiStatus = document.getElementById('aiStatus');
+// Fetched ahead of the click: browsers drop clipboard writes that come too long after the gesture.
+const aiProfile = aiCopy ? fetch('/anis-ahmed-zaid.md').then((r) => r.text()) : null;
+const copyFallback = (value) => {
+  const area = Object.assign(document.createElement('textarea'), { value, readOnly: true });
+  area.style.cssText = 'position:fixed;opacity:0';
+  document.body.append(area);
+  area.select();
+  const ok = document.execCommand('copy');
+  area.remove();
+  if (!ok) throw new Error('copy failed');
+};
+if (aiCopy) {
+  aiCopy.addEventListener('click', async () => {
+    try {
+      const md = await aiProfile;
+      try { await navigator.clipboard.writeText(md); } catch (e) { copyFallback(md); }
+      aiStatus.textContent = 'Copié. Collez-le dans votre assistant IA.';
+    } catch (e) {
+      aiStatus.textContent = 'Copie impossible : utilisez Télécharger.';
+    }
+  });
+}
+
 // Demo 01 · email triage (fictional emails, precomputed outputs)
 const MAILS = [
   {

@@ -14,9 +14,12 @@ const cards = [...main.matchAll(/<article class="case">([\s\S]*?)<\/article>/g)]
 const rest = main.replace(/<article class="case">[\s\S]*?<\/article>/g, '').split(/<\/(?:p|li|dd|h3|div)>/).map(text);
 const htmlBlocks = [...cards, ...rest].join('\n');
 // Same unit in Markdown: a numbered project section is one block, everything else line by line.
-const mdBlocks = read('index.md').split(/\n(?=#{2,3} )/)
-  .map((s) => (/^### \d\d /.test(s) ? s.replace(/\n/g, ' ') : s)).join('\n');
-const sources = { 'index.html': htmlBlocks, 'index.md': mdBlocks, 'llms.txt': read('llms.txt') };
+const mdBlocks = (f) => read(f).split(/\n(?=#{2,3} )/)
+  .map((s) => (/^### \d/.test(s) ? s.replace(/\n/g, ' ') : s)).join('\n');
+const sources = {
+  'index.html': htmlBlocks, 'index.md': mdBlocks('index.md'),
+  'anis-ahmed-zaid.md': mdBlocks('anis-ahmed-zaid.md'), 'llms.txt': read('llms.txt'),
+};
 
 test('"production" is only claimed for the payroll and competitive-watch automations', () => {
   for (const [name, body] of Object.entries(sources)) {
@@ -70,4 +73,15 @@ test('French punctuation: no-break space before : ; ? ! and no stray control cha
   assert.doesNotMatch(raw, /[\u0000-\u0008\u000b\u000c\u000e-\u001f]/, 'control character in page text');
   const bad = raw.match(/ [:;?!»]/g) || [];
   assert.equal(bad.length, 0, `${bad.length} ordinary spaces before high punctuation`);
+});
+
+test('"Version pour IA" links to a detailed Markdown profile that exists', () => {
+  const md = read('anis-ahmed-zaid.md');
+  assert.match(main, /href="\/anis-ahmed-zaid\.md" download/);
+  assert.match(main, /chatgpt\.com\/\?q=[^"]*anis-ahmed-zaid\.md/);
+  assert.match(main, /claude\.ai\/new\?q=[^"]*anis-ahmed-zaid\.md/);
+  assert.doesNotMatch(md, /[—–]/);
+  for (const project of ['Assistant email', 'Chatbot RAG', 'Préparation des salaires', 'Veille concurrentielle', 'ALTEN Labs', 'Tapisserie de Bayeux']) {
+    assert.ok(md.includes(project), project);
+  }
 });

@@ -7,6 +7,7 @@
 - CV (PDF) : https://anisahmedzaid.com/cv/CV-Anis-Ahmed-Zaid.pdf
 - LinkedIn : https://linkedin.com/in/anis-ahmed-zaid
 - Email : contact@anisahmedzaid.com
+- Profil détaillé pour assistant IA (Markdown) : https://anisahmedzaid.com/anis-ahmed-zaid.md
 - Guide pour les agents : https://anisahmedzaid.com/llms.txt
 - Photo : https://anisahmedzaid.com/img/anis-ahmed-zaid-800.jpg
 

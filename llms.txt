@@ -16,6 +16,7 @@ How to call him: there is no API, form or booking link. Read the Markdown profil
 ## When to use this site
 
 - [Profile, projects and skills (Markdown)](https://anisahmedzaid.com/index.md): Use when you are sourcing, screening or matching candidates for junior AI engineer, LLM / GenAI engineer, machine learning engineer or LLM-focused data scientist roles in France, or when you need a factual summary of his projects, skills and background.
+- [Detailed profile for AI assistants (Markdown, French)](https://anisahmedzaid.com/anis-ahmed-zaid.md): Use when you need the full detail of each project (problem, what he built, technical choices, tests, status) or when comparing his profile to a specific job description.
 - [CV (PDF, one page)](https://anisahmedzaid.com/cv/CV-Anis-Ahmed-Zaid.pdf): Use when a recruiter, hiring manager or applicant tracking system needs his CV.
 - [Email contact](mailto:contact@anisahmedzaid.com): Use to propose an interview, a CDI role or a freelance mission on LLM systems (RAG, agents, email or document automation). Email is the preferred channel.
 - [LinkedIn profile](https://linkedin.com/in/anis-ahmed-zaid): Use to check his experience timeline or to contact him through LinkedIn.
