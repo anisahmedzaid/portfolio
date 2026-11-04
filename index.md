@@ -2,7 +2,7 @@
 
 > Version Markdown de https://anisahmedzaid.com/ pour les agents et les outils de lecture.
 > Ingénieur IA junior, diplômé de l'ENSICAEN (2025), passé par ALTEN Labs. Des LLM dans de vrais processus métier, testés avant d'être livrés.
-> Disponible immédiatement. Cherche un poste d'ingénieur IA / ML, en CDI de préférence, en Île-de-France ou en remote ; ouvert aussi à des missions freelance.
+> Cherche un poste d'ingénieur IA / ML en Île-de-France ou en remote (CDI ou missions freelance).
 
 - CV (PDF) : https://anisahmedzaid.com/cv/CV-Anis-Ahmed-Zaid.pdf
 - LinkedIn : https://linkedin.com/in/anis-ahmed-zaid
@@ -17,8 +17,7 @@ Diplômé de l'ENSICAEN (2025, IA et traitement d'images), passé par ALTEN Labs
 
 - 5 projets clients livrés, menés seul du cadrage à la livraison
 - 2 automatisations en production chez des clients (paie et veille concurrentielle)
-- 16/16 emails de test traités correctement avant livraison (assistant email)
-- 7 mois chez ALTEN Labs sur des agents LLM
+- Stage de fin d'études chez ALTEN Labs sur des agents LLM
 
 ## Projets : trois projets clients, en détail
 
@@ -100,7 +99,7 @@ Un script Google Apps Script intégré à Google Sheets ajoute un menu en trois 
 
 ## Contact
 
-Vous recrutez un ingénieur IA junior ? Parlons-en. Disponible immédiatement. CDI de préférence, en Île-de-France ou en remote ; ouvert aussi à des missions freelance.
+Vous recrutez un ingénieur IA junior ? Parlons-en. Ouvert à un CDI comme à des missions en freelance, en Île-de-France ou en remote.
 
 - Email : contact@anisahmedzaid.com
 - LinkedIn : https://linkedin.com/in/anis-ahmed-zaid
