@@ -1,79 +1,89 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conditions Générales d'Utilisation — Anis Ahmed Zaid</title>
+  <title>Conditions générales d'utilisation · Anis Ahmed Zaid</title>
   <meta name="description" content="Conditions générales d'utilisation du site anisahmedzaid.com.">
   <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#f5f5f7">
   <link rel="canonical" href="https://anisahmedzaid.com/terms-of-service.html">
+  <script>
+    // Apply saved or system theme before first paint
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="theme-color" content="#0a0a0b">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="js/tailwind-config.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/site.css">
 </head>
-<body class="bg-background text-text-primary">
-  <header class="border-b border-border-subtle py-5 px-6 bg-background">
-    <div class="max-w-3xl mx-auto flex items-center justify-between">
-      <a href="/" class="font-mono font-bold text-lg text-text-primary hover:text-accent-blue transition-colors">← anisahmedzaid.com</a>
+
+<body>
+  <header class="top" id="top">
+    <div class="wrap">
+      <a href="/" class="name">Anis Ahmed Zaid</a>
+      <nav aria-label="Navigation principale">
+        <a href="/" class="hide-sm">Accueil</a>
+        <a href="/cv/CV-Anis-Ahmed-Zaid.pdf" class="cv" target="_blank" rel="noopener">CV</a>
+        <button type="button" class="theme-btn" id="themeBtn" aria-label="Passer au thème sombre">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        </button>
+      </nav>
     </div>
   </header>
 
-  <main class="max-w-3xl mx-auto px-6 py-12">
-    <div class="mb-8">
-      <div class="font-mono text-sm text-text-muted mb-3">
-        <span class="text-accent-blue">~</span><span class="text-text-muted">/</span><span class="text-text-primary">terms-of-service</span>
-      </div>
-      <h1 class="text-4xl font-bold tracking-tight mb-2">Conditions Générales d'Utilisation</h1>
-      <p class="text-text-muted text-sm">Dernière mise à jour : 21 avril 2026</p>
-    </div>
-
-    <div class="space-y-8 text-text-secondary leading-relaxed">
-      <section>
-        <h2 class="text-xl font-semibold text-text-primary mb-3">1. Objet</h2>
-        <p>Les présentes Conditions Générales d’Utilisation (CGU) ont pour objet de définir les modalités de mise à disposition et d'utilisation du site anisahmedzaid.com.</p>
-      </section>
-
-      <section>
-        <h2 class="text-xl font-semibold text-text-primary mb-3">2. Accès au site</h2>
-        <p>Le site est accessible gratuitement à tout utilisateur disposant d'un accès à Internet. Tous les frais afférents à l'accès au site, que ce soient les frais matériels, logiciels ou d'accès à Internet, sont exclusivement à la charge de l'utilisateur.</p>
-      </section>
-
-      <section>
-        <h2 class="text-xl font-semibold text-text-primary mb-3">3. Propriété intellectuelle</h2>
-        <p>L'ensemble des éléments constituant ce site (textes, graphismes, logiciels, photographies, images, vidéos, sons, plans, noms, logos, marques, créations et œuvres protégeables diverses, bases de données, etc.) ainsi que le site lui-même, relèvent des législations françaises et internationales sur le droit d'auteur et la propriété intellectuelle.</p>
-        <p>Toute utilisation, reproduction, diffusion, commercialisation, modification de toute ou partie du site, sans autorisation de l'éditeur est prohibée et pourra entraînée des actions et poursuites judiciaires.</p>
-      </section>
-
-      <section>
-        <h2 class="text-xl font-semibold text-text-primary mb-3">4. Responsabilité</h2>
-        <p>L'éditeur s'efforce de fournir sur le site des informations aussi précises que possible. Toutefois, il ne pourra être tenu responsable des omissions, des inexactitudes et des carences dans la mise à jour.</p>
-        <p>L'utilisateur admet utiliser les informations fournies sous sa responsabilité exclusive. L'éditeur ne pourra être tenu responsable des dommages directs ou indirects résultant de l'utilisation de ce site ou d'autres sites qui lui sont liés.</p>
-      </section>
-
-      <section>
-        <h2 class="text-xl font-semibold text-text-primary mb-3">5. Liens hypertextes</h2>
-        <p>Le site peut contenir des liens hypertextes vers d'autres sites présents sur le réseau Internet. Les liens vers ces autres ressources vous font quitter le site anisahmedzaid.com. L'éditeur ne pourra être tenu responsable du contenu de ces sites.</p>
-      </section>
-
-      <section>
-        <h2 class="text-xl font-semibold text-text-primary mb-3">6. Modification des CGU</h2>
-        <p>L'éditeur se réserve la faculté de modifier les présentes CGU à tout moment afin de les adapter aux évolutions du site et/ou de son exploitation. L'utilisateur est donc invité à les consulter régulièrement.</p>
-      </section>
-    </div>
+  <main>
+    <article class="legal wrap">
+      <header class="legal-head">
+        <a class="text-link back" href="/">Retour au site</a>
+        <h1>Conditions générales d'utilisation</h1>
+        <p class="updated">Dernière mise à jour&nbsp;: 4 novembre 2026</p>
+      </header>
+        <section>
+          <h2>Objet</h2>
+          <p>Ces conditions encadrent l'accès au site anisahmedzaid.com et son utilisation.</p>
+        </section>
+        <section>
+          <h2>Accès au site</h2>
+          <p>Le site est accessible gratuitement. Les frais d'accès à Internet restent à la charge de l'utilisateur.</p>
+        </section>
+        <section>
+          <h2>Propriété intellectuelle</h2>
+          <p>Les textes, images, démonstrations et le code du site sont protégés par le droit d'auteur. Toute reproduction ou modification sans autorisation de l'éditeur est interdite.</p>
+        </section>
+        <section>
+          <h2>Responsabilité</h2>
+          <p>Les informations du site sont aussi précises que possible, mais peuvent comporter des omissions ou ne pas être à jour. Les démonstrations utilisent des données fictives et ont une valeur d'illustration.</p>
+        </section>
+        <section>
+          <h2>Liens externes</h2>
+          <p>Le site renvoie vers d'autres sites (LinkedIn, ChatGPT, Claude, GitHub). L'éditeur n'est pas responsable de leur contenu.</p>
+        </section>
+        <section>
+          <h2>Modification</h2>
+          <p>Ces conditions peuvent évoluer avec le site. La date de mise à jour figure en haut de la page.</p>
+        </section>
+    </article>
   </main>
 
-  <footer class="border-t border-border-subtle py-8 px-6 bg-background mt-12">
-    <div class="max-w-3xl mx-auto text-center text-text-muted text-sm">
-      © 2026 Anis Ahmed Zaid
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Anis Ahmed Zaid</span>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/privacy-policy.html">Confidentialité</a>
+      <a href="/terms-of-service.html">CGU</a>
     </div>
   </footer>
+
+  <script src="/js/site.js"></script>
 </body>
+
 </html>

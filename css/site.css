@@ -325,6 +325,58 @@ footer a:hover { color: var(--ink); }
 .hero.solo h1 em { display: block; font-style: normal; color: var(--ink-display); }
 .hero.solo .links { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; margin-top: 32px; }
 
+/* Legal pages (same sheet) */
+.legal { max-width: calc(var(--text) + 64px); padding-top: 72px; padding-bottom: 96px; }
+.legal-head { margin-bottom: 48px; }
+.legal-head .back { display: inline-block; margin-bottom: 28px; font-size: 0.9375rem; }
+.legal-head .back::after { content: none; }
+.legal-head .back::before { content: "‹\00a0"; }
+.legal h1 { font-size: clamp(2.25rem, 5vw, 3.25rem); line-height: 1.06; letter-spacing: -0.03em; font-weight: 700; }
+.legal .updated { margin-top: 12px; color: var(--ink-3); font-size: 0.9375rem; }
+.legal section { padding: 28px 0; border-top: 1px solid var(--rule); }
+.legal h2 { font-size: 1.25rem; letter-spacing: -0.015em; font-weight: 600; margin-bottom: 12px; }
+.legal p, .legal li { color: var(--ink-2); }
+.legal p + p, .legal p + ul { margin-top: 10px; }
+.legal ul { padding-left: 1.25em; }
+.legal li + li { margin-top: 4px; }
+.legal-card { margin: 0; background: var(--card); border-radius: var(--r-md); padding: 8px 24px; box-shadow: var(--shadow); }
+.legal-card div { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 16px; padding: 12px 0; }
+.legal-card div + div { border-top: 1px solid var(--rule); }
+.legal-card dt { color: var(--ink-3); }
+.legal-card dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
+
+/* Easter egg: how this site was made */
+.making-btn {
+  margin-left: auto; font: inherit; color: var(--ink-3); background: none; border: 0; padding: 0 2px; cursor: pointer;
+  transition: color .2s var(--ease), transform .2s var(--ease-out);
+}
+.making-btn:hover { color: var(--accent); transform: rotate(45deg); }
+.making-btn:active { transform: rotate(45deg) scale(0.9); transition-duration: .1s; }
+.making {
+  width: min(680px, calc(100vw - 32px)); max-height: min(82vh, 760px); padding: 0; border: 0; border-radius: var(--r-lg);
+  background: var(--card); color: var(--ink); box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  margin: auto 16px 16px auto; transform-origin: bottom right;
+}
+.making[open] { display: flex; flex-direction: column; animation: making-in .42s var(--ease-out) both; }
+.making::backdrop { background: rgba(0, 0, 0, 0.32); animation: fadeonly .3s linear both; }
+.making-head { display: flex; align-items: start; justify-content: space-between; gap: 16px; padding: 28px 28px 0; }
+.making-head h2 { font-size: 1.5rem; letter-spacing: -0.02em; font-weight: 700; }
+.making-close { flex: none; width: 32px; height: 32px; border-radius: 50%; border: 0; background: var(--sunk); color: var(--ink); font-size: 1.25rem; line-height: 1; cursor: pointer; }
+.making-close:active { transform: scale(0.92); }
+.making-body { overflow-y: auto; padding: 16px 28px 28px; }
+.making-body > p { color: var(--ink-2); }
+.making-meta { margin: 20px 0; display: grid; gap: 8px; }
+.making-meta div { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 12px; }
+.making-meta dt { color: var(--ink-3); }
+.making-meta dd { margin: 0; }
+.making pre {
+  margin: 0; padding: 18px 20px; border-radius: var(--r-sm); background: var(--sunk); color: var(--ink);
+  font: 0.875rem/1.55 ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere;
+}
+.making-actions { display: flex; align-items: center; gap: 16px; margin-top: 16px; }
+.making-actions span { color: var(--ink-3); font-size: 0.9375rem; }
+@keyframes making-in { from { opacity: 0; transform: translateY(12px) scale(0.96); } to { opacity: 1; transform: none; } }
+
 /* Responsive */
 @media (max-width: 960px) {
   .top nav .hide-md { display: none; }
@@ -358,6 +410,12 @@ footer a:hover { color: var(--ink); }
   .rag-tools ul { grid-template-columns: minmax(0, 1fr); }
   .ai-copy { padding: 24px 20px; }
   .more-grid li, .skills > div { padding: 22px 20px; }
+  .legal { padding-top: 48px; }
+  .legal-card { padding: 4px 18px; }
+  .legal-card div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .making { margin: auto 0 0; width: 100vw; max-width: 100vw; border-radius: var(--r-lg) var(--r-lg) 0 0; transform-origin: bottom center; }
+  .making-head { padding: 24px 20px 0; }
+  .making-body { padding: 14px 20px 24px; }
 }
 
 /* Preferences */
@@ -366,6 +424,8 @@ footer a:hover { color: var(--ink); }
   .js .reveal { transform: none; transition: opacity .2s linear; }
   .swap { animation: fadeonly .2s linear both; }
   .btn:active, .top .cv:active, .theme-btn:active, .inbox button:active, .rag-questions button:active { transform: none; }
+  .making[open] { animation: fadeonly .2s linear both; }
+  .making-btn:hover, .making-btn:active { transform: none; }
 }
 @keyframes fadeonly { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-transparency: reduce) {

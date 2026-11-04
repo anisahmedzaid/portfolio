@@ -103,6 +103,25 @@ if (aiCopy) {
   });
 }
 
+// Easter egg: the prompt, skill and model behind this site
+const making = document.getElementById('making');
+if (making && making.showModal) {
+  const makingStatus = document.getElementById('makingStatus');
+  document.getElementById('makingBtn').addEventListener('click', () => making.showModal());
+  document.getElementById('makingClose').addEventListener('click', () => making.close());
+  // A click on the dimmed backdrop lands on the dialog itself, outside its content.
+  making.addEventListener('click', (e) => { if (e.target === making) making.close(); });
+  document.getElementById('makingCopy').addEventListener('click', async () => {
+    const prompt = document.getElementById('makingPrompt').textContent;
+    try {
+      try { await navigator.clipboard.writeText(prompt); } catch (e) { copyFallback(prompt); }
+      makingStatus.textContent = 'Prompt copié.';
+    } catch (e) {
+      makingStatus.textContent = 'Copie impossible, sélectionnez le texte.';
+    }
+  });
+}
+
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const frenchSpaces = (s) => s.replace(/ ([:;?!»])/g, `${NBSP}$1`).replace(/« /g, `«${NBSP}`);
 

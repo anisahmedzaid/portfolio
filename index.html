@@ -448,8 +448,44 @@
       <a href="/privacy-policy.html">Confidentialité</a>
       <a href="/terms-of-service.html">CGU</a>
       <a href="/index.md">Version Markdown</a>
+      <button type="button" class="making-btn" id="makingBtn" aria-haspopup="dialog" aria-controls="making" title="Comment ce site a été fait">✦<span class="sr-only">Comment ce site a été fait</span></button>
     </div>
   </footer>
+
+  <dialog class="making" id="making" aria-labelledby="making-title">
+    <div class="making-head">
+      <h2 id="making-title">Comment ce site a été fait</h2>
+      <button type="button" class="making-close" id="makingClose" aria-label="Fermer">×</button>
+    </div>
+    <div class="making-body">
+      <p>Vous avez trouvé l'easter egg. Ce site a été refait par un agent IA lancé sans autre contexte que le prompt ci-dessous, puis retouché à la demande. Je préfère le dire que le cacher&nbsp;: c'est exactement le genre d'outil que j'utilise au quotidien, avec une relecture systématique.</p>
+      <dl class="making-meta">
+        <div><dt>Modèle</dt><dd>Claude Opus 5.5 (Anthropic), dans Claude Code</dd></div>
+        <div><dt>Skill</dt><dd><a href="https://github.com/emilkowalski/skills/tree/main/skills/apple-design" target="_blank" rel="noopener noreferrer">apple-design</a>, d'Emil Kowalski</dd></div>
+        <div><dt>Retouches</dt><dd>moins de texte, grille des compétences, pages légales et cet easter egg</dd></div>
+      </dl>
+      <pre id="makingPrompt">You are redesigning a personal portfolio website. You have full creative freedom over both form (design, layout, typography, colors, motion, interactions) and substance (structure, sections, wording, what to highlight or cut, page order).
+
+Design skill to apply: read ~/.claude/skills/apple-design/SKILL.md (Emil Kowalski's "apple-design" skill, distilled from Apple's WWDC design talks) and apply it seriously, including its design foundations (purpose, simplicity not minimalism, craft, hierarchy, wayfinding) to the content, not only to the visuals. Ignore its "Initial Response" section.
+
+Site: a static one-page site in French, in the git worktree portfolio-apple (branch `apple-design`). Work only in that folder. Main files: index.html, css/site.css, js/site.js. It is the portfolio of Anis Ahmed Zaid, a junior AI engineer looking for a job; the audience is recruiters and hiring managers.
+
+Only hard constraints:
+- Every fact must stay true. The source of truth for facts is anis-ahmed-zaid.md in that folder. Do not invent clients, numbers, results or skills. Do not call a project "en production" unless that file does.
+- Keep it a static site (plain HTML/CSS/JS, no build step; a small library from a CDN with a pinned version is fine if it earns its place), in French, working on mobile (375px, no horizontal scroll) and desktop, light and dark themes, accessible (WCAG AA contrast, prefers-reduced-motion respected).
+- Keep these files working and linked: cv/CV-Anis-Ahmed-Zaid.pdf, anis-ahmed-zaid.md, index.md, llms.txt, the portrait images in img/, the JSON-LD in the head.
+- No long dashes in the copy.
+- Do not push, do not touch any other folder or branch. Commit your work on the `apple-design` branch when done.
+
+Check your result: serve the folder with `python -m http.server 8790` and look at it in a browser at desktop and 375px widths, both themes. `npm test` runs the existing tests; they encode the previous design's copy, so a failure is information, not a rule: keep the ones that protect truthfulness (statuses, forbidden technologies) passing and update or remove ones that only pin old wording, saying which.
+
+Report back in French, briefly: what you changed in form and in substance and why, which tests you changed, the commit hash, and anything you were unsure about.</pre>
+      <div class="making-actions">
+        <button type="button" class="btn btn-quiet" id="makingCopy">Copier le prompt</button>
+        <span id="makingStatus" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+  </dialog>
 
   <script src="js/site.js"></script>
 </body>

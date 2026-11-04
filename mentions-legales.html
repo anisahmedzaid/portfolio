@@ -1,83 +1,94 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mentions Légales — Anis Ahmed Zaid</title>
-  <meta name="description" content="Mentions légales du site anisahmedzaid.com — Anis Ahmed Zaid, ingénieur IA.">
+  <title>Mentions légales · Anis Ahmed Zaid</title>
+  <meta name="description" content="Mentions légales du site anisahmedzaid.com, portfolio d'Anis Ahmed Zaid, ingénieur IA.">
   <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#f5f5f7">
   <link rel="canonical" href="https://anisahmedzaid.com/mentions-legales.html">
+  <script>
+    // Apply saved or system theme before first paint
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="theme-color" content="#0a0a0b">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="js/tailwind-config.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/site.css">
 </head>
-<body class="bg-background text-text-primary">
-  <header class="border-b border-border-subtle py-5 px-6 bg-background">
-    <div class="max-w-3xl mx-auto flex items-center justify-between">
-      <a href="/" class="font-mono font-bold text-lg text-text-primary hover:text-accent-blue transition-colors">← anisahmedzaid.com</a>
+
+<body>
+  <header class="top" id="top">
+    <div class="wrap">
+      <a href="/" class="name">Anis Ahmed Zaid</a>
+      <nav aria-label="Navigation principale">
+        <a href="/" class="hide-sm">Accueil</a>
+        <a href="/cv/CV-Anis-Ahmed-Zaid.pdf" class="cv" target="_blank" rel="noopener">CV</a>
+        <button type="button" class="theme-btn" id="themeBtn" aria-label="Passer au thème sombre">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        </button>
+      </nav>
     </div>
   </header>
 
-  <main class="max-w-3xl mx-auto px-6 py-12">
-    <div class="mb-8">
-      <div class="font-mono text-sm text-text-muted mb-3">
-        <span class="text-accent-blue">~</span><span class="text-text-muted">/</span><span class="text-text-primary">mentions-legales</span>
-      </div>
-      <h1 class="text-4xl font-bold tracking-tight mb-2">Mentions Légales</h1>
-      <p class="text-text-muted text-sm">Dernière mise à jour : 21 avril 2026</p>
-    </div>
-
-    <div class="space-y-8 text-text-secondary leading-relaxed">
-
-      <section>
-        <h2 class="text-xl font-semibold text-text-primary mb-3">1. Éditeur du site</h2>
-        <div class="bg-bg-elevated border border-border rounded-xl p-5 space-y-2 font-mono text-sm">
-          <p><span class="text-text-muted">Nom :</span> <span class="text-text-primary">Anis Ahmed Zaid</span></p>
-          <p><span class="text-text-muted">Statut :</span> <span class="text-text-primary">Auto-entrepreneur</span></p>
-          <p><span class="text-text-muted">Activité :</span> <span class="text-text-primary">Développement et conseil en automatisation IA</span></p>
-          <p><span class="text-text-muted">Email :</span> <a href="mailto:anisahmedzaid@gmail.com" class="text-accent-blue hover:underline">anisahmedzaid@gmail.com</a></p>
-          <p><span class="text-text-muted">Téléphone :</span> <a href="tel:+33652640258" class="text-accent-blue hover:underline">+33 6 52 64 02 58</a></p>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="text-xl font-semibold text-text-primary mb-3">2. Hébergement</h2>
-        <div class="bg-bg-elevated border border-border rounded-xl p-5 space-y-2 font-mono text-sm">
-          <p><span class="text-text-muted">Hébergeur :</span> <span class="text-text-primary">GitHub Pages</span></p>
-          <p><span class="text-text-muted">Société :</span> <span class="text-text-primary">GitHub, Inc. — 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</span></p>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="text-xl font-semibold text-text-primary mb-3">3. Propriété intellectuelle</h2>
-        <p>L'ensemble du contenu de ce site (textes, visuels, code) est la propriété exclusive d'Anis Ahmed Zaid. Toute reproduction, représentation, modification ou exploitation, totale ou partielle, est interdite sans autorisation écrite préalable.</p>
-      </section>
-
-      <section>
-        <h2 class="text-xl font-semibold text-text-primary mb-3">4. Données personnelles & RGPD</h2>
-        <p>Ce site ne collecte aucune donnée personnelle via des formulaires. Les seules données échangées sont celles que vous communiquez volontairement par email ou téléphone. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en contactant : <a href="mailto:anisahmedzaid@gmail.com" class="text-accent-blue hover:underline">anisahmedzaid@gmail.com</a>.</p>
-      </section>
-
-      <section>
-        <h2 class="text-xl font-semibold text-text-primary mb-3">5. Cookies</h2>
-        <p>Ce site n'utilise aucun cookie de traçage ou d'analyse. Aucun outil de tracking (Google Analytics, etc.) n'est installé sur ce site.</p>
-      </section>
-
-    </div>
+  <main>
+    <article class="legal wrap">
+      <header class="legal-head">
+        <a class="text-link back" href="/">Retour au site</a>
+        <h1>Mentions légales</h1>
+        <p class="updated">Dernière mise à jour&nbsp;: 4 novembre 2026</p>
+      </header>
+        <section>
+          <h2>Éditeur du site</h2>
+          <dl class="legal-card">
+            <div><dt>Nom</dt><dd>Anis Ahmed Zaid</dd></div>
+            <div><dt>Statut</dt><dd>Auto-entrepreneur</dd></div>
+            <div><dt>Activité</dt><dd>Ingénierie et conseil en intelligence artificielle</dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:contact@anisahmedzaid.com">contact@anisahmedzaid.com</a></dd></div>
+            <div><dt>Téléphone</dt><dd><a href="tel:+33652640258">+33 6 52 64 02 58</a></dd></div>
+          </dl>
+        </section>
+        <section>
+          <h2>Hébergement</h2>
+          <dl class="legal-card">
+            <div><dt>Hébergeur</dt><dd>GitHub Pages</dd></div>
+            <div><dt>Société</dt><dd>GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</dd></div>
+          </dl>
+        </section>
+        <section>
+          <h2>Propriété intellectuelle</h2>
+          <p>Les textes, visuels et le code de ce site appartiennent à Anis Ahmed Zaid. Toute reproduction ou exploitation, totale ou partielle, demande une autorisation écrite préalable.</p>
+        </section>
+        <section>
+          <h2>Données personnelles</h2>
+          <p>Ce site ne contient aucun formulaire et ne collecte aucune donnée personnelle. Les seules données échangées sont celles que vous envoyez volontairement par email, téléphone ou LinkedIn. Le détail figure dans la <a href="/privacy-policy.html">politique de confidentialité</a>.</p>
+        </section>
+        <section>
+          <h2>Cookies</h2>
+          <p>Aucun cookie et aucun outil de mesure d'audience. Seul votre choix de thème clair ou sombre est enregistré, dans votre propre navigateur.</p>
+        </section>
+    </article>
   </main>
 
-  <footer class="border-t border-border-subtle py-8 px-6 bg-background mt-12">
-    <div class="max-w-3xl mx-auto text-center text-text-muted text-sm">
-      © 2026 Anis Ahmed Zaid
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Anis Ahmed Zaid</span>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/privacy-policy.html">Confidentialité</a>
+      <a href="/terms-of-service.html">CGU</a>
     </div>
   </footer>
+
+  <script src="/js/site.js"></script>
 </body>
+
 </html>
