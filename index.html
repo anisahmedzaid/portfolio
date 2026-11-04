@@ -12,7 +12,7 @@
   <link rel="alternate" hreflang="fr" href="https://anisahmedzaid.com/">
   <link rel="alternate" type="text/markdown" href="https://anisahmedzaid.com/index.md" title="Version Markdown pour les agents">
   <link rel="help" type="text/plain" href="https://anisahmedzaid.com/llms.txt" title="llms.txt">
-  <meta name="theme-color" content="#f7f5f0">
+  <meta name="theme-color" content="#f5f5f7">
   <script>
     // Apply saved or system theme before first paint
     (function () {
@@ -62,7 +62,7 @@
         "isPartOf": {
           "@id": "https://anisahmedzaid.com/#website"
         },
-        "dateModified": "2026-10-25",
+        "dateModified": "2026-11-04",
         "mainEntity": {
           "@id": "https://anisahmedzaid.com/#person"
         }
@@ -115,331 +115,342 @@
     ]
   }
   </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Geist:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
 </head>
 
 <body>
+  <a class="skip" href="#projets">Aller aux projets</a>
+
   <header class="top" id="top">
     <div class="wrap">
-      <a href="/" class="name">Anis Ahmed Zaid</a>
-      <div class="right">
+      <a href="#accueil" class="name">Anis Ahmed Zaid</a>
       <nav aria-label="Navigation principale">
-        <a href="#projets">Projets</a>
+        <a href="#projets" class="hide-sm">Projets</a>
         <a href="#parcours" class="hide-sm">Parcours</a>
+        <a href="#competences" class="hide-md">Compétences</a>
         <a href="#contact" class="hide-sm">Contact</a>
         <a href="/cv/CV-Anis-Ahmed-Zaid.pdf" class="cv" target="_blank" rel="noopener">CV</a>
+        <button type="button" class="theme-btn" id="themeBtn" aria-label="Passer au thème sombre">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        </button>
       </nav>
-      <button type="button" class="theme-btn" id="themeBtn" aria-label="Passer au thème sombre">
-        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
-        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
-      </button>
-      </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
-    <div class="hero wrap with-portrait">
-      <picture class="portrait">
-        <source type="image/webp" srcset="/img/anis-ahmed-zaid-480.webp 480w, /img/anis-ahmed-zaid-800.webp 800w" sizes="(max-width: 860px) 140px, 220px">
-        <img src="/img/anis-ahmed-zaid-480.png" width="480" height="480" alt="Portrait d'Anis Ahmed Zaid, ingénieur IA" fetchpriority="high">
-      </picture>
-      <h1><span class="sr-only">Anis Ahmed Zaid, </span>Ingénieur IA.<br><em>L'IA générative appliquée à de vrais problèmes d'entreprise.</em></h1>
-      <p class="intro">
-        Je suis Anis Ahmed Zaid, ingénieur ENSICAEN (2025, IA et traitement d'images), passé par ALTEN Labs.
-        Depuis septembre 2025, en indépendant, je conçois seul des outils d'IA générative et des automatisations
-        pour des entreprises : tri d'emails par LLM, chatbot RAG, agent vocal, préparation de paie.
-      </p>
-      <p class="intro">
-        Je cherche maintenant à rejoindre une équipe produit ou data comme ingénieur IA / ML,
-        sur des systèmes utilisés à plus grande échelle.
-      </p>
-      <div class="links">
-        <a class="btn" href="/cv/CV-Anis-Ahmed-Zaid.pdf" target="_blank" rel="noopener">Télécharger le CV</a>
-        <a href="https://linkedin.com/in/anis-ahmed-zaid" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:contact@anisahmedzaid.com">contact@anisahmedzaid.com</a>
-      </div>
-      <div class="ai-copy">
-        <p><strong>Version pour IA.</strong> Mon profil détaillé en Markdown, pour le comparer à votre offre avec votre assistant IA.</p>
-        <div class="ai-actions">
-          <button type="button" id="aiCopy">Copier le profil</button>
-          <a href="/anis-ahmed-zaid.md" download>Télécharger (.md)</a>
-          <a href="https://chatgpt.com/?q=Voici%20le%20profil%20d%C3%A9taill%C3%A9%20d'Anis%20Ahmed%20Zaid%2C%20ing%C3%A9nieur%20IA%20%3A%20https%3A%2F%2Fanisahmedzaid.com%2Fanis-ahmed-zaid.md.%20Lis-le.%20Je%20vais%20ensuite%20te%20coller%20une%20offre%20d'emploi%20%3A%20compare-la%20%C3%A0%20ce%20profil%20point%20par%20point%20(ce%20qui%20correspond%2C%20ce%20qui%20manque)." target="_blank" rel="noopener noreferrer">Ouvrir dans ChatGPT</a>
-          <a href="https://claude.ai/new?q=Voici%20le%20profil%20d%C3%A9taill%C3%A9%20d'Anis%20Ahmed%20Zaid%2C%20ing%C3%A9nieur%20IA%20%3A%20https%3A%2F%2Fanisahmedzaid.com%2Fanis-ahmed-zaid.md.%20Lis-le.%20Je%20vais%20ensuite%20te%20coller%20une%20offre%20d'emploi%20%3A%20compare-la%20%C3%A0%20ce%20profil%20point%20par%20point%20(ce%20qui%20correspond%2C%20ce%20qui%20manque)." target="_blank" rel="noopener noreferrer">Ouvrir dans Claude</a>
-          <span class="ai-status" id="aiStatus" role="status" aria-live="polite"></span>
+    <!-- Accueil : qui, quoi, disponible, comment le joindre -->
+    <div class="hero wrap" id="accueil">
+      <div class="hero-text">
+        <p class="availability"><span class="dot" aria-hidden="true"></span>Disponible immédiatement · CDI de préférence · Île-de-France ou remote</p>
+        <h1><span class="h1-name">Anis Ahmed Zaid</span> Ingénieur IA junior. <span class="h1-soft">Des LLM dans de vrais processus métier, testés avant d'être livrés.</span></h1>
+        <p class="intro">
+          Diplômé de l'ENSICAEN (2025, IA et traitement d'images), passé par ALTEN Labs.
+          Depuis septembre 2025, en indépendant, je conçois et livre seul des outils d'IA générative
+          pour des entreprises&nbsp;: tri d'emails par LLM, chatbot RAG, agent vocal, préparation de paie.
+          Je cherche maintenant à rejoindre une équipe produit ou data comme ingénieur IA / ML.
+        </p>
+        <div class="actions">
+          <a class="btn" href="/cv/CV-Anis-Ahmed-Zaid.pdf" target="_blank" rel="noopener">Télécharger le CV</a>
+          <a class="btn btn-quiet" href="mailto:contact@anisahmedzaid.com">Écrire un email</a>
+          <a class="text-link" href="https://linkedin.com/in/anis-ahmed-zaid" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
+      <picture class="portrait">
+        <source type="image/webp" srcset="/img/anis-ahmed-zaid-480.webp 480w, /img/anis-ahmed-zaid-800.webp 800w" sizes="(max-width: 860px) 112px, 300px">
+        <img src="/img/anis-ahmed-zaid-480.png" width="480" height="480" alt="Portrait d'Anis Ahmed Zaid, ingénieur IA" fetchpriority="high">
+      </picture>
+
+      <ul class="stats" aria-label="En bref">
+        <li><b>5</b><span>projets clients livrés, menés seul du cadrage à la livraison</span></li>
+        <li><b>2</b><span>automatisations en production chez des clients</span></li>
+        <li><b>16/16</b><span>emails de test traités correctement avant livraison</span></li>
+        <li><b>7 mois</b><span>chez ALTEN Labs sur des agents LLM</span></li>
+      </ul>
     </div>
 
     <!-- Projets -->
-    <section id="projets">
+    <section id="projets" aria-labelledby="projets-title">
       <div class="wrap">
-        <div class="section-head">
-          <div class="label">Projets</div>
-          <div>
-            <h2>Projets : trois clients, un projet d'école</h2>
-            <p>Pour chacun : le contexte, ce que j'ai construit, comment je l'ai vérifié.</p>
-          </div>
-        </div>
+        <header class="section-head reveal">
+          <p class="eyebrow">Projets</p>
+          <h2 id="projets-title">Trois projets clients, en détail.</h2>
+          <p>Pour chacun&nbsp;: le problème, ce que j'ai construit, comment je l'ai vérifié.</p>
+        </header>
 
         <!-- 01 Email -->
-        <article class="case">
-          <div class="meta"><span class="num">01</span>Livré au client<br>Juin 2026</div>
-          <div class="body">
-            <h3>Assistant email par LLM pour une entreprise de collecte de déchets au Québec</h3>
-            <p class="lede">Plaintes, ramassages manqués, demandes de devis : les emails arrivaient en vrac.
-              Le but : ne plus perdre de clients sur des emails restés sans réponse.</p>
-            <p>À chaque email reçu, le système le classe dans l'une de 10 catégories métier (urgent, plainte, ramassage
-              manqué, nouveau client…), résume le problème et le ton du client, puis range l'email sous le bon libellé Gmail. Il prépare aussi
-              un brouillon de réponse dans la langue du client, en français ou en anglais.
-              Aucun email ne part seul : le workflow ne contient tout simplement aucune étape d'envoi.</p>
-            <dl class="facts">
-              <dt>Mon rôle</dt><dd>Seul, du cadrage avec le client à la livraison (workflow et guide d'installation)</dd>
-              <dt>Recette</dt><dd>16 emails de test sur 16 traités correctement : 10 catégories exactes, aucune date ni promesse inventée, réponses en français et en anglais</dd>
-              <dt>Robustesse</dt><dd>Un bug de concurrence trouvé en recette (deux emails dans la même minute) puis corrigé ; validé ensuite sur 20 emails simultanés, sans perte</dd>
-              <dt>Choix clé</dt><dd>Un modèle open source (Qwen 2.5) exécuté en local avec Ollama sur un serveur privé : les emails ne partent vers aucune API d'IA externe</dd>
-              <dt>Outils</dt><dd>n8n, Ollama, Gmail API, Telegram, prompt engineering</dd>
-            </dl>
-
-            <figure class="demo" aria-labelledby="mail-title">
-              <div class="demo-title" id="mail-title">Démo · choisissez un email</div>
-              <div class="mail-demo">
-                <div class="inbox" id="inbox" role="group" aria-label="Emails d'exemple"></div>
-                <div class="mail-out" id="mailOut" aria-live="polite"></div>
-              </div>
-              <figcaption>Exemple illustratif : emails fictifs, réponses préparées à l'avance pour la démo.
-                Les catégories et le format « [à compléter] » sont ceux du vrai système ; les données du client restent privées.</figcaption>
-            </figure>
+        <article class="case reveal" id="assistant-email">
+          <div class="case-head">
+            <p class="status"><span class="pill">Livré au client</span>Juin 2026 · Entreprise de collecte de déchets, Québec</p>
+            <h3>Assistant email par LLM pour une entreprise de collecte de déchets</h3>
+            <p class="lede">Plaintes, ramassages manqués, demandes de devis&nbsp;: tout arrivait en vrac dans une seule boîte,
+              et des clients partaient faute de réponse.</p>
           </div>
+          <div class="body">
+            <p>À chaque email reçu, un seul appel au LLM renvoie un JSON structuré&nbsp;: l'une de 10 catégories métier,
+              un résumé, le ton du client et un brouillon de réponse dans sa langue, français ou anglais.
+              L'email est rangé sous le bon libellé Gmail et une notification part sur Telegram.
+              Rien n'est envoyé au client&nbsp;: le workflow ne contient aucune étape d'envoi, une personne relit chaque brouillon.</p>
+            <dl class="facts">
+              <div><dt>Vérification</dt><dd>16 emails de test écrits à l'avance, 16 traités correctement, y compris un cas piège de classification et aucune date inventée</dd></div>
+              <div><dt>Bug corrigé</dt><dd>Deux emails dans la même minute faisaient échouer le second. Corrigé, puis validé sur 20 emails simultanés sans perte</dd></div>
+              <div><dt>Choix clé</dt><dd>Client sensible à la confidentialité&nbsp;: Qwen 2.5 exécuté en local avec Ollama, aucun email ne part vers une API d'IA externe</dd></div>
+            </dl>
+            <ul class="tools" aria-label="Outils">
+              <li>n8n</li><li>Ollama · Qwen 2.5</li><li>Gmail API</li><li>Telegram</li><li>Docker</li><li>Sortie JSON</li>
+            </ul>
+          </div>
+
+          <figure class="demo" aria-labelledby="mail-title">
+            <figcaption class="demo-head">
+              <span id="mail-title">Essayez&nbsp;: choisissez un email</span>
+            </figcaption>
+            <div class="mail-demo">
+              <div class="inbox" id="inbox" role="group" aria-label="Emails d'exemple"></div>
+              <div class="mail-out" id="mailOut" aria-live="polite"></div>
+            </div>
+            <p class="demo-note">Exemple illustratif&nbsp;: emails fictifs, réponses préparées à l'avance pour la démo.
+              Les catégories et le format «&nbsp;[à compléter]&nbsp;» sont ceux du vrai système&nbsp;; les données du client restent privées.</p>
+          </figure>
         </article>
 
         <!-- 02 RAG + voix -->
-        <article class="case">
-          <div class="meta"><span class="num">02</span>Livré au client<br>Mai 2026</div>
-          <div class="body">
-            <h3>Chatbot RAG et agent vocal pour un centre de formation en médecines alternatives</h3>
-            <p class="lede">Les visiteurs posaient les mêmes questions, alors que les réponses existaient déjà
-              dans les documents du centre (PDF, tableaux Excel ou CSV).</p>
-            <p>Une chaîne d'ingestion lit les documents depuis Google Drive (PDF, Excel, CSV), les découpe,
-              calcule leurs embeddings et les range dans une base vectorielle Supabase ; les tableaux sont stockés
-              ligne par ligne pour être interrogés en SQL. Côté conversation, un agent choisit son outil selon la
-              question : recherche sémantique, lecture d'un document entier ou requête SQL, avec une mémoire
-              de conversation. Le chatbot s'ajoute au site du client avec une seule balise script.
-              J'ai aussi conçu l'agent vocal d'accueil téléphonique (Retell, ElevenLabs).</p>
-            <dl class="facts">
-              <dt>Mon rôle</dt><dd>Seul, de la conception à la livraison du code et des guides</dd>
-              <dt>Choix clé</dt><dd>Un agent qui choisit entre recherche vectorielle et SQL : le texte et les tableaux ne se cherchent pas de la même façon</dd>
-              <dt>Outils</dt><dd>n8n, OpenAI (chat et embeddings), Supabase, PostgreSQL, Retell, ElevenLabs, JavaScript, PHP</dd>
-            </dl>
-
-            <figure class="demo" aria-labelledby="rag-title">
-              <div class="demo-title" id="rag-title">Comment une question est traitée</div>
-              <div class="flow">
-                <div class="node"><b>Question</b><span>« Quelles sont les dates de la prochaine session ? »</span></div>
-                <div class="arrow" aria-hidden="true">→</div>
-                <div class="branch">
-                  <div class="node"><b>Documents</b><span>embedding de la question, recherche des passages proches dans Supabase</span></div>
-                  <div class="node"><b>Tableaux</b><span>requête SQL sur les données structurées</span></div>
-                </div>
-                <div class="arrow" aria-hidden="true">→</div>
-                <div class="node"><b>Réponse</b><span>le LLM rédige à partir des éléments retrouvés</span></div>
-              </div>
-
-              <figcaption>Schéma simplifié du pipeline.</figcaption>
-            </figure>
+        <article class="case reveal" id="chatbot-rag">
+          <div class="case-head">
+            <p class="status"><span class="pill">Livré au client</span>Mai 2026 · Centre de formation en médecines alternatives</p>
+            <h3>Chatbot RAG et agent vocal pour un centre de formation</h3>
+            <p class="lede">Les visiteurs posaient sans cesse les mêmes questions, alors que les réponses existaient déjà
+              dans les documents du centre&nbsp;: PDF, tableaux Excel et CSV.</p>
           </div>
+          <div class="body">
+            <p>Une chaîne d'ingestion lit les documents depuis Google Drive, les découpe, calcule leurs embeddings
+              et les range dans une base vectorielle Supabase&nbsp;; les tableaux sont stockés ligne par ligne pour être
+              interrogés en SQL. Un agent avec mémoire de conversation choisit son outil selon la question.
+              Le chat s'ajoute au site du client avec une seule balise script. J'ai aussi conçu un agent vocal d'accueil téléphonique.</p>
+            <dl class="facts">
+              <div><dt>Choix clé</dt><dd>Le texte et les tableaux ne se cherchent pas de la même façon&nbsp;: une recherche vectorielle répond mal à «&nbsp;combien coûte la formation X&nbsp;?&nbsp;» quand la réponse est dans une cellule</dd></div>
+              <div><dt>Mon rôle</dt><dd>Seul, de la conception à la livraison du code et des guides d'installation</dd></div>
+            </dl>
+            <ul class="tools" aria-label="Outils">
+              <li>n8n</li><li>OpenAI</li><li>Supabase</li><li>PostgreSQL</li><li>Retell</li><li>ElevenLabs</li><li>JavaScript</li><li>PHP</li>
+            </ul>
+          </div>
+
+          <figure class="demo" aria-labelledby="rag-title">
+            <figcaption class="demo-head">
+              <span id="rag-title">Essayez&nbsp;: quel outil l'agent choisit-il&nbsp;?</span>
+            </figcaption>
+            <div class="rag">
+              <div class="rag-questions" id="ragQuestions" role="group" aria-label="Questions d'exemple"></div>
+              <ol class="rag-flow" id="ragFlow">
+                <li class="rag-step">Question</li>
+                <li class="rag-step">L'agent choisit son outil</li>
+                <li class="rag-tools">
+                  <ul>
+                    <li data-tool="vector"><b>Recherche sémantique</b><span>passages proches dans Supabase</span></li>
+                    <li data-tool="doc"><b>Document entier</b><span>lecture complète d'un fichier</span></li>
+                    <li data-tool="sql"><b>Requête SQL</b><span>cellules des tableaux</span></li>
+                  </ul>
+                </li>
+                <li class="rag-step">Le LLM rédige la réponse à partir de ce qu'il a trouvé</li>
+              </ol>
+            </div>
+            <p class="demo-note">Schéma simplifié, questions inventées pour la démo.</p>
+          </figure>
         </article>
 
         <!-- 03 Paie -->
-        <article class="case">
-          <div class="meta"><span class="num">03</span>En production<br>Depuis mai 2026</div>
+        <article class="case reveal" id="paie">
+          <div class="case-head">
+            <p class="status"><span class="pill pill-live">En production</span>Depuis mai 2026, chaque mois · Société de portage salarial</p>
+            <h3>Préparation des salaires automatisée, en production chez une société de portage salarial</h3>
+            <p class="lede">Chaque mois, l'équipe reprenait à la main l'export du logiciel de paie pour préparer
+              les fichiers de salaires, la feuille comptable et la commande de titres-restaurant.</p>
+          </div>
           <div class="body">
-            <h3>Préparation des salaires automatisée, en production pour une société de portage salarial</h3>
-            <p class="lede">Chaque mois, il fallait reprendre l'export de paie à la main pour préparer les fichiers
-              de salaires et la commande de titres-restaurant.</p>
-            <p>J'ai écrit un script Google Apps Script qui transforme l'export de paie en un tableau consolidé
-              (brut, charges, coût global par salarié) et remplit la commande de titres-restaurant.
-              Il est livré avec une batterie de tests et tourne en production depuis mai 2026.</p>
+            <p>Un script Google Apps Script intégré à Google Sheets ajoute un menu en trois étapes.
+              Le plus délicat&nbsp;: rapprocher des salariés entre fichiers aux formats différents.</p>
+            <ol class="steps">
+              <li><b>Feuille comptable</b><span>brut, charges et coût global par salarié</span></li>
+              <li><b>Feuille d'intégration</b><span>préparée à partir de l'export</span></li>
+              <li><b>Titres-restaurant</b><span>commande remplie</span></li>
+            </ol>
             <dl class="facts">
-              <dt>Résultat</dt><dd>Quelques heures de travail manuel économisées chaque mois</dd>
-              <dt>Fiabilité</dt><dd>Livré avec une batterie de tests sur des fichiers de paie de démonstration</dd>
-              <dt>Outils</dt><dd>Google Apps Script, Google Sheets, JavaScript, Python (tests)</dd>
+              <div><dt>Résultat</dt><dd>Quelques heures de travail manuel économisées chaque mois, avec moins de risques d'erreur de recopie</dd></div>
+              <div><dt>Cas traités</dt><dd>Matricules «&nbsp;0021&nbsp;» contre 21, noms avec ou sans accents, nombres au format «&nbsp;1 234,56&nbsp;», en-têtes irréguliers</dd></div>
+              <div><dt>Fiabilité</dt><dd>Tests automatisés en Node.js qui simulent Apps Script, et un générateur Python de fichiers de paie de démonstration</dd></div>
             </dl>
+            <ul class="tools" aria-label="Outils">
+              <li>Google Apps Script</li><li>Google Sheets</li><li>JavaScript</li><li>Node.js</li><li>Python</li>
+            </ul>
           </div>
         </article>
 
-        <!-- 04 CLIP -->
-        <article class="case">
-          <div class="meta"><span class="num">04</span>Projet d'école<br>Avec le laboratoire GREYC<br>oct. 2024 à jan. 2025</div>
-          <div class="body">
-            <h3>Recherche multimodale texte-image dans la Tapisserie de Bayeux (CLIP)</h3>
-            <p class="lede">La Tapisserie fait près de 70 mètres. Comment retrouver une scène sans la connaître,
-              juste en la décrivant, ou à partir d'une autre image ?</p>
-            <p>J'ai utilisé CLIP, un modèle qui place textes et images dans un même espace de vecteurs.
-              Une description et une scène qui parlent de la même chose se retrouvent proches :
-              la recherche devient un calcul de similarité.</p>
-            <dl class="facts">
-              <dt>Outils</dt><dd>Python, OpenAI CLIP, embeddings, similarité vectorielle, computer vision</dd>
-            </dl>
-
-            <figure class="demo" aria-labelledby="clip-title">
-              <div class="demo-title" id="clip-title">L'idée en une image · choisissez une requête</div>
-              <div class="clip">
-                <svg viewBox="0 0 600 320" role="img" aria-label="Espace d'embeddings : la requête texte se place près des scènes qui lui correspondent">
-                  <g id="clipLinks"></g>
-                  <g data-k="navires"><circle class="pt" cx="390" cy="74" r="10"/><text class="pt-label" x="406" y="78">navires</text></g>
-                  <g data-k="navires"><circle class="pt" cx="424" cy="118" r="10"/><text class="pt-label" x="440" y="122">débarquement</text></g>
-                  <g data-k="comete"><circle class="pt" cx="404" cy="250" r="10"/><text class="pt-label" x="420" y="254">la comète</text></g>
-                  <g data-k="cavaliers"><circle class="pt" cx="112" cy="232" r="10"/><text class="pt-label" x="128" y="236">cavalerie</text></g>
-                  <g data-k="cavaliers"><circle class="pt" cx="160" cy="276" r="10"/><text class="pt-label" x="176" y="280">bataille d'Hastings</text></g>
-                  <g data-k="repas"><circle class="pt" cx="96" cy="70" r="10"/><text class="pt-label" x="112" y="74">le banquet</text></g>
-                  <g data-k="serment"><circle class="pt" cx="250" cy="150" r="10"/><text class="pt-label" x="266" y="154">le serment</text></g>
-                  <g id="clipQ" class="q" transform="translate(260,160)"><rect x="-7" y="-7" width="14" height="14" rx="2" transform="rotate(45)"/></g>
-                </svg>
-                <div class="queries" id="queries">
-                  <p>Requête texte :</p>
-                </div>
-              </div>
-              <figcaption>Schéma illustratif en 2D : les vrais embeddings CLIP ont des centaines de dimensions.
-                Les points sont des scènes de la Tapisserie, le losange est la requête.</figcaption>
-            </figure>
-          </div>
-        </article>
-
-        <!-- Aussi -->
-        <div class="also">
-          <div class="label">Aussi</div>
-          <ul>
-            <li><b>Veille concurrentielle hebdomadaire, en production.</b> Un workflow n8n qui suit les concurrents
-              d'une entreprise de marketing et produit une synthèse chaque semaine.</li>
-            <li><b>Audit des justificatifs comptables par LLM.</b> Chaque mois, repérer dans les emails factures et reçus,
-              extraire émetteur, date et montant, signaler les pièces manquantes et préparer l'envoi au comptable.
-              Livré à la société de portage.</li>
-            <li><b>Hackathon LCL Paris, 3<sup>e</sup> place (sept. 2024).</b> Un prototype de chatbot expert des cartes bancaires,
-              développé en 26 heures avec Gemini sur Google Cloud.</li>
+        <!-- Autres projets -->
+        <div class="more reveal">
+          <h3 class="more-title">Autres projets</h3>
+          <ul class="more-grid">
+            <li><span class="pill pill-live">En production</span><h4>Veille concurrentielle hebdomadaire</h4>
+              <p>Un workflow n8n suit chaque semaine les concurrents d'une entreprise de marketing et envoie par email une synthèse rédigée par LLM (OpenAI). Depuis mai 2026.</p></li>
+            <li><span class="pill">Livré au client</span><h4>Audit des justificatifs comptables par LLM</h4>
+              <p>Chaque mois, repérer dans les emails factures et reçus, extraire émetteur, date et montant, signaler les pièces manquantes et préparer l'envoi au comptable.</p></li>
+            <li><span class="pill">Projet d'école</span><h4>Recherche texte-image dans la Tapisserie de Bayeux</h4>
+              <p>Avec le laboratoire GREYC, oct. 2024 à jan. 2025. Retrouver une scène en la décrivant&nbsp;: CLIP place textes et images dans un même espace, la recherche devient un calcul de similarité.</p></li>
+            <li><span class="pill">3<sup>e</sup> place</span><h4>Hackathon LCL, Paris</h4>
+              <p>Sept. 2024. Un chatbot expert des cartes bancaires, développé en équipe en 26 heures avec Gemini sur Google Cloud.</p></li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- Méthode -->
-    <section>
+    <section id="methode" aria-labelledby="methode-title">
       <div class="wrap">
-        <div class="section-head">
-          <div class="label">Méthode</div>
-          <h2>Ma méthode : tester, garder l'humain, choisir le bon modèle</h2>
-        </div>
-        <div class="principles">
+        <header class="section-head reveal">
+          <p class="eyebrow">Méthode</p>
+          <h2 id="methode-title">Comment je travaille.</h2>
+        </header>
+        <div class="principles reveal">
           <div>
             <h3>Tester avant de livrer</h3>
-            <p>Un système LLM se valide sur des cas concrets écrits à l'avance, pas sur une impression : 16 emails de test pour l'assistant, cas limites compris.</p>
+            <p>Un système LLM se valide sur des cas concrets écrits à l'avance, cas limites compris, pas sur une impression. C'est ainsi que le bug des emails simultanés a été trouvé avant la livraison.</p>
           </div>
           <div>
             <h3>Garder l'humain dans la boucle</h3>
-            <p>Sur les actions qui engagent, le modèle prépare et une personne décide. Si une information manque, le brouillon écrit « [à compléter] » au lieu de l'inventer.</p>
+            <p>Sur les actions qui engagent l'entreprise, le modèle prépare et une personne décide. Si une information manque, le brouillon écrit «&nbsp;[à compléter]&nbsp;» au lieu de l'inventer.</p>
           </div>
           <div>
             <h3>Choisir le modèle pour le besoin</h3>
-            <p>Coût, latence, confidentialité : selon le client, un modèle via API (OpenAI) ou un modèle open source en local avec Ollama.</p>
+            <p>Coût, latence, confidentialité&nbsp;: selon le client, un modèle via API (OpenAI, Claude, Gemini) ou un modèle open source en local avec Ollama.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Compétences -->
-    <section id="competences">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="label">Compétences</div>
           <div>
-            <h2>Compétences, et le projet qui les prouve</h2>
+            <h3>Livrer de bout en bout</h3>
+            <p>Cadrage du besoin, développement, recette, guide d'installation et relation client. J'utilise des outils de code IA comme Claude Code, avec une revue systématique du code produit.</p>
           </div>
         </div>
-        <table class="skills">
-          <tbody>
-            <tr><th>LLM : OpenAI, Claude, Gemini, Ollama</th><td>Assistant email, chatbot RAG, agents chez ALTEN, hackathon LCL<small>API hébergées et modèles locaux</small></td></tr>
-            <tr><th>IA générative et prompt engineering</th><td>Assistant email : catégorie, résumé, ton et brouillon en une sortie JSON, consignes anti-invention<small>Audit des justificatifs comptables par LLM</small></td></tr>
-            <tr><th>RAG et embeddings</th><td>Chatbot de l'organisme de formation, recherche CLIP sur la Tapisserie<small>Supabase comme base vectorielle</small></td></tr>
-            <tr><th>Agents et NLP</th><td>Agent RAG qui choisit ses outils (recherche vectorielle, SQL), prototype de pilotage d'agents chez ALTEN Labs, agent vocal (Retell), classification d'emails</td></tr>
-            <tr><th>Prototypage rapide</th><td>Chatbot en 26 heures au hackathon LCL (3<sup>e</sup> place), prototype de recherche chez ALTEN Labs</td></tr>
-            <tr><th>Machine Learning et vision</th><td>Modèle d'aide à la radiothérapie (données DICOM), spécialité traitement d'images à l'ENSICAEN<small>TensorFlow / Keras, Scikit-learn, Pandas, NumPy</small></td></tr>
-            <tr><th>Python et SQL</th><td>Python sur tous les projets, SQL pour les données structurées du chatbot</td></tr>
-            <tr><th>Automatisation et outils</th><td>n8n (workflows en production), Google Apps Script, Supabase, Git, GCP, Docker (bases)</td></tr>
-            <tr><th>Langues</th><td>Français (natif), anglais (C1), arabe (B2)</td></tr>
-          </tbody>
-        </table>
       </div>
     </section>
 
     <!-- Parcours -->
-    <section id="parcours">
+    <section id="parcours" aria-labelledby="parcours-title">
       <div class="wrap">
-        <div class="section-head">
-          <div class="label">Parcours</div>
-          <h2>Parcours</h2>
-        </div>
-        <ol class="timeline">
+        <header class="section-head reveal">
+          <p class="eyebrow">Parcours</p>
+          <h2 id="parcours-title">Parcours</h2>
+        </header>
+        <ol class="timeline reveal">
           <li>
-            <div class="when">sept. 2025 à aujourd'hui</div>
+            <p class="when">sept. 2025 à aujourd'hui</p>
             <div>
               <h3>Ingénieur IA indépendant</h3>
-              <div class="where">Île-de-France</div>
-              <p>Conception et livraison d'outils d'IA générative et d'automatisations pour des entreprises, du cadrage à la recette : projets 01 à 03. Deux automatisations sont en production chez les clients (paie et veille concurrentielle).</p>
+              <p class="where">Île-de-France</p>
+              <p>Outils d'IA générative et automatisations pour des entreprises, du cadrage à la recette. Deux automatisations sont en production chez les clients (paie et veille concurrentielle).</p>
             </div>
           </li>
           <li>
-            <div class="when">fév. à août 2025</div>
+            <p class="when">fév. à août 2025</p>
             <div>
               <h3>Ingénieur IA, stage de fin d'études</h3>
-              <div class="where">ALTEN Labs, Rennes</div>
-              <p>Prototype de recherche : pilotage d'agents en langage naturel à base de LLM. Intégration de modèles locaux (Ollama) et hébergés (OpenAI), conteneurisation avec Docker.</p>
+              <p class="where">ALTEN Labs, Rennes · Direction de l'innovation</p>
+              <p>Prototype de recherche pour piloter des agents logiciels et physiques en langage naturel avec des LLM&nbsp;: un agent Excel, un bras robotique intégré avec un autre laboratoire, puis le routage de demandes multiples vers le bon agent par un LLM classifieur. Travail en binôme&nbsp;; exécutable autonome, API et interface web de chat, déploiement avec Docker Compose, modèles hébergés (OpenAI) et locaux (Ollama).</p>
             </div>
           </li>
           <li>
-            <div class="when">mai à août 2024</div>
+            <p class="when">mai à août 2024</p>
             <div>
               <h3>Stage Machine Learning en radiothérapie</h3>
-              <div class="where">Hôpital C. Mahmoudi, Tizi-Ouzou</div>
+              <p class="where">Hôpital C. Mahmoudi, Tizi-Ouzou</p>
               <p>Modèle de Machine Learning pour assister les physiciens médicaux, à partir de données DICOM (Keras, Pydicom, Scikit-learn).</p>
             </div>
           </li>
           <li>
-            <div class="when">2022 à 2025</div>
+            <p class="when">2022 à 2025</p>
             <div>
               <h3>Diplôme d'ingénieur</h3>
-              <div class="where">ENSICAEN, Caen</div>
+              <p class="where">ENSICAEN, Caen</p>
               <p>Spécialité intelligence artificielle et traitement d'images.</p>
             </div>
           </li>
           <li>
-            <div class="when">2020 à 2022</div>
+            <p class="when">2020 à 2022</p>
             <div>
               <h3>Classes préparatoires MPSI puis PSI</h3>
-              <div class="where">Lycée Pothier, Orléans</div>
+              <p class="where">Lycée Pothier, Orléans</p>
             </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="contact">
+    <!-- Compétences -->
+    <section id="competences" aria-labelledby="competences-title">
       <div class="wrap">
-        <div class="section-head">
-          <div class="label">Contact</div>
+        <header class="section-head reveal">
+          <p class="eyebrow">Compétences</p>
+          <h2 id="competences-title">Compétences, et où elles ont servi.</h2>
+        </header>
+        <dl class="skills reveal">
           <div>
-            <h2>Vous recrutez un ingénieur IA junior ? Parlons-en.</h2>
-            <p class="open">Ouvert à un CDI comme à des missions en freelance, en Île-de-France ou en remote.</p>
-            <a class="mail" href="mailto:contact@anisahmedzaid.com">contact@anisahmedzaid.com</a>
-            <div class="links">
-              <a class="btn" href="/cv/CV-Anis-Ahmed-Zaid.pdf" target="_blank" rel="noopener">Télécharger le CV</a>
-              <a href="https://linkedin.com/in/anis-ahmed-zaid" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
+            <dt>LLM et IA générative</dt>
+            <dd><ul class="tools"><li>OpenAI</li><li>Claude</li><li>Gemini</li><li>Ollama · Qwen</li><li>Prompt engineering</li><li>Sorties JSON</li><li>Consignes anti-invention</li></ul>
+              <p><span class="where-label">Où&nbsp;:</span> Assistant email, chatbot RAG, ALTEN Labs, hackathon LCL, veille, audit des justificatifs</p></dd>
           </div>
+          <div>
+            <dt>RAG et embeddings</dt>
+            <dd><ul class="tools"><li>Découpage de documents</li><li>Embeddings</li><li>Supabase</li><li>Recherche sémantique et SQL</li></ul>
+              <p><span class="where-label">Où&nbsp;:</span> Chatbot du centre de formation, recherche CLIP sur la Tapisserie</p></dd>
+          </div>
+          <div>
+            <dt>Agents</dt>
+            <dd><ul class="tools"><li>Choix d'outils</li><li>Routage par LLM classifieur</li><li>Dialogue orienté tâche</li><li>Agent vocal · Retell, ElevenLabs</li></ul>
+              <p><span class="where-label">Où&nbsp;:</span> Chatbot RAG, ALTEN Labs</p></dd>
+          </div>
+          <div>
+            <dt>Machine Learning et vision</dt>
+            <dd><ul class="tools"><li>TensorFlow / Keras</li><li>Scikit-learn</li><li>Pandas</li><li>NumPy</li><li>CLIP</li><li>Traitement d'images</li></ul>
+              <p><span class="where-label">Où&nbsp;:</span> Stage en radiothérapie, projet Bayeux, spécialité ENSICAEN</p></dd>
+          </div>
+          <div>
+            <dt>Langages</dt>
+            <dd><ul class="tools"><li>Python</li><li>SQL</li><li>JavaScript · Apps Script, Node.js</li></ul>
+              <p><span class="where-label">Où&nbsp;:</span> Tous les projets</p></dd>
+          </div>
+          <div>
+            <dt>Automatisation et outils</dt>
+            <dd><ul class="tools"><li>n8n</li><li>Google Apps Script</li><li>Google APIs</li><li>Supabase</li><li>Git</li><li>Docker (bases)</li><li>GCP</li></ul>
+              <p><span class="where-label">Où&nbsp;:</span> Projets clients</p></dd>
+          </div>
+          <div>
+            <dt>Langues</dt>
+            <dd><p class="langs">Français natif · anglais C1 · arabe B2</p></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="contact-main reveal">
+          <h2 id="contact-title">Vous recrutez un ingénieur IA junior&nbsp;? Parlons-en.</h2>
+          <p class="open">Disponible immédiatement. CDI de préférence, en Île-de-France ou en remote&nbsp;; ouvert aussi à des missions freelance.</p>
+          <a class="mail" href="mailto:contact@anisahmedzaid.com">contact@anisahmedzaid.com</a>
+          <div class="actions">
+            <a class="btn" href="/cv/CV-Anis-Ahmed-Zaid.pdf" target="_blank" rel="noopener">Télécharger le CV</a>
+            <a class="text-link" href="https://linkedin.com/in/anis-ahmed-zaid" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="ai-copy reveal">
+          <h3>Comparez mon profil à votre offre</h3>
+          <p>Mon profil détaillé en Markdown, écrit pour un assistant IA. Donnez-le-lui avec votre offre&nbsp;: il dira ce qui correspond et ce qui manque.</p>
+          <div class="ai-actions">
+            <button type="button" class="btn btn-quiet" id="aiCopy">Copier le profil</button>
+            <a href="https://chatgpt.com/?q=Voici%20le%20profil%20d%C3%A9taill%C3%A9%20d'Anis%20Ahmed%20Zaid%2C%20ing%C3%A9nieur%20IA%20%3A%20https%3A%2F%2Fanisahmedzaid.com%2Fanis-ahmed-zaid.md.%20Lis-le.%20Je%20vais%20ensuite%20te%20coller%20une%20offre%20d'emploi%20%3A%20compare-la%20%C3%A0%20ce%20profil%20point%20par%20point%20(ce%20qui%20correspond%2C%20ce%20qui%20manque)." target="_blank" rel="noopener noreferrer">Ouvrir dans ChatGPT</a>
+            <a href="https://claude.ai/new?q=Voici%20le%20profil%20d%C3%A9taill%C3%A9%20d'Anis%20Ahmed%20Zaid%2C%20ing%C3%A9nieur%20IA%20%3A%20https%3A%2F%2Fanisahmedzaid.com%2Fanis-ahmed-zaid.md.%20Lis-le.%20Je%20vais%20ensuite%20te%20coller%20une%20offre%20d'emploi%20%3A%20compare-la%20%C3%A0%20ce%20profil%20point%20par%20point%20(ce%20qui%20correspond%2C%20ce%20qui%20manque)." target="_blank" rel="noopener noreferrer">Ouvrir dans Claude</a>
+            <a href="/anis-ahmed-zaid.md" download>Télécharger (.md)</a>
+          </div>
+          <p class="ai-status" id="aiStatus" role="status" aria-live="polite"></p>
         </div>
       </div>
     </section>
@@ -451,6 +462,7 @@
       <a href="/mentions-legales.html">Mentions légales</a>
       <a href="/privacy-policy.html">Confidentialité</a>
       <a href="/terms-of-service.html">CGU</a>
+      <a href="/index.md">Version Markdown</a>
     </div>
   </footer>
 

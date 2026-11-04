@@ -1,28 +1,70 @@
-// Header border once the page scrolls
+// anisahmedzaid.com · small, dependency-free enhancements. The page reads fine without them.
+document.documentElement.classList.add('js');
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const NBSP = ' ';
+
+// Navigation: scroll-edge fade once content slides under the bar
 const header = document.getElementById('top');
-const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
-window.addEventListener('scroll', onScroll, { passive: true });
-onScroll();
+if (header) {
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
+
+// Wayfinding: mark the section currently in view
+const navLinks = [...document.querySelectorAll('.top nav a[href^="#"]')];
+if (navLinks.length && 'IntersectionObserver' in window) {
+  const byId = new Map(navLinks.map((a) => [a.getAttribute('href').slice(1), a]));
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      const link = byId.get(e.target.id);
+      if (!link) return;
+      if (e.isIntersecting) {
+        navLinks.forEach((a) => a.removeAttribute('aria-current'));
+        link.setAttribute('aria-current', 'true');
+      } else if (link.getAttribute('aria-current')) {
+        link.removeAttribute('aria-current');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  byId.forEach((_, id) => { const s = document.getElementById(id); if (s) spy.observe(s); });
+  // The last section is short: at the very bottom, it is the one in view.
+  window.addEventListener('scroll', () => {
+    if (window.innerHeight + window.scrollY < document.documentElement.scrollHeight - 4) return;
+    navLinks.forEach((a) => a.removeAttribute('aria-current'));
+    navLinks[navLinks.length - 1].setAttribute('aria-current', 'true');
+  }, { passive: true });
+}
+
+// Arrival: reveal blocks as they enter view (never hides content without JS)
+const reveals = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+  reveals.forEach((el) => io.observe(el));
+} else {
+  reveals.forEach((el) => el.classList.add('in'));
+}
 
 // Day / night theme
 const themeBtn = document.getElementById('themeBtn');
 const themeMeta = document.querySelector('meta[name="theme-color"]');
 const syncTheme = () => {
   const dark = document.documentElement.getAttribute('data-theme') === 'dark';
-  themeBtn.setAttribute('aria-label', dark ? 'Passer au thème clair' : 'Passer au thème sombre');
-  themeMeta.setAttribute('content', dark ? '#141311' : '#f7f5f0');
+  if (themeBtn) themeBtn.setAttribute('aria-label', dark ? 'Passer au thème clair' : 'Passer au thème sombre');
+  if (themeMeta) themeMeta.setAttribute('content', dark ? '#000000' : '#f5f5f7');
 };
+syncTheme();
 if (themeBtn) {
-  syncTheme();
   themeBtn.addEventListener('click', () => {
     const root = document.documentElement;
     const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     const apply = () => { root.setAttribute('data-theme', next); syncTheme(); };
     try { localStorage.setItem('theme', next); } catch (e) {}
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (document.startViewTransition && !reduce) {
+    if (document.startViewTransition && !reduceMotion.matches) {
       document.startViewTransition(apply);
-    } else if (!reduce) {
+    } else if (!reduceMotion.matches) {
       root.classList.add('theme-fade');
       apply();
       setTimeout(() => root.classList.remove('theme-fade'), 500);
@@ -32,11 +74,12 @@ if (themeBtn) {
   });
 }
 
-// "Version pour IA": copy the detailed Markdown profile to the clipboard
+// "Comparez mon profil à votre offre": copy the detailed Markdown profile
 const aiCopy = document.getElementById('aiCopy');
 const aiStatus = document.getElementById('aiStatus');
 // Fetched ahead of the click: browsers drop clipboard writes that come too long after the gesture.
 const aiProfile = aiCopy ? fetch('/anis-ahmed-zaid.md').then((r) => r.text()) : null;
+if (aiProfile) aiProfile.catch(() => {});
 const copyFallback = (value) => {
   const area = Object.assign(document.createElement('textarea'), { value, readOnly: true });
   area.style.cssText = 'position:fixed;opacity:0';
@@ -51,12 +94,49 @@ if (aiCopy) {
     try {
       const md = await aiProfile;
       try { await navigator.clipboard.writeText(md); } catch (e) { copyFallback(md); }
-      aiStatus.textContent = 'Copié. Collez-le dans votre assistant IA.';
+      aiCopy.textContent = 'Copié';
+      aiStatus.textContent = `Profil copié. Collez-le dans votre assistant IA avec votre offre.`;
+      setTimeout(() => { aiCopy.textContent = 'Copier le profil'; }, 2400);
     } catch (e) {
-      aiStatus.textContent = 'Copie impossible : utilisez Télécharger.';
+      aiStatus.textContent = `Copie impossible${NBSP}: utilisez «${NBSP}Télécharger (.md)${NBSP}».`;
     }
   });
 }
+
+const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const frenchSpaces = (s) => s.replace(/ ([:;?!»])/g, `${NBSP}$1`).replace(/« /g, `«${NBSP}`);
+
+// A list of buttons where exactly one is pressed (segmented choice). Arrow keys move between them.
+const choiceGroup = (container, labels, onSelect) => {
+  const buttons = labels.map((html, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.innerHTML = html;
+    b.addEventListener('click', () => select(i));
+    container.appendChild(b);
+    return b;
+  });
+  const select = (i) => {
+    buttons.forEach((b, j) => b.setAttribute('aria-pressed', String(i === j)));
+    // On narrow screens the choices scroll sideways: keep the chosen one in view, without moving the page.
+    if (container.scrollWidth > container.clientWidth) {
+      const left = buttons[i].offsetLeft - container.offsetLeft - 2;
+      container.scrollTo({ left, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+    }
+    onSelect(i);
+  };
+  container.addEventListener('keydown', (e) => {
+    const i = buttons.indexOf(document.activeElement);
+    if (i < 0) return;
+    const step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+    if (!step) return;
+    e.preventDefault();
+    const next = (i + step + buttons.length) % buttons.length;
+    buttons[next].focus();
+    select(next);
+  });
+  select(0);
+};
 
 // Demo 01 · email triage (fictional emails, precomputed outputs)
 const MAILS = [
@@ -86,69 +166,37 @@ const MAILS = [
   },
 ];
 
-const esc = (s) => s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
-
 const inbox = document.getElementById('inbox');
 const mailOut = document.getElementById('mailOut');
 if (inbox && mailOut) {
-  const show = (i) => {
+  choiceGroup(inbox, MAILS.map((m) => `<strong>${esc(m.from)}</strong>${esc(m.subject)}`), (i) => {
     const m = MAILS[i];
-    inbox.querySelectorAll('button').forEach((b, j) => b.setAttribute('aria-pressed', String(i === j)));
-    const draft = esc(m.draft).replace(/\[([^\]]+)\]/g, '<mark>[$1]</mark>');
+    const draft = esc(frenchSpaces(m.draft)).replace(/\[([^\]]+)\]/g, '<mark>[$1]</mark>');
     mailOut.innerHTML = `
-      <div class="fade">
+      <div class="swap">
         <div class="row"><span>Catégorie</span><span><span class="tag">${esc(m.category)}</span></span></div>
         <div class="row"><span>Ton</span><span>${esc(m.tone)}</span></div>
         <div class="row"><span>Résumé</span><span>${esc(m.summary)}</span></div>
         <div class="draft">${draft}</div>
         <div class="draft-state">Brouillon enregistré, en attente de relecture. Rien n'a été envoyé.</div>
       </div>`;
-  };
-  MAILS.forEach((m, i) => {
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.innerHTML = `<strong>${esc(m.from)}</strong>${esc(m.subject)}`;
-    b.addEventListener('click', () => show(i));
-    inbox.appendChild(b);
   });
-  show(0);
 }
 
-// Demo 03 · CLIP embedding space (illustrative 2D)
-const QUERIES = [
-  { text: 'des navires traversent la mer', k: 'navires', x: 372, y: 110 },
-  { text: 'une étoile dans le ciel', k: 'comete', x: 368, y: 232 },
-  { text: 'des cavaliers chargent', k: 'cavaliers', x: 200, y: 208 },
-  { text: 'un repas entre seigneurs', k: 'repas', x: 140, y: 100 },
+// Demo 02 · which tool the RAG agent picks (illustrative questions)
+const QUESTIONS = [
+  { q: 'Combien coûte la formation X ?', tool: 'sql' },
+  { q: 'Comment se déroule un stage pratique ?', tool: 'vector' },
+  { q: 'Résume-moi la brochure de présentation.', tool: 'doc' },
 ];
-const queries = document.getElementById('queries');
-const qMark = document.getElementById('clipQ');
-const links = document.getElementById('clipLinks');
-if (queries && qMark && links) {
-  const svgNS = 'http://www.w3.org/2000/svg';
-  const select = (i) => {
-    const q = QUERIES[i];
-    queries.querySelectorAll('button').forEach((b, j) => b.setAttribute('aria-pressed', String(i === j)));
-    qMark.setAttribute('transform', `translate(${q.x},${q.y})`);
-    links.innerHTML = '';
-    document.querySelectorAll('.clip g[data-k]').forEach((g) => {
-      const hit = g.dataset.k === q.k;
-      g.classList.toggle('hit', hit);
-      if (!hit) return;
-      const c = g.querySelector('circle');
-      const l = document.createElementNS(svgNS, 'line');
-      l.setAttribute('class', 'link');
-      l.setAttribute('x1', q.x); l.setAttribute('y1', q.y);
-      l.setAttribute('x2', c.getAttribute('cx')); l.setAttribute('y2', c.getAttribute('cy'));
-      links.appendChild(l);
-    });
-  };
-  QUERIES.forEach((q, i) => {
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.textContent = `« ${q.text} »`;
-    b.addEventListener('click', () => select(i));
-    queries.appendChild(b);
+const ragQuestions = document.getElementById('ragQuestions');
+const ragFlow = document.getElementById('ragFlow');
+if (ragQuestions && ragFlow) {
+  const first = ragFlow.querySelector('.rag-step');
+  const tools = ragFlow.querySelectorAll('[data-tool]');
+  choiceGroup(ragQuestions, QUESTIONS.map((x) => esc(frenchSpaces(`« ${x.q} »`))), (i) => {
+    const x = QUESTIONS[i];
+    first.innerHTML = `<b>Question${NBSP}:</b> ${esc(frenchSpaces(x.q))}`;
+    tools.forEach((t) => t.classList.toggle('on', t.dataset.tool === x.tool));
   });
-  select(0);
 }

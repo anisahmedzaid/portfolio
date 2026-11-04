@@ -36,7 +36,7 @@ test('index.md mirrors the homepage projects and links back', () => {
   const md = read('index.md');
   const html = read('index.html');
   assert.match(md, /^# Anis Ahmed Zaid/);
-  const titles = [...html.matchAll(/<article class="case">[\s\S]*?<h3>(.*?)<\/h3>/g)].map((m) => m[1]);
+  const titles = [...html.matchAll(/<article class="case[^"]*"[^>]*>[\s\S]*?<h3>(.*?)<\/h3>/g)].map((m) => m[1]);
   assert.ok(titles.length >= 3);
   for (const t of titles) assert.ok(md.includes(t.replace(/&#39;|&apos;/g, "'")), t);
   for (const link of ['/cv/CV-Anis-Ahmed-Zaid.pdf', '/llms.txt']) assert.ok(md.includes(SITE + link), link);
@@ -64,9 +64,8 @@ test('JSON-LD is a ProfilePage whose main entity is the Person, with a descripti
 test('brand name is in the title, h1 and visible intro', () => {
   const html = read('index.html');
   assert.match(html, /<title>Anis Ahmed Zaid · /);
-  assert.match(html, /<h1><span class="sr-only">Anis Ahmed Zaid, <\/span>Ingénieur IA\./);
-  assert.match(html, /Je suis Anis Ahmed Zaid, ingénieur ENSICAEN/);
-  assert.match(read('css/site.css'), /\.sr-only \{/);
+  assert.match(html, /<h1><span class="h1-name">Anis Ahmed Zaid<\/span> Ingénieur IA/);
+  assert.match(html, /<a href="#accueil" class="name">Anis Ahmed Zaid<\/a>/);
 });
 
 test('portrait is on the page and in the Person JSON-LD', () => {

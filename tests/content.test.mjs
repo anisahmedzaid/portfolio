@@ -10,8 +10,9 @@ const text = (h) => h.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<[^>]+
 const pageText = text(main);
 // Blocks = paragraphs, list items, definitions: the unit a reader sees a claim in.
 // A project card counts as one block: its status line and its title read together.
-const cards = [...main.matchAll(/<article class="case">([\s\S]*?)<\/article>/g)].map((m) => text(m[1].replace(/<figure[\s\S]*?<\/figure>/g, '')));
-const rest = main.replace(/<article class="case">[\s\S]*?<\/article>/g, '').split(/<\/(?:p|li|dd|h3|div)>/).map(text);
+const CASE = /<article class="case[^"]*"[^>]*>([\s\S]*?)<\/article>/g;
+const cards = [...main.matchAll(CASE)].map((m) => text(m[1].replace(/<figure[\s\S]*?<\/figure>/g, '')));
+const rest = main.replace(CASE, '').split(/<\/(?:p|li|dd|h3|div)>/).map(text);
 const htmlBlocks = [...cards, ...rest].join('\n');
 // Same unit in Markdown: a numbered project section is one block, everything else line by line.
 const mdBlocks = (f) => read(f).split(/\n(?=#{2,3} )/)
@@ -39,7 +40,7 @@ test('no unmastered technologies are claimed', () => {
 });
 
 test('skim view (headings only) tells who, what and the proof', () => {
-  const headings = [...main.matchAll(/<h[123][^>]*>([\s\S]*?)<\/h[123]>/g)].map((m) => text(m[1])).join(' | ');
+  const headings = [...main.matchAll(/<h[1-4][^>]*>([\s\S]*?)<\/h[1-4]>/g)].map((m) => text(m[1])).join(' | ');
   for (const term of [/Anis Ahmed Zaid/, /Ingénieur IA/, /LLM/, /RAG/, /production/, /Assistant email/, /Parcours/, /Compétences/]) {
     assert.match(headings, term, `${term} missing from headings: ${headings}`);
   }
@@ -53,12 +54,17 @@ test('first screen says who, where he trained and what he builds', () => {
 });
 
 test('every project states its status and its tools', () => {
-  const cases = [...main.matchAll(/<article class="case">([\s\S]*?)<\/article>/g)].map((m) => m[1]);
-  assert.equal(cases.length, 4);
+  const cases = [...main.matchAll(CASE)].map((m) => m[1]);
+  assert.equal(cases.length, 3);
   for (const c of cases) {
     assert.match(text(c), /Livré au client|En production|Projet d'école/);
-    assert.match(c, /<dt>Outils<\/dt>/);
+    assert.match(c, /class="tools" aria-label="Outils"/);
   }
+  // Smaller projects carry a status too.
+  const grid = main.slice(main.indexOf('class="more-grid"'), main.indexOf('</ul>', main.indexOf('class="more-grid"')));
+  const items = [...grid.matchAll(/<li>([\s\S]*?)<\/li>/g)].map((m) => text(m[1]));
+  assert.ok(items.length >= 4);
+  for (const li of items) assert.match(li, /Livré au client|En production|Projet d'école|place/);
 });
 
 test('copy has no long dashes and no runaway sentences', () => {

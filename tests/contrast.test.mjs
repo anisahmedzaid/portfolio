@@ -18,6 +18,7 @@ const PAIRS = [
   ['ink-3', 'paper', 4.5, 75], ['ink-3', 'card', 4.5, 75],
   ['accent', 'paper', 4.5, 75], ['accent', 'card', 4.5, 75],
   ['accent-ink', 'accent-soft', 4.5, 75],
+  ['live-ink', 'live-soft', 4.5, 75],
   ['ink-display', 'paper', 3, 45],
   ['paper', 'ink', 4.5, 75],
 ];
@@ -35,7 +36,8 @@ for (const [name, t] of Object.entries(themes)) {
 }
 
 test('known contrast regressions stay fixed', () => {
-  assert.match(css, /\.case \.body > \.lede \{ color: var\(--ink\); \}/, 'project lede must not inherit --ink-2');
+  assert.match(css, /\.case-head > \.lede \{[^}]*color: var\(--ink\);/, 'project lede must not inherit --ink-2');
   assert.match(css, /\.mail-out \.row > span:first-child/, 'row label selector must not match the category tag');
   assert.doesNotMatch(css, /font-size: 1[0-3]px/, 'no text under 14px');
+  for (const m of css.matchAll(/font-size: ([\d.]+)rem/g)) assert.ok(Number(m[1]) >= 0.875, `font-size ${m[1]}rem is under 14px`);
 });
