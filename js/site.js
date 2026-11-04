@@ -103,7 +103,7 @@ if (aiCopy) {
   });
 }
 
-// Easter egg: the prompt, skill and model behind this site
+// "Prompt du site" (footer): the prompt, skill and model behind this site
 const making = document.getElementById('making');
 if (making && making.showModal) {
   const makingStatus = document.getElementById('makingStatus');

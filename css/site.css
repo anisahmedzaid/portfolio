@@ -345,13 +345,9 @@ footer a:hover { color: var(--ink); }
 .legal-card dt { color: var(--ink-3); }
 .legal-card dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
 
-/* Easter egg: how this site was made */
-.making-btn {
-  margin-left: auto; font: inherit; color: var(--ink-3); background: none; border: 0; padding: 0 2px; cursor: pointer;
-  transition: color .2s var(--ease), transform .2s var(--ease-out);
-}
-.making-btn:hover { color: var(--accent); transform: rotate(45deg); }
-.making-btn:active { transform: rotate(45deg) scale(0.9); transition-duration: .1s; }
+/* Footer "Prompt du site": the prompt, skill and model behind this site */
+.making-btn { font: inherit; color: var(--ink-3); background: none; border: 0; padding: 0; cursor: pointer; }
+.making-btn:hover { color: var(--ink); }
 .making {
   width: min(680px, calc(100vw - 32px)); max-height: min(82vh, 760px); padding: 0; border: 0; border-radius: var(--r-lg);
   background: var(--card); color: var(--ink); box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
@@ -425,7 +421,6 @@ footer a:hover { color: var(--ink); }
   .swap { animation: fadeonly .2s linear both; }
   .btn:active, .top .cv:active, .theme-btn:active, .inbox button:active, .rag-questions button:active { transform: none; }
   .making[open] { animation: fadeonly .2s linear both; }
-  .making-btn:hover, .making-btn:active { transform: none; }
 }
 @keyframes fadeonly { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-transparency: reduce) {
