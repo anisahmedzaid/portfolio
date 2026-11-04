@@ -312,7 +312,7 @@ section + section { border-top: 1px solid var(--rule); }
 .ai-status { color: var(--ink-3); font-size: 0.9375rem; margin-top: 12px; min-height: 1.5em; }
 
 footer { padding: 32px 0 48px; font-size: 0.875rem; color: var(--ink-3); border-top: 1px solid var(--rule); }
-footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; text-align: center; }
 footer a { color: var(--ink-3); }
 footer a:hover { color: var(--ink); }
 
