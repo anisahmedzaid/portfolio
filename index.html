@@ -181,18 +181,15 @@
           <div class="case-head">
             <p class="status"><span class="pill">Livré au client</span>Juin 2026 · Entreprise de collecte de déchets, Québec</p>
             <h3>Assistant email par LLM pour une entreprise de collecte de déchets</h3>
-            <p class="lede">Plaintes, ramassages manqués, demandes de devis&nbsp;: tout arrivait en vrac dans une seule boîte,
-              et des clients partaient faute de réponse.</p>
+            <p class="lede">Tout arrivait en vrac dans une seule boîte, et des clients partaient faute de réponse.</p>
           </div>
           <div class="body">
-            <p>À chaque email reçu, un seul appel au LLM renvoie un JSON structuré&nbsp;: l'une de 10 catégories métier,
-              un résumé, le ton du client et un brouillon de réponse dans sa langue, français ou anglais.
-              L'email est rangé sous le bon libellé Gmail et une notification part sur Telegram.
-              Rien n'est envoyé au client&nbsp;: le workflow ne contient aucune étape d'envoi, une personne relit chaque brouillon.</p>
+            <p>Chaque email est classé parmi 10 catégories métier, résumé et rangé dans Gmail, avec un brouillon
+              de réponse dans la langue du client. Rien ne part seul&nbsp;: une personne relit chaque brouillon.</p>
             <dl class="facts">
-              <div><dt>Vérification</dt><dd>16 emails de test écrits à l'avance, 16 traités correctement, y compris un cas piège de classification et aucune date inventée</dd></div>
-              <div><dt>Bug corrigé</dt><dd>Deux emails dans la même minute faisaient échouer le second. Corrigé, puis validé sur 20 emails simultanés sans perte</dd></div>
-              <div><dt>Choix clé</dt><dd>Client sensible à la confidentialité&nbsp;: Qwen 2.5 exécuté en local avec Ollama, aucun email ne part vers une API d'IA externe</dd></div>
+              <div><dt>Vérification</dt><dd>16 emails de test sur 16 traités correctement, cas pièges compris</dd></div>
+              <div><dt>Bug corrigé</dt><dd>Deux emails à la même minute&nbsp;: corrigé, puis validé sur 20 simultanés sans perte</dd></div>
+              <div><dt>Choix clé</dt><dd>Modèle open source en local (Qwen 2.5, Ollama)&nbsp;: aucun email ne sort du serveur</dd></div>
             </dl>
             <ul class="tools" aria-label="Outils">
               <li>n8n</li><li>Ollama · Qwen 2.5</li><li>Gmail API</li><li>Telegram</li><li>Docker</li><li>Sortie JSON</li>
@@ -207,8 +204,7 @@
               <div class="inbox" id="inbox" role="group" aria-label="Emails d'exemple"></div>
               <div class="mail-out" id="mailOut" aria-live="polite"></div>
             </div>
-            <p class="demo-note">Exemple illustratif&nbsp;: emails fictifs, réponses préparées à l'avance pour la démo.
-              Les catégories et le format «&nbsp;[à compléter]&nbsp;» sont ceux du vrai système&nbsp;; les données du client restent privées.</p>
+            <p class="demo-note">Emails fictifs, réponses préparées pour la démo.</p>
           </figure>
         </article>
 
@@ -217,17 +213,13 @@
           <div class="case-head">
             <p class="status"><span class="pill">Livré au client</span>Mai 2026 · Centre de formation en médecines alternatives</p>
             <h3>Chatbot RAG et agent vocal pour un centre de formation</h3>
-            <p class="lede">Les visiteurs posaient sans cesse les mêmes questions, alors que les réponses existaient déjà
-              dans les documents du centre&nbsp;: PDF, tableaux Excel et CSV.</p>
+            <p class="lede">Les visiteurs posaient les mêmes questions, alors que les réponses étaient déjà dans les documents du centre.</p>
           </div>
           <div class="body">
-            <p>Une chaîne d'ingestion lit les documents depuis Google Drive, les découpe, calcule leurs embeddings
-              et les range dans une base vectorielle Supabase&nbsp;; les tableaux sont stockés ligne par ligne pour être
-              interrogés en SQL. Un agent avec mémoire de conversation choisit son outil selon la question.
-              Le chat s'ajoute au site du client avec une seule balise script. J'ai aussi conçu un agent vocal d'accueil téléphonique.</p>
+            <p>Les documents sont découpés et indexés dans Supabase, les tableaux interrogés en SQL&nbsp;;
+              un agent choisit son outil selon la question. S'y ajoute un agent vocal d'accueil téléphonique.</p>
             <dl class="facts">
-              <div><dt>Choix clé</dt><dd>Le texte et les tableaux ne se cherchent pas de la même façon&nbsp;: une recherche vectorielle répond mal à «&nbsp;combien coûte la formation X&nbsp;?&nbsp;» quand la réponse est dans une cellule</dd></div>
-              <div><dt>Mon rôle</dt><dd>Seul, de la conception à la livraison du code et des guides d'installation</dd></div>
+              <div><dt>Choix clé</dt><dd>Recherche vectorielle pour le texte, SQL pour les tableaux&nbsp;: un prix se lit dans une cellule</dd></div>
             </dl>
             <ul class="tools" aria-label="Outils">
               <li>n8n</li><li>OpenAI</li><li>Supabase</li><li>PostgreSQL</li><li>Retell</li><li>ElevenLabs</li><li>JavaScript</li><li>PHP</li>
@@ -253,7 +245,7 @@
                 <li class="rag-step">Le LLM rédige la réponse à partir de ce qu'il a trouvé</li>
               </ol>
             </div>
-            <p class="demo-note">Schéma simplifié, questions inventées pour la démo.</p>
+            <p class="demo-note">Schéma simplifié, questions d'exemple.</p>
           </figure>
         </article>
 
@@ -262,21 +254,19 @@
           <div class="case-head">
             <p class="status"><span class="pill pill-live">En production</span>Depuis mai 2026, chaque mois · Société de portage salarial</p>
             <h3>Préparation des salaires automatisée, en production chez une société de portage salarial</h3>
-            <p class="lede">Chaque mois, l'équipe reprenait à la main l'export du logiciel de paie pour préparer
-              les fichiers de salaires, la feuille comptable et la commande de titres-restaurant.</p>
+            <p class="lede">Chaque mois, l'équipe retraitait à la main l'export du logiciel de paie.</p>
           </div>
           <div class="body">
-            <p>Un script Google Apps Script intégré à Google Sheets ajoute un menu en trois étapes.
-              Le plus délicat&nbsp;: rapprocher des salariés entre fichiers aux formats différents.</p>
+            <p>Un script Google Apps Script ajoute à Google Sheets un menu en trois étapes.</p>
             <ol class="steps">
               <li><b>Feuille comptable</b><span>brut, charges et coût global par salarié</span></li>
               <li><b>Feuille d'intégration</b><span>préparée à partir de l'export</span></li>
               <li><b>Titres-restaurant</b><span>commande remplie</span></li>
             </ol>
             <dl class="facts">
-              <div><dt>Résultat</dt><dd>Quelques heures de travail manuel économisées chaque mois, avec moins de risques d'erreur de recopie</dd></div>
-              <div><dt>Cas traités</dt><dd>Matricules «&nbsp;0021&nbsp;» contre 21, noms avec ou sans accents, nombres au format «&nbsp;1 234,56&nbsp;», en-têtes irréguliers</dd></div>
-              <div><dt>Fiabilité</dt><dd>Tests automatisés en Node.js qui simulent Apps Script, et un générateur Python de fichiers de paie de démonstration</dd></div>
+              <div><dt>Résultat</dt><dd>Quelques heures économisées chaque mois, moins d'erreurs de recopie</dd></div>
+              <div><dt>Cas traités</dt><dd>Matricules, accents et formats de nombres différents d'un fichier à l'autre</dd></div>
+              <div><dt>Fiabilité</dt><dd>Tests automatisés sur des fichiers de paie de démonstration</dd></div>
             </dl>
             <ul class="tools" aria-label="Outils">
               <li>Google Apps Script</li><li>Google Sheets</li><li>JavaScript</li><li>Node.js</li><li>Python</li>
@@ -289,13 +279,13 @@
           <h3 class="more-title">Autres projets</h3>
           <ul class="more-grid">
             <li><span class="pill pill-live">En production</span><h4>Veille concurrentielle hebdomadaire</h4>
-              <p>Un workflow n8n suit chaque semaine les concurrents d'une entreprise de marketing et envoie par email une synthèse rédigée par LLM (OpenAI). Depuis mai 2026.</p></li>
+              <p>Chaque semaine, une synthèse des concurrents rédigée par LLM, pour une entreprise de marketing (n8n, OpenAI).</p></li>
             <li><span class="pill">Livré au client</span><h4>Audit des justificatifs comptables par LLM</h4>
-              <p>Chaque mois, repérer dans les emails factures et reçus, extraire émetteur, date et montant, signaler les pièces manquantes et préparer l'envoi au comptable.</p></li>
+              <p>Factures et reçus repérés dans les emails, montants extraits, pièces manquantes signalées au comptable.</p></li>
             <li><span class="pill">Projet d'école</span><h4>Recherche texte-image dans la Tapisserie de Bayeux</h4>
-              <p>Avec le laboratoire GREYC, oct. 2024 à jan. 2025. Retrouver une scène en la décrivant&nbsp;: CLIP place textes et images dans un même espace, la recherche devient un calcul de similarité.</p></li>
+              <p>Avec le laboratoire GREYC. Retrouver une scène en la décrivant, grâce aux embeddings CLIP.</p></li>
             <li><span class="pill">3<sup>e</sup> place</span><h4>Hackathon LCL, Paris</h4>
-              <p>Sept. 2024. Un chatbot expert des cartes bancaires, développé en équipe en 26 heures avec Gemini sur Google Cloud.</p></li>
+              <p>Un chatbot expert des cartes bancaires, en 26 heures avec Gemini sur Google Cloud.</p></li>
           </ul>
         </div>
       </div>
@@ -311,19 +301,19 @@
         <div class="principles reveal">
           <div>
             <h3>Tester avant de livrer</h3>
-            <p>Un système LLM se valide sur des cas concrets écrits à l'avance, cas limites compris, pas sur une impression. C'est ainsi que le bug des emails simultanés a été trouvé avant la livraison.</p>
+            <p>Des cas concrets écrits à l'avance, cas limites compris, plutôt qu'une impression.</p>
           </div>
           <div>
             <h3>Garder l'humain dans la boucle</h3>
-            <p>Sur les actions qui engagent l'entreprise, le modèle prépare et une personne décide. Si une information manque, le brouillon écrit «&nbsp;[à compléter]&nbsp;» au lieu de l'inventer.</p>
+            <p>Le modèle prépare, une personne décide. Ce qu'il ne sait pas, il ne l'invente pas.</p>
           </div>
           <div>
             <h3>Choisir le modèle pour le besoin</h3>
-            <p>Coût, latence, confidentialité&nbsp;: selon le client, un modèle via API (OpenAI, Claude, Gemini) ou un modèle open source en local avec Ollama.</p>
+            <p>API (OpenAI, Claude, Gemini) ou modèle local (Ollama), selon le coût, la latence et la confidentialité.</p>
           </div>
           <div>
             <h3>Livrer de bout en bout</h3>
-            <p>Cadrage du besoin, développement, recette, guide d'installation et relation client. J'utilise des outils de code IA comme Claude Code, avec une revue systématique du code produit.</p>
+            <p>Du cadrage à la recette et au guide d'installation, avec des outils de code IA et une revue systématique.</p>
           </div>
         </div>
       </div>
@@ -342,7 +332,7 @@
             <div>
               <h3>Ingénieur IA indépendant</h3>
               <p class="where">Île-de-France</p>
-              <p>Outils d'IA générative et automatisations pour des entreprises, du cadrage à la recette. Deux automatisations sont en production chez les clients (paie et veille concurrentielle).</p>
+              <p>Outils d'IA générative et automatisations pour des entreprises. Deux automatisations en production (paie, veille concurrentielle).</p>
             </div>
           </li>
           <li>
@@ -350,7 +340,7 @@
             <div>
               <h3>Ingénieur IA, stage de fin d'études</h3>
               <p class="where">ALTEN Labs, Rennes · Direction de l'innovation</p>
-              <p>Prototype de recherche pour piloter des agents logiciels et physiques en langage naturel avec des LLM&nbsp;: un agent Excel, un bras robotique intégré avec un autre laboratoire, puis le routage de demandes multiples vers le bon agent par un LLM classifieur. Travail en binôme&nbsp;; exécutable autonome, API et interface web de chat, déploiement avec Docker Compose, modèles hébergés (OpenAI) et locaux (Ollama).</p>
+              <p>Prototype de recherche&nbsp;: piloter des agents en langage naturel avec des LLM, d'un agent Excel à un bras robotique, avec routage multi-agents. API, interface de chat, Docker, OpenAI et Ollama.</p>
             </div>
           </li>
           <li>
@@ -358,7 +348,7 @@
             <div>
               <h3>Stage Machine Learning en radiothérapie</h3>
               <p class="where">Hôpital C. Mahmoudi, Tizi-Ouzou</p>
-              <p>Modèle de Machine Learning pour assister les physiciens médicaux, à partir de données DICOM (Keras, Pydicom, Scikit-learn).</p>
+              <p>Modèle d'aide aux physiciens médicaux, sur données DICOM (Keras, Scikit-learn).</p>
             </div>
           </li>
           <li>
@@ -418,11 +408,8 @@
             <dd><ul class="tools"><li>n8n</li><li>Google Apps Script</li><li>Google APIs</li><li>Supabase</li><li>Git</li><li>Docker (bases)</li><li>GCP</li></ul>
               <p><span class="where-label">Où&nbsp;:</span> Projets clients</p></dd>
           </div>
-          <div>
-            <dt>Langues</dt>
-            <dd><p class="langs">Français natif · anglais C1 · arabe B2</p></dd>
-          </div>
         </dl>
+        <p class="langs reveal"><b>Langues</b>Français natif · anglais C1 · arabe B2</p>
       </div>
     </section>
 

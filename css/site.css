@@ -293,7 +293,8 @@ section + section { border-top: 1px solid var(--rule); }
 .skills dd { margin: 0; }
 .skills dd p { margin-top: 14px; font-size: 0.9375rem; color: var(--ink-3); }
 .skills dd p .where-label { font-weight: 600; color: var(--ink-2); }
-.skills dd p.langs { margin-top: 0; color: var(--ink-2); font-size: 1rem; }
+.langs { margin: 24px 0 0; text-align: center; color: var(--ink-2); }
+.langs b { font-weight: 600; color: var(--ink); margin-right: 12px; }
 
 /* Contact */
 .contact { padding-bottom: 96px; }
