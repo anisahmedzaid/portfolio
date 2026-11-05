@@ -47,7 +47,7 @@ Une chaîne d'ingestion lit les documents depuis Google Drive, les découpe, cal
 
 - Choix clé : le texte et les tableaux ne se cherchent pas de la même façon ; une recherche vectorielle répond mal à « combien coûte la formation X ? » quand la réponse est dans une cellule
 - Mon rôle : seul, de la conception à la livraison du code et des guides d'installation
-- Outils : n8n, OpenAI, Supabase, Retell, ElevenLabs, JavaScript
+- Outils : n8n, OpenAI, Supabase, Retell, JavaScript
 - Démo sur le site : trois questions inventées et l'outil que l'agent choisit (recherche sémantique, document entier ou requête SQL)
 
 ### 03 · Préparation des salaires automatisée, en production chez une société de portage salarial
@@ -91,7 +91,7 @@ Un script Google Apps Script intégré à Google Sheets ajoute un menu en trois 
 |---|---|---|
 | LLM et IA générative | OpenAI, Claude, Gemini, Ollama (Qwen), prompt engineering, sorties JSON, consignes anti-invention | Assistant email, chatbot RAG, ALTEN Labs, hackathon LCL, veille, audit des justificatifs |
 | RAG et embeddings | Découpage de documents, embeddings, Supabase, recherche sémantique et SQL | Chatbot du centre de formation, recherche CLIP sur la Tapisserie |
-| Agents | Choix d'outils, routage par LLM classifieur, dialogue orienté tâche, agent vocal (Retell, ElevenLabs) | Chatbot RAG, ALTEN Labs |
+| Agents | Choix d'outils, routage par LLM classifieur, dialogue orienté tâche, agent vocal (Retell, ElevenLabs) | Chatbot RAG, agents vocaux (centre de formation, conciergerie), ALTEN Labs |
 | Machine Learning et vision | TensorFlow / Keras, Scikit-learn, Pandas, NumPy, CLIP, traitement d'images | Stage en radiothérapie, projet Bayeux, spécialité ENSICAEN |
 | Langages | Python, SQL, JavaScript (Apps Script) | Tous les projets |
 | Automatisation et outils | n8n, Google Apps Script, Google APIs, Supabase, Git, Docker (bases), GCP | Projets clients |

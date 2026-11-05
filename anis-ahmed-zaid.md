@@ -52,9 +52,9 @@ Tous ces projets ont été menés seul : cadrage avec le client, conception, dé
   - une chaîne d'ingestion qui lit les documents depuis Google Drive, découpe les textes, calcule leurs embeddings (OpenAI) et les range dans une base vectorielle Supabase ; les tableaux sont stockés ligne par ligne dans des tables pour être interrogés en SQL ;
   - un agent conversationnel qui choisit son outil selon la question : recherche sémantique dans les textes, lecture d'un document entier, ou requête SQL sur les tableaux ; avec une mémoire de conversation ;
   - un widget de chat qui s'ajoute au site du client avec une seule balise script ;
-  - un agent vocal d'accueil téléphonique (Retell pour la conversation, ElevenLabs pour la voix).
+  - un agent vocal d'accueil téléphonique (Retell, flux de conversation).
 - **Choix clé** : du texte et des tableaux ne se cherchent pas de la même façon. Une recherche vectorielle répond mal à « combien coûte la formation X ? » quand la réponse est dans une cellule de tableau ; d'où un agent qui choisit entre recherche vectorielle et SQL.
-- **Outils** : n8n, OpenAI (chat et embeddings), Supabase (SQL), Retell, ElevenLabs, JavaScript.
+- **Outils** : n8n, OpenAI (chat et embeddings), Supabase (SQL), Retell, JavaScript.
 
 ### 3. Préparation des salaires · société de portage salarial · EN PRODUCTION
 
@@ -130,7 +130,7 @@ Prototype de chatbot expert des cartes bancaires, développé en équipe en 26 h
 |---|---|---|
 | LLM et IA générative | OpenAI, Claude, Gemini, Ollama (modèles locaux, Qwen), prompt engineering, sorties JSON structurées, consignes anti-invention | Assistant email, chatbot RAG, ALTEN Labs, hackathon LCL, veille, audit des justificatifs |
 | RAG et embeddings | Découpage de documents, embeddings, base vectorielle Supabase, recherche sémantique combinée au SQL | Chatbot du centre de formation, recherche CLIP |
-| Agents | Agent qui choisit ses outils, routage par LLM classifieur, dialogue orienté tâche, agent vocal (Retell, ElevenLabs) | Chatbot RAG, ALTEN Labs |
+| Agents | Agent qui choisit ses outils, routage par LLM classifieur, dialogue orienté tâche, agent vocal (Retell, ElevenLabs) | Chatbot RAG, agents vocaux (centre de formation, conciergerie), ALTEN Labs |
 | Machine Learning et vision | TensorFlow / Keras, Scikit-learn, Pandas, NumPy, CLIP, traitement d'images | Stage en radiothérapie, projet Bayeux, spécialité ENSICAEN |
 | Langages | Python, SQL, JavaScript (Google Apps Script) | Tous les projets |
 | Automatisation et outils | n8n (fort), Google Apps Script, Google APIs, Supabase, Git, Docker (bases), GCP | Projets clients |
