@@ -12,10 +12,10 @@ Dernière mise à jour : novembre 2026.
 
 ## En bref
 
-- **Qui** : Anis Ahmed Zaid, ingénieur IA junior. Diplôme d'ingénieur ENSICAEN (2025), spécialité intelligence artificielle et traitement d'images.
+- **Qui** : Anis Ahmed Zaid, ingénieur IA. Diplôme d'ingénieur ENSICAEN (2025), spécialité intelligence artificielle et traitement d'images.
 - **Expérience** : environ 14 mois en indépendant (depuis septembre 2025) à concevoir et livrer seul des outils d'IA générative et des automatisations pour des entreprises ; stage de fin d'études chez ALTEN Labs sur des agents LLM ; stage de Machine Learning en radiothérapie à l'hôpital.
 - **Ce qu'il sait faire** : intégrer des LLM dans des processus métier réels (classification, résumé, rédaction, RAG, agents qui choisissent leurs outils), les tester avant livraison, garder un humain dans la boucle sur les actions sensibles, choisir entre modèle hébergé et modèle local selon le coût et la confidentialité.
-- **Ce qu'il cherche** : un poste d'ingénieur IA / ML / GenAI dans une équipe produit ou data, en CDI ou en mission freelance, en Île-de-France ou en remote.
+- **Ce qu'il cherche** : un poste en équipe ou des missions en automatisation IA (brancher des LLM et des agents sur des processus métier). Basé en Île-de-France, mobile en France et en remote.
 - **Langues** : français (natif), anglais (C1, professionnel), arabe (B2).
 - **Contact** : contact@anisahmedzaid.com · https://linkedin.com/in/anis-ahmed-zaid · CV : https://anisahmedzaid.com/cv/CV-Anis-Ahmed-Zaid.pdf
 
@@ -54,7 +54,7 @@ Tous ces projets ont été menés seul : cadrage avec le client, conception, dé
   - un widget de chat qui s'ajoute au site du client avec une seule balise script ;
   - un agent vocal d'accueil téléphonique (Retell pour la conversation, ElevenLabs pour la voix).
 - **Choix clé** : du texte et des tableaux ne se cherchent pas de la même façon. Une recherche vectorielle répond mal à « combien coûte la formation X ? » quand la réponse est dans une cellule de tableau ; d'où un agent qui choisit entre recherche vectorielle et SQL.
-- **Outils** : n8n, OpenAI (chat et embeddings), Supabase, PostgreSQL / SQL, Retell, ElevenLabs, JavaScript, PHP.
+- **Outils** : n8n, OpenAI (chat et embeddings), Supabase (SQL), Retell, ElevenLabs, JavaScript.
 
 ### 3. Préparation des salaires · société de portage salarial · EN PRODUCTION
 
@@ -132,7 +132,7 @@ Prototype de chatbot expert des cartes bancaires, développé en équipe en 26 h
 | RAG et embeddings | Découpage de documents, embeddings, base vectorielle Supabase, recherche sémantique combinée au SQL | Chatbot du centre de formation, recherche CLIP |
 | Agents | Agent qui choisit ses outils, routage par LLM classifieur, dialogue orienté tâche, agent vocal (Retell, ElevenLabs) | Chatbot RAG, ALTEN Labs |
 | Machine Learning et vision | TensorFlow / Keras, Scikit-learn, Pandas, NumPy, CLIP, traitement d'images | Stage en radiothérapie, projet Bayeux, spécialité ENSICAEN |
-| Langages | Python, SQL, JavaScript (Google Apps Script, Node.js) | Tous les projets |
+| Langages | Python, SQL, JavaScript (Google Apps Script) | Tous les projets |
 | Automatisation et outils | n8n (fort), Google Apps Script, Google APIs, Supabase, Git, Docker (bases), GCP | Projets clients |
 | Langues | Français (natif), anglais (C1), arabe (B2) | |
 

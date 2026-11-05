@@ -1,8 +1,8 @@
 # Anis Ahmed Zaid · Ingénieur IA
 
 > Version Markdown de https://anisahmedzaid.com/ pour les agents et les outils de lecture.
-> Ingénieur IA junior, diplômé de l'ENSICAEN (2025), passé par ALTEN Labs. Des LLM dans de vrais processus métier, testés avant d'être livrés.
-> Cherche un poste d'ingénieur IA / ML en Île-de-France ou en remote (CDI ou missions freelance).
+> Ingénieur IA, diplômé de l'ENSICAEN (2025), passé par ALTEN Labs. Des LLM dans de vrais processus métier, testés avant d'être livrés.
+> Ouvert à un poste en équipe ou à des missions en automatisation IA (LLM et agents sur des processus métier). Basé en Île-de-France, mobile en France et en remote.
 
 - CV (PDF) : https://anisahmedzaid.com/cv/CV-Anis-Ahmed-Zaid.pdf
 - LinkedIn : https://linkedin.com/in/anis-ahmed-zaid
@@ -11,7 +11,7 @@
 - Guide pour les agents : https://anisahmedzaid.com/llms.txt
 - Photo : https://anisahmedzaid.com/img/anis-ahmed-zaid-800.jpg
 
-Diplômé de l'ENSICAEN (2025, IA et traitement d'images), passé par ALTEN Labs. Depuis septembre 2025, en indépendant, je conçois et livre seul des outils d'IA générative pour des entreprises : tri d'emails par LLM, chatbot RAG, agent vocal, préparation de paie. Je cherche maintenant à rejoindre une équipe produit ou data comme ingénieur IA / ML.
+Diplômé de l'ENSICAEN (2025, IA et traitement d'images), passé par ALTEN Labs. Depuis septembre 2025, en indépendant, je conçois et livre seul des outils d'IA générative pour des entreprises : tri d'emails par LLM, chatbot RAG, agent vocal, préparation de paie. Ouvert à un poste en équipe ou à des missions en automatisation IA. Basé en Île-de-France, mobile en France et en remote.
 
 ## En bref
 
@@ -47,7 +47,7 @@ Une chaîne d'ingestion lit les documents depuis Google Drive, les découpe, cal
 
 - Choix clé : le texte et les tableaux ne se cherchent pas de la même façon ; une recherche vectorielle répond mal à « combien coûte la formation X ? » quand la réponse est dans une cellule
 - Mon rôle : seul, de la conception à la livraison du code et des guides d'installation
-- Outils : n8n, OpenAI, Supabase, PostgreSQL, Retell, ElevenLabs, JavaScript, PHP
+- Outils : n8n, OpenAI, Supabase, Retell, ElevenLabs, JavaScript
 - Démo sur le site : trois questions inventées et l'outil que l'agent choisit (recherche sémantique, document entier ou requête SQL)
 
 ### 03 · Préparation des salaires automatisée, en production chez une société de portage salarial
@@ -93,13 +93,13 @@ Un script Google Apps Script intégré à Google Sheets ajoute un menu en trois 
 | RAG et embeddings | Découpage de documents, embeddings, Supabase, recherche sémantique et SQL | Chatbot du centre de formation, recherche CLIP sur la Tapisserie |
 | Agents | Choix d'outils, routage par LLM classifieur, dialogue orienté tâche, agent vocal (Retell, ElevenLabs) | Chatbot RAG, ALTEN Labs |
 | Machine Learning et vision | TensorFlow / Keras, Scikit-learn, Pandas, NumPy, CLIP, traitement d'images | Stage en radiothérapie, projet Bayeux, spécialité ENSICAEN |
-| Langages | Python, SQL, JavaScript (Apps Script, Node.js) | Tous les projets |
+| Langages | Python, SQL, JavaScript (Apps Script) | Tous les projets |
 | Automatisation et outils | n8n, Google Apps Script, Google APIs, Supabase, Git, Docker (bases), GCP | Projets clients |
 | Langues | Français natif, anglais C1, arabe B2 | |
 
 ## Contact
 
-Vous recrutez un ingénieur IA junior ? Parlons-en. Ouvert à un CDI comme à des missions en freelance, en Île-de-France ou en remote.
+Un poste ou une mission en automatisation IA ? Parlons-en. Ouvert à un CDI comme à des missions en freelance. Basé en Île-de-France, mobile en France et en remote.
 
 - Email : contact@anisahmedzaid.com
 - LinkedIn : https://linkedin.com/in/anis-ahmed-zaid
